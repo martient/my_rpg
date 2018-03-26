@@ -10,7 +10,11 @@
 int main(int ac, char *argv[], char *env[])
 {
 	game_global_t *game = __init__();
-	if (__init__() == NULL)
+
+	if (game == NULL)
 		return (84);
+	free(game->player);
+	sfRenderWindow_destroy(game->window);
+	free(game);
 	return (0);
 }

@@ -53,5 +53,6 @@ game_global_t *__init__(void)
 		game->player = player;
 	printf("Game finised loading (%lf ms)\n",
 	sfClock_getElapsedTime(clock).microseconds * 0.001);
+	sfClock_destroy(clock);
 	return (game);
 }

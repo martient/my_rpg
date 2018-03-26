@@ -11,9 +11,9 @@ TEST_NAME=	test
 
 INCLUDE	=	include
 
-SRC	=	./src/init.c	\
-		./src/main.c
-
+SRC	=	./src/init/init.c		\
+		./src/main.c			\
+		./extern_lib/nxjson.c
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\
