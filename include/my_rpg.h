@@ -14,6 +14,7 @@
 #include "nxjson.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
+#define START_SCREEN 0
 
 typedef struct player_info_t {
 	char *name;
@@ -24,11 +25,13 @@ typedef struct player_info_t {
 
 typedef struct game_global_t {
 	sfRenderWindow *window;
+	int screen_id;
 	int frame_rate;
+	sfFont *font;
 	struct player_info_t *player;
 } game_global_t;
 
 game_global_t *__init__(void);
 int main(int ac, char *argv[], char *env[]);
-
+void engine_exit(game_global_t *global);
 #endif /* !MY_RPG_H_ */

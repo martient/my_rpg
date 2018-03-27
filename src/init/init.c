@@ -18,6 +18,16 @@ static void init_screen(game_global_t *game)
 	game->window = window;
 }
 
+static int init_engine_ressources(game_global_t *game)
+{
+	sfFont *engine_font;
+	engine_font = sfFont_createFromFile("./resources/arial.ttf");
+	if (engine_font == NULL)
+		return (1);
+	game->font = engine_font;
+	return (0);
+}
+
 static void init_game(game_global_t *game)
 {
 	game->frame_rate = DEFAULT_FRAME_RATE;
@@ -51,6 +61,8 @@ game_global_t *__init__(void)
 		return (NULL);
 	else
 		game->player = player;
+	if (init_engine_ressources(game))
+		return (NULL);
 	printf("Game finised loading (%lf ms)\n",
 	sfClock_getElapsedTime(clock).microseconds * 0.001);
 	sfClock_destroy(clock);

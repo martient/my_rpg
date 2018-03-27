@@ -13,7 +13,9 @@ INCLUDE	=	include
 
 SRC	=	./src/init/init.c		\
 		./src/main.c			\
-		./extern_lib/nxjson.c
+		./extern_lib/nxjson.c		\
+		./engine_lib/game_events.c	\
+		./src/draw/shim.c
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\
@@ -65,6 +67,3 @@ tests_run:	$(TEST_NAME) clean
 tests_clean:
 		rm *.gc*
 		rm $(TEST_NAME)
-
-play:		
-		./script.sh $(NAME) 1 > res

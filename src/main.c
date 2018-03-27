@@ -12,7 +12,15 @@ int main(int ac, char *argv[], char *env[])
 	game_global_t *game = __init__();
 
 	if (game == NULL)
-		return (84);
+		return (84);	
+	while (sfRenderWindow_isOpen(game->window)) {
+		sfRenderWindow_clear(game->window, sfWhite);
+		draw_shim(game, sfRed);
+		sfRenderWindow_display(game->window);
+		sleep(1);
+		//engine_exit(game);
+	}
+	sfRenderWindow_close(game->window);
 	free(game->player);
 	sfRenderWindow_destroy(game->window);
 	free(game);
