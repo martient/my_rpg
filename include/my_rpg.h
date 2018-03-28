@@ -30,10 +30,17 @@ typedef struct object_info_t {
 	int y;
 	int z;
 	int collider;
+	int *type;
+	int visible;
 	//Collision call back;
 	sfTexture *texture;
 	sfSprite *sprite;
+	object_info_t *next;
 }object_info_t;
+
+typedef struct object_first_t {
+	object_info_t *first;
+}object_first_t;
 
 typedef struct game_global_t {
 	sfRenderWindow *window;
