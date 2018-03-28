@@ -31,4 +31,16 @@ struct inventory_list {
 	inventory *first;
 };
 
+#ifndef LIMIT_INVENTORY_1
+#define LIMIT_INVENTORY_1 10
+#endif
+
+#ifndef LIMIT_INVENTORY_2
+#define LIMIT_INVENTORY_2 20
+#endif
+
+#ifndef LIMIT_INVENTORY_3
+#define LIMIT_INVENTORY_3 30
+#endif
+
 #endif /* !INVENTORY_H_ */
