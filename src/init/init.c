@@ -33,7 +33,7 @@ static void init_game(game_global_t *game)
 	game->frame_rate = DEFAULT_FRAME_RATE;
 }
 
-static player_info_t *init_player(void)
+static player_info_t *init_player(game_global_t *game)
 {
 	player_info_t *player = malloc(sizeof(player_info_t));
 
@@ -43,6 +43,7 @@ static player_info_t *init_player(void)
 	player->x = 0;
 	player->y = 0;
 	player->zone = 0;
+	game->player = player;
 	return (player);
 }
 
@@ -50,17 +51,13 @@ game_global_t *__init__(void)
 {
 	sfClock *clock = sfClock_create();
 	game_global_t *game = malloc(sizeof(game_global_t));
-	player_info_t *player = NULL;
 
 	if (game == NULL)
 		return (NULL);
 	init_game(game);
 	init_screen(game);
-	player = init_player();
-	if (player == NULL)
+	if (init_player(game) == NULL)
 		return (NULL);
-	else
-		game->player = player;
 	if (init_engine_ressources(game))
 		return (NULL);
 	printf("Game finised loading (%lf ms)\n",
