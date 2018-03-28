@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "nxjson.h"
+// #include "inventory.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -22,6 +23,17 @@ typedef struct player_info_t {
 	int y;
 	int zone;
 } player_info_t;
+
+typedef struct object_info_t {
+	char *name;
+	int x;
+	int y;
+	int z;
+	int collider;
+	//Collision call back;
+	sfTexture *texture;
+	sfSprite *sprite;
+}object_info_t;
 
 typedef struct game_global_t {
 	sfRenderWindow *window;
