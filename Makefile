@@ -27,7 +27,8 @@ SRC	=	.//engine_lib/text.c	\
 		.//billow/my_strdup.c	\
 		.//billow/my_strlen.c	\
 		.//billow/my_put_nbr.c	\
-		.//extern_lib/nxjson.c
+		.//extern_lib/nxjson.c \
+		./src/json_parser/rpg_json_reader.c \
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\

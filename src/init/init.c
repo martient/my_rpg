@@ -39,16 +39,27 @@ static void init_game(game_global_t *game)
 
 static player_info_t *init_player(game_global_t *game)
 {
+	char *file_content = rpg_map_load("./resources/player.json");
 	player_info_t *player = malloc(sizeof(player_info_t));
+	const nx_json* json = nx_json_parse(file_content, 0);
 
-	if (player == NULL)
-		return (NULL);
-	player->name = "Player";
-	player->x = 0;
-	player->y = 0;
-	player->zone = 0;
-	game->player = player;
-	return (player);
+	if (json && player) {
+		player->name =  nx_json_get(json, "name")->text_value;
+		player->x = nx_json_get(json, "x")->int_value;
+		player->y = nx_json_get(json, "y")->int_value;
+		player->zone = nx_json_get(json, "zone")->int_value;
+		player->health = nx_json_get(json, "pv")->int_value;
+		player->mana = nx_json_get(json, "mana")->int_value;
+		player->skill_point = nx_json_get(json, "skill_point")->int_value;
+		player->rotate = nx_json_get(json, "rotate")->int_value;
+		player->cd_q = 0;
+		player->cd_w = 0;
+		player->cd_e = 0;
+		player->cd_r = 0;
+		player->cd_a = 0;
+		return (player);
+	}
+	return (NULL);
 }
 
 game_global_t *__init__(void)
