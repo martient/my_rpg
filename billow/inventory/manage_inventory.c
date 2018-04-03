@@ -36,7 +36,7 @@ int add_inventory(struct inventory_list *ivnt, char *name)
 		new = ivnt->first;
 		while (new->next != NULL && my_strcmp(new->name, name) != 0)
 			new = new->next;
-		if (new->next == NULL) {
+		if (new->next == NULL && my_strcmp(new->name, name) != 0) {
 			new2 = new_ivnt_obj(NULL, name);
 			new->next = new2;
 		} else
