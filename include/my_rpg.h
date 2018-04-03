@@ -30,7 +30,8 @@ typedef struct player_info_t {
 	double cd_w;
 	double cd_e;
 	double cd_r;
-	int pc;
+	double cd_a;
+	int skill_point;
 	int rotate;
 } player_info_t;
 
