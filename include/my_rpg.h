@@ -25,6 +25,7 @@ typedef struct player_info_t {
 	int zone;
 } player_info_t;
 
+
 typedef struct object_info_t object_info_t;
 struct object_info_t {
 	char *name;
@@ -45,6 +46,16 @@ struct object_first_t {
 	object_info_t *first;
 };
 
+typedef struct map_info_t map_info_t;
+struct map_info_t {
+	char *name;
+	int width;
+	int height;
+	int start_x;
+	int start_y;
+	object_first_t first;
+};
+
 typedef struct game_global_t {
 	sfRenderWindow *window;
 	int screen_id;
@@ -54,6 +65,5 @@ typedef struct game_global_t {
 } game_global_t;
 
 game_global_t *__init__(void);
-int main(int ac, char *argv[], char *env[]);
 void engine_exit(game_global_t *global);
 #endif /* !MY_RPG_H_ */
