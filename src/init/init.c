@@ -57,6 +57,7 @@ static player_info_t *init_player(game_global_t *game)
 		player->cd_e = 0;
 		player->cd_r = 0;
 		player->cd_a = 0;
+		game->player = player;
 		return (player);
 	}
 	return (NULL);
