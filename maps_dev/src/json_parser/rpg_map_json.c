@@ -9,7 +9,14 @@
 
 int rpg_json_map_init(object_first_t *info)
 {
-	nx_json* json=nx_json_parse(rpg_map_load("./map/obj.json"), 0);
+	char *read_file = rpg_map_load("./map/obj.json");
+	if (!read_file) {
+		my_putstr("lol\n");
+		exit(84);
+	}
+	my_putstr("lolmdsr\n");
+	nx_json* json = nx_json_parse(read_file, 0);
+	my_putstr("lolmdr\n");
 //	const nx_json* tele;
 	nx_json* map;
 
