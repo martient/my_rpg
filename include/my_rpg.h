@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "nxjson.h"
 #include "my.h"
-// #include "inventory.h"
+#include "inventory.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -62,6 +62,7 @@ typedef struct game_global_t {
 	int frame_rate;
 	sfFont *font;
 	struct player_info_t *player;
+	struct inventory_list *invent;
 } game_global_t;
 
 game_global_t *__init__(void);
