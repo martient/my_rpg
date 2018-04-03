@@ -1,4 +1,4 @@
-{"map_file": {
+{
     "name": "on",
     "with": 100,
     "height": 100,
@@ -36,4 +36,4 @@
 	    { "x": 0, "y": 25, "z": 0, "id": 0, "event_func": "NULL"},
 	    { "x": 0, "y": 26, "z": 0, "id": 0, "event_func": "NULL"}
     ],
-}}
+}

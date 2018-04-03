@@ -13,7 +13,7 @@ SRC=		$(SRC_DIR)/*.c
 
 OBJ=		$(SRC:.c=.o)
 
-CFLAGS=		-I./include -Wall -W -pedantic -Werror
+CFLAGS=		-I./include -Wall -W -pedantic
 
 all:		$(NAME_BIN)
 
