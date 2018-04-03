@@ -17,3 +17,8 @@ int inventory_new_obj(struct inventory_list_t *list, char *name)
 		add_inventory(list, name);
 	return (0);
 }
+
+int inventory_del_obj(struct inventory_list_t *list, char *name)
+{
+	return (del_inventory(list, name));
+}
