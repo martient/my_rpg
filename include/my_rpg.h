@@ -76,6 +76,7 @@ typedef struct game_global_t {
 	sfFont *font;
 	struct player_info_t *player;
 	struct inventory_list *invent;
+	struct skills_t *tree;
 } game_global_t;
 
 game_global_t *__init__(void);
