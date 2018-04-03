@@ -46,9 +46,9 @@ OBJ	=	$(SRC:.c=.o)
 
 TEST_OBJ=	$(TEST_SRC:.c=.o)
 
-CFLAGS	=	-Wall -pedantic -I../include -I../my_lib -lc_graph_prog
+CFLAGS	=	-Wall -pedantic -I../include -I../my_lib -lc_graph_prog -g3
 
-OFLAGS	=	-Wall -pedantic -I../include -I../my_lib -lc_graph_prog
+OFLAGS	=	-Wall -pedantic -I../include -I../my_lib -lc_graph_prog -g3
 
 TFLAGS	=	-Wall -pedantic -I../include -I../my_lib --criterion
 
