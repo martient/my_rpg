@@ -11,11 +11,23 @@ TEST_NAME=	test
 
 INCLUDE	=	include
 
-SRC	=	./src/init/init.c		\
-		./src/main.c			\
-		./extern_lib/nxjson.c		\
-		./engine_lib/game_events.c	\
-		./src/draw/shim.c
+SRC	=	.//engine_lib/text.c	\
+		.//src//draw/shim.c	\
+		.//src//draw/bar.c	\
+		.//engine_lib/game_events.c	\
+		.//src//inventory/manage_inventory.c	\
+		.//src//inventory/print_inventory.c	\
+		.//src//inventory/get_inventory_size.c	\
+		.//src//inventory/modify_inventory.c	\
+		.//src//inventory/init_inventory.c	\
+		.//src//init/init.c	\
+		.//src/main.c	\
+		.//billow/my_putstr.c	\
+		.//billow/my_strcmp.c	\
+		.//billow/my_strdup.c	\
+		.//billow/my_strlen.c	\
+		.//billow/my_put_nbr.c	\
+		.//extern_lib/nxjson.c
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\
@@ -36,9 +48,9 @@ OBJ	=	$(SRC:.c=.o)
 
 TEST_OBJ=	$(TEST_SRC:.c=.o)
 
-CFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog
+CFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog -g3
 
-OFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog
+OFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog -g3
 
 TFLAGS	=	-Wall -pedantic -I./include -I./my_lib --criterion
 

@@ -5,7 +5,7 @@
 ** functions to print text
 */
 
-#include "engine.h"
+#include "my_rpg.h"
 
 void engine_create_text(game_global_t *global, char *text, int info[3], sfColor color)
 {

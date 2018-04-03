@@ -23,6 +23,7 @@ static int color_shim(sfUint8 *pixels, sfColor color)
 	}
 	return (0);
 }
+
 void draw_shim(game_global_t *game, sfColor color)
 {
 	sfUint8 *pixels = malloc(800 * 600 * 4);
