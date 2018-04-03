@@ -56,6 +56,9 @@ game_global_t *__init__(void)
 		return (NULL);
 	init_game(game);
 	init_screen(game);
+	game->invent = init_inventory();
+	if (game->invent == NULL)
+		return (NULL);
 	if (init_player(game) == NULL)
 		return (NULL);
 	if (init_engine_ressources(game))
