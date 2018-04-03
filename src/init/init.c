@@ -18,6 +18,8 @@ static void init_screen(game_global_t *game)
 	sfRenderWindow_setFramerateLimit(window, game->frame_rate);
 	game->window = window;
 	game->clock = clock;
+	game->width = 800;
+	game->height = 600;
 }
 
 static int init_engine_ressources(game_global_t *game)

@@ -19,6 +19,7 @@
 #define START_SCREEN 0
 
 typedef struct player_info_t {
+	sfView *camera;
 	char *name;
 	double x;
 	double y;
@@ -65,6 +66,8 @@ struct map_info_t {
 typedef struct game_global_t {
 	sfRenderWindow *window;
 	sfClock *clock;
+	int height;
+	int width;
 	int screen_id;
 	int frame_rate;
 	int state;
