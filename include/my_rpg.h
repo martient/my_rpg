@@ -106,7 +106,7 @@ int my_putstr(char *str);
 int my_strcmp(char *str, char *str2);
 char *my_strdup(char *str);
 int my_strlen(char *str);
-
+void key_event(game_global_t *game, double delta_time);
 int rpg_init_global_info(object_first_t *info);
 object_first_t *rpg_init_object_list(void);
 int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos);
