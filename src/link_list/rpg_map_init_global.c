@@ -9,10 +9,7 @@
 
 int rpg_init_global_info(object_first_t *info)
 {
-	if (!info) {
-		my_putstr("Error: value gift is null\n");
+	if (rpg_inject_object_grass_list(info) == -1)
 		return (0);
-	}
-	rpg_inject_object_grass_list(info);
 	return (1);
 }

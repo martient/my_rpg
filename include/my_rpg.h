@@ -111,4 +111,5 @@ int rpg_init_global_info(object_first_t *info);
 object_first_t *rpg_init_object_list(void);
 int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos);
 int rpg_inject_object_grass_list(object_first_t *info);
+map_info_t *rpg_map_info(void);
 #endif /* !MY_RPG_H_ */

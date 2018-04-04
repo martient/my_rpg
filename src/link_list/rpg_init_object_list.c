@@ -34,9 +34,9 @@ object_first_t *rpg_init_object_list(void)
 map_info_t *rpg_map_info(void)
 {
 	map_info_t *info = malloc(sizeof(map_info_t));
-	object_first_t *first;
+	object_first_t *first = NULL;
 
-	if (!first || !info) {
+	if (!info) {
 		my_putstr("Error: malloc new struct\n");
 		return (NULL);
 	}
