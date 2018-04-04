@@ -9,11 +9,19 @@
 
 void draw_player(game_global_t *game)
 {
-	player_info_t *player = game->player;
-	sfVector2f center = {player->x, player->y};
-	sfFloatRect cam = {0, 0, game->width, game->height};
+	static int anim = 0;
+	sfIntRect animation = {(anim * 39), (game->player->direction - 1) * 39, 39, 39};
+	sfVector2f pos = {game->player->x, game->player->y};
 
-	player->camera = sfView_createFromRect(cam);
-	sfView_setCenter(player->camera, center);
-	sfRenderWindow_setView(game->window, player->camera);
+	sfSprite_setTexture(game->player->sprite, game->player->texture, sfTrue);
+	sfSprite_setTextureRect(game->player->sprite, animation);
+	sfSprite_setPosition(game->player->sprite, pos);
+	sfRenderWindow_drawSprite(game->window, game->player->sprite, NULL);
+	if (game->player->moving)
+		anim++;
+	else
+		anim = 1;
+	if (anim > 2)
+		anim = 0;
+	game->player->moving = 0;
 }

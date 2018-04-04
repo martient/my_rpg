@@ -14,7 +14,7 @@
 #include "nxjson.h"
 #include "my.h"
 #include "inventory.h"
-//#include "skill_tree.h"
+#include "skill_tree.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -33,7 +33,10 @@ typedef struct player_info_t {
 	double cd_r;
 	double cd_a;
 	int skill_point;
-	int rotate;
+	int direction;
+	int moving;
+	sfSprite *sprite;
+	sfTexture *texture;
 } player_info_t;
 
 
@@ -107,5 +110,6 @@ int analyse_event(game_global_t *game);
 void draw__(game_global_t *game);
 void game_loop(game_global_t *game);
 int main(int ac, char *argv[], char *env[]);
+player_info_t *init_player(game_global_t *game);
 
 #endif /* !MY_RPG_H_ */

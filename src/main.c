@@ -25,50 +25,6 @@ int draw(game_global_t *game, int *infos, int *infos2)
 	return (0);
 }
 
-void update_screen_size(game_global_t *game)
-{
-	sfVector2u screen_size;
-
-	screen_size = sfRenderWindow_getSize(game->window);
-	game->width = screen_size.x;
-	game->height = screen_size.y;
-}
-
-int analyse_event(game_global_t *game)
-{
-	sfEvent event;
-	double delta_time =
-	sfClock_getElapsedTime(game->clock).microseconds / 1000000.0;
-
-	while (sfRenderWindow_pollEvent(game->window, &event)) {
-		if (event.type == sfEvtClosed) {
-			sfRenderWindow_close(game->window);
-			return (0);
-		}
-		if (event.type == sfEvtResized)
-			update_screen_size(game);
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyW)) {
-		game->player->y -= 1 * (delta_time);
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyS)) {
-		game->player->y += 1 * delta_time;
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyA)) {
-		game->player->x -= 1 * delta_time;
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyD)) {
-		game->player->x += 1 * delta_time;
-	}
-	sfClock_restart(game->clock);
-	return (0);
-}
-
-void draw__(game_global_t *game)
-{
-	printf("X:%d; Y:%d\n", game->width, game->height);
-}
-
 void game_loop(game_global_t *game)
 {
 	sfClock *draw_clock = sfClock_create();
