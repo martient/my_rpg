@@ -11,7 +11,7 @@ int analyse_event(game_global_t *game)
 {
 	sfEvent event;
 	double delta_time =
-	sfClock_getElapsedTime(game->clock).microseconds / 1000.0;
+	sfClock_getElapsedTime(game->clock).microseconds / 100000.0;
 
 	while (sfRenderWindow_pollEvent(game->window, &event)) {
 		if (event.type == sfEvtClosed) {

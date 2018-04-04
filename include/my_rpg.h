@@ -94,7 +94,6 @@ typedef struct game_global_t {
 
 game_global_t *__init__(void);
 void engine_exit(game_global_t *global);
-int draw_element(game_global_t *game, object_info_t *obj);
 void draw_shim(game_global_t *game, sfColor color);
 void draw_bar(game_global_t *game, sfColor colors[2], int *infos);
 void draw_player(game_global_t *game);
@@ -120,4 +119,5 @@ object_first_t *rpg_init_object_list(void);
 int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos);
 int rpg_inject_object_grass_list(object_first_t *info);
 map_info_t *rpg_map_info(void);
+int draw_element(game_global_t *game);
 #endif /* !MY_RPG_H_ */
