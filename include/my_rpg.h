@@ -18,6 +18,14 @@
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
 
+#ifndef Z_MINIMUM
+#define Z_MINIMUM -1
+#endif
+
+#ifndef Z_MAXIMUM
+#define Z_MAXIMUM 2
+#endif
+
 typedef struct player_info_t {
 	sfView *camera;
 	char *name;
