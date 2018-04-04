@@ -43,4 +43,15 @@ struct inventory_list {
 #define LIMIT_INVENTORY_3 30
 #endif
 
+int inventory_new_obj(struct inventory_list *list, char *name);
+int inventory_del_obj(struct inventory_list *list, char *name);
+int print_inventory(inventory_list *ivnt);
+inventory *new_ivnt_obj(char *path, char *name);
+int add_inventory(struct inventory_list *ivnt, char *name);
+int del_beginning(inventory_list *ivnt, inventory *del_list);
+int del_end(inventory *del, inventory *previous);
+int del_inventory(struct inventory_list *ivnt, char *name);
+inventory_list *init_inventory(void);
+int get_inventory_size(struct inventory_list *ivnt);
+
 #endif /* !INVENTORY_H_ */

@@ -12,7 +12,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "nxjson.h"
-#include "my.h"
 #include "inventory.h"
 #include "skill_tree.h"
 #define GAME_NAME "Overlord Adventures"
@@ -93,16 +92,6 @@ void draw_player(game_global_t *game);
 char *rpg_map_load(char *filepath);
 int rpg_json_map_init(object_first_t *info);
 player_info_t *rpg_map_parsed(char *file_content);
-inventory *new_ivnt_obj(char *path, char *name);
-int add_inventory(struct inventory_list *ivnt, char *name);
-int del_beginning(inventory_list *ivnt, inventory *del_list);
-int del_end(inventory *del, inventory *previous);
-int del_inventory(struct inventory_list *ivnt, char *name);
-int print_inventory(inventory_list *ivnt);
-int get_inventory_size(struct inventory_list *ivnt);
-int inventory_new_obj(struct inventory_list_t *list, char *name);
-int inventory_del_obj(struct inventory_list_t *list, char *name);
-inventory_list *init_inventory(void);
 game_global_t *__init__(void);
 int draw(game_global_t *game, int *infos, int *infos2);
 void update_screen_size(game_global_t *game);
@@ -111,5 +100,10 @@ void draw__(game_global_t *game);
 void game_loop(game_global_t *game);
 int main(int ac, char *argv[], char *env[]);
 player_info_t *init_player(game_global_t *game);
+int my_put_nbr(int nb);
+int my_putstr(char *str);
+int my_strcmp(char *str, char *str2);
+char *my_strdup(char *str);
+int my_strlen(char *str);
 
 #endif /* !MY_RPG_H_ */

@@ -8,7 +8,7 @@
 #ifndef SKILL_TREE_H_
 	#define SKILL_TREE_H_
 
-//#include "knight_skills.h"
+#include "knight_skills.h"
 
 #ifndef FIRST_LIFE_H_
 #define FIRST_LIFE_H_ 100
