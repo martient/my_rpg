@@ -13,23 +13,23 @@ INCLUDE	=	include
 
 SRC	=	.//engine_lib/text.c	\
 		.//engine_lib/game_events.c	\
-		.//billow/my_putstr.c	\
-		.//billow/my_strcmp.c	\
-		.//billow/my_strdup.c	\
-		.//billow/my_strlen.c	\
-		.//billow/my_put_nbr.c	\
+		./src/lib/my_putstr.c	\
+		./src/lib/my_strcmp.c	\
+		./src/lib/my_strdup.c	\
+		./src/lib/my_strlen.c	\
+		./src/lib/my_put_nbr.c	\
 		.//extern_lib/nxjson.c \
-		./src//draw/draw_hub.c	\
-		./src//draw/shim.c	\
-		./src//draw/bar.c	\
-		./src//draw/draw_player.c	\
-		./src//json_parser/rpg_json_reader.c	\
-		./src//json_parser/rpg_map_json.c	\
-		./src//inventory/manage_inventory.c	\
-		./src//inventory/print_inventory.c	\
-		./src//inventory/get_inventory_size.c	\
-		./src//inventory/modify_inventory.c	\
-		./src//inventory/init_inventory.c	\
+		./src/draw/draw_hub.c	\
+		./src/draw/shim.c	\
+		./src/draw/bar.c	\
+		./src/draw/draw_player.c	\
+		./src/json_parser/rpg_json_reader.c	\
+		./src/json_parser/rpg_map_json.c	\
+		./src/inventory/manage_inventory.c	\
+		./src/inventory/print_inventory.c	\
+		./src/inventory/get_inventory_size.c	\
+		./src/inventory/modify_inventory.c	\
+		./src/inventory/init_inventory.c	\
 		./src//init/init_player.c	\
 		./src//init/init.c	\
 		./src//event/screen_event.c	\
