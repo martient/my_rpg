@@ -12,8 +12,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "nxjson.h"
+#include "my.h"
 #include "inventory.h"
-#include "skill_tree.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -32,10 +32,8 @@ typedef struct player_info_t {
 	double cd_r;
 	double cd_a;
 	int skill_point;
-	int direction;
-	int moving;
+	int rotate;
 	sfSprite *sprite;
-	sfTexture *texture;
 } player_info_t;
 
 
@@ -66,7 +64,7 @@ struct map_info_t {
 	int height;
 	int start_x;
 	int start_y;
-	object_first_t *first;
+	object_first_t first;
 };
 
 typedef struct game_global_t {
@@ -80,35 +78,9 @@ typedef struct game_global_t {
 	sfFont *font;
 	struct player_info_t *player;
 	struct inventory_list *invent;
-	struct map_info_t *info_map;
 	struct skills_t *tree;
 } game_global_t;
 
 game_global_t *__init__(void);
 void engine_exit(game_global_t *global);
-int draw_element(game_global_t *game, object_info_t *obj);
-void draw_shim(game_global_t *game, sfColor color);
-void draw_bar(game_global_t *game, sfColor colors[2], int *infos);
-void draw_player(game_global_t *game);
-char *rpg_map_load(char *filepath);
-int rpg_json_map_init(object_first_t *info);
-player_info_t *rpg_map_parsed(char *file_content);
-game_global_t *__init__(void);
-int draw(game_global_t *game, int *infos, int *infos2);
-void update_screen_size(game_global_t *game);
-int analyse_event(game_global_t *game);
-void draw__(game_global_t *game);
-void game_loop(game_global_t *game);
-int main(int ac, char *argv[], char *env[]);
-player_info_t *init_player(game_global_t *game);
-int my_put_nbr(int nb);
-int my_putstr(char *str);
-int my_strcmp(char *str, char *str2);
-char *my_strdup(char *str);
-int my_strlen(char *str);
-
-int rpg_init_global_info(object_first_t *info);
-object_first_t *rpg_init_object_list(void);
-int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos);
-int rpg_inject_object_grass_list(object_first_t *info);
 #endif /* !MY_RPG_H_ */

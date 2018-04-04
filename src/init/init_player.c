@@ -29,9 +29,9 @@ player_info_t *init_player(game_global_t *game)
 	char *file_content = rpg_map_load("./resources/player.json");
 	player_info_t *player = malloc(sizeof(player_info_t));
 	const nx_json* json = nx_json_parse(file_content, 0);
-	
+
 	if (json && player) {
-		player->name =  nx_json_get(json, "name")->text_value;
+		player->name = "Patrick";
 		player->x = nx_json_get(json, "x")->dbl_value;
 		player->y = nx_json_get(json, "y")->dbl_value;
 		player->zone = nx_json_get(json, "zone")->int_value;

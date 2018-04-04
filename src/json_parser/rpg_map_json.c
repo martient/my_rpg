@@ -10,15 +10,13 @@
 int rpg_json_map_init(object_first_t *info)
 {
 	char *read_file = rpg_map_load("./map/obj.json");
+	const nx_json* json;
+	const nx_json* map;
 	if (!read_file) {
-		my_putstr("lol\n");
+		my_putstr("Error: File not found\n");
 		exit(84);
 	}
-	my_putstr("lolmdsr\n");
-	nx_json* json = nx_json_parse(read_file, 0);
-	my_putstr("lolmdr\n");
-//	const nx_json* tele;
-	nx_json* map;
+	json = nx_json_parse(read_file, 0);
 
 	if (json) {
 		//tele = nx_json_get(json, "teleportation");

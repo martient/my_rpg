@@ -25,6 +25,10 @@ SRC	=	.//engine_lib/text.c	\
 		./src/draw/draw_player.c	\
 		./src/json_parser/rpg_json_reader.c	\
 		./src/json_parser/rpg_map_json.c	\
+		./src/link_list/rpg_init_object_list.c \
+		./src/link_list/rpg_inject_object_list.c \
+		./src/link_list/rpg_map_init_global.c \
+		./src/link_list/rpg_remove_object_list.c \
 		./src/inventory/manage_inventory.c	\
 		./src/inventory/print_inventory.c	\
 		./src/inventory/get_inventory_size.c	\

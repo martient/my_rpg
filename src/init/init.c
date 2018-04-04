@@ -54,6 +54,9 @@ game_global_t *__init__(void)
 		return (NULL);
 	if (init_engine_ressources(game))
 		return (NULL);
+	game->info_map = rpg_map_info();
+	if (rpg_init_global_info(game->info_map->first) == 0)
+		return (NULL);
 	printf("Game finised loading (%lf ms)\n",
 	sfClock_getElapsedTime(clock).microseconds * 0.001);
 	sfClock_destroy(clock);
