@@ -5,7 +5,7 @@
 ** Function that returns the number of objects it founds in the current inventory
 */
 
-#include "inventory.h"
+#include "my_rpg.h"
 
 int get_inventory_size(struct inventory_list *ivnt)
 {

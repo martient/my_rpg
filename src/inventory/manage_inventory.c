@@ -5,7 +5,7 @@
 ** Functions that manages the inventory chained list
 */
 
-#include "inventory.h"
+#include "my_rpg.h"
 
 inventory *new_ivnt_obj(char *path, char *name)
 {
