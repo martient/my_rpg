@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-void key_event(game_global_t *game, int delta_time)
+void key_event(game_global_t *game, double delta_time)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyW)) {
 		game->player->y -= 10 * (delta_time);

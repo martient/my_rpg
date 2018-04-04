@@ -24,6 +24,17 @@ static void init_player_sprite(player_info_t *player)
 	player->moving = 0;
 }
 
+static void init_player_camera(game_global_t *game, player_info_t *player)
+{
+	sfView *player_camera;
+	sfVector2f pos = {(player->x - (game->width / 2)), player->y - (game->height / 2)};
+	sfFloatRect cam = {game->width, game->height};
+	
+	player_camera = sfView_createFromRect(cam);
+	sfView_setCenter(player_camera, pos);
+	player->camera = player_camera;
+}
+
 player_info_t *init_player(game_global_t *game)
 {
 	char *file_content = rpg_map_load("./resources/player.json");
@@ -45,6 +56,7 @@ player_info_t *init_player(game_global_t *game)
 		player->cd_r = 0;
 		player->cd_a = 0;
 		init_player_sprite(player);
+		init_player_camera(game, player);
 		game->player = player;
 		return (player);
 	}

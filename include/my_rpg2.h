@@ -12,12 +12,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "nxjson.h"
-// #include "inventory.h"
+#include "inventory.h"
+#include "skill_tree.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
 
 typedef struct player_info_t {
+	sfView *camera;
 	char *name;
 	double x;
 	double y;
@@ -28,9 +30,17 @@ typedef struct player_info_t {
 	double cd_w;
 	double cd_e;
 	double cd_r;
+	double cd_a;
+	int skill_point;
+	int direction;
+	int moving;
+	sfSprite *sprite;
+	sfTexture *texture;
 } player_info_t;
 
-typedef struct object_info_t {
+
+typedef struct object_info_t object_info_t;
+struct object_info_t {
 	char *name;
 	int x;
 	int y;
@@ -41,25 +51,62 @@ typedef struct object_info_t {
 	//Collision call back;
 	sfTexture *texture;
 	sfSprite *sprite;
-}object_info_t;
+	object_info_t *next;
+};
 
-typedef struct object_first_t {
+typedef struct object_first_t object_first_t;
+struct object_first_t {
 	object_info_t *first;
-}object_first_t;
+};
+
+typedef struct map_info_t map_info_t;
+struct map_info_t {
+	char *name;
+	int width;
+	int height;
+	int start_x;
+	int start_y;
+	object_first_t first;
+};
 
 typedef struct game_global_t {
 	sfRenderWindow *window;
 	sfClock *clock;
+	int height;
+	int width;
 	int screen_id;
 	int frame_rate;
 	int state;
 	sfFont *font;
 	struct player_info_t *player;
+	struct inventory_list *invent;
+	struct skills_t *tree;
 } game_global_t;
 
 game_global_t *__init__(void);
-int main(int ac, char *argv[], char *env[]);
 void engine_exit(game_global_t *global);
-void draw_bar(game_global_t *game, sfColor colors[2], int *infos);
+int draw_element(game_global_t *game, object_info_t *obj);
 void draw_shim(game_global_t *game, sfColor color);
+void draw_bar(game_global_t *game, sfColor colors[2], int *infos);
+void draw_player(game_global_t *game);
+char *rpg_map_load(char *filepath);
+int rpg_json_map_init(object_first_t *info);
+player_info_t *rpg_map_parsed(char *file_content);
+game_global_t *__init__(void);
+int draw(game_global_t *game, int *infos, int *infos2);
+void update_screen_size(game_global_t *game);
+int analyse_event(game_global_t *game);
+void draw__(game_global_t *game);
+void game_loop(game_global_t *game);
+int main(int ac, char *argv[], char *env[]);
+player_info_t *init_player(game_global_t *game);
+int my_put_nbr(int nb);
+int my_putstr(char *str);
+int my_strcmp(char *str, char *str2);
+char *my_strdup(char *str);
+int my_strlen(char *str);
+void update_screen_size(game_global_t *game);
+void key_event(game_global_t *game, int delta_time);
+int analyse_event(game_global_t *game);
+
 #endif /* !MY_RPG_H_ */
