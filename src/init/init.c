@@ -42,7 +42,8 @@ static player_info_t *init_player(game_global_t *game)
 	char *file_content = rpg_map_load("./resources/player.json");
 	player_info_t *player = malloc(sizeof(player_info_t));
 	const nx_json* json = nx_json_parse(file_content, 0);
-
+	sfTexture* texture;
+    	texture = sfTexture_create(800, 600);
 	if (json && player) {
 		player->name =  nx_json_get(json, "name")->text_value;
 		player->x = nx_json_get(json, "x")->int_value;
@@ -57,6 +58,8 @@ static player_info_t *init_player(game_global_t *game)
 		player->cd_e = 0;
 		player->cd_r = 0;
 		player->cd_a = 0;
+		player->sprite = sfSprite_create;
+		sfSprite_setTexture(player->sprite, texture, sfTrue);
 		game->player = player;
 		return (player);
 	}
