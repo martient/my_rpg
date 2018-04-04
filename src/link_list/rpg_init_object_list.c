@@ -36,15 +36,16 @@ map_info_t *rpg_map_info(void)
 	map_info_t *info = malloc(sizeof(map_info_t));
 	object_first_t *first = NULL;
 
-	if (!info) {
-		my_putstr("Error: malloc new struct\n");
-		return (NULL);
-	}
+	//if (!info) {
+	//	my_putstr("Error: malloc new struct\n");
+	//	return (NULL);
+	//}
 	info->name = "ratata";
 	info->width = 100;
 	info->height = 100;
 	info->start_x = 5;
 	info->start_y = 10;
 	first = rpg_init_object_list();
+	info->first = first;
 	return (info);
 }
