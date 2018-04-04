@@ -43,7 +43,7 @@ static player_info_t *init_player(game_global_t *game)
 	player_info_t *player = malloc(sizeof(player_info_t));
 	const nx_json* json = nx_json_parse(file_content, 0);
 	sfTexture* texture;
-    	texture = sfTexture_create(800, 600);
+	sfTexture_createFromFile("./resources/sprites/knight.png");
 	if (json && player) {
 		player->name =  nx_json_get(json, "name")->text_value;
 		player->x = nx_json_get(json, "x")->int_value;
