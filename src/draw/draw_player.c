@@ -9,7 +9,7 @@
 
 static void player_cam(game_global_t *game)
 {
-	sfVector2f pos = {game->player->x, game->player->y};
+	sfVector2f pos = {game->player->x + (39/2), game->player->y + (39/2)};
 	sfFloatRect cam = {0, 0, game->width, game->height};
 
 	game->player->camera =  sfView_createFromRect(cam);
