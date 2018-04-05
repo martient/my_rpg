@@ -10,22 +10,22 @@
 void key_event(game_global_t *game, double delta_time)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyW)) {
-		game->player->y -= 10 * (delta_time);
+		game->player->y -= PLAYER_SPEED * (delta_time);
 		game->player->direction = 4;
 		game->player->moving = 1;
 	}
 	if (sfKeyboard_isKeyPressed(sfKeyS)) {
-		game->player->y += 10 * delta_time;
+		game->player->y += PLAYER_SPEED * delta_time;
 		game->player->direction = 1;
 		game->player->moving = 1;
 	}
 	if (sfKeyboard_isKeyPressed(sfKeyA)) {
-		game->player->x -= 10 * delta_time;
+		game->player->x -= PLAYER_SPEED * delta_time;
 		game->player->direction = 2;
 		game->player->moving = 1;
 	}
 	if (sfKeyboard_isKeyPressed(sfKeyD)) {
-		game->player->x += 10 * delta_time;
+		game->player->x += PLAYER_SPEED * delta_time;
 		game->player->direction = 3;
 		game->player->moving = 1;
 	}

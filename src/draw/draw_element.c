@@ -29,6 +29,7 @@ int draw_element(game_global_t *game)
 	int player = 0;
 
 	for (int i = 0; i < Z_MAXIMUM; i++) {
+		//printf("Drawing (z:%d)\n", i);
 		if (i == 1 && player== 0) {
 			draw_player(game);
 			player = 1;

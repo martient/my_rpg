@@ -26,6 +26,10 @@
 #define Z_MAXIMUM 2
 #endif
 
+#ifndef PLAYER_SPEED
+#define PLAYER_SPEED 20
+#endif
+
 typedef struct player_info_t {
 	sfView *camera;
 	char *name;
