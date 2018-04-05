@@ -13,6 +13,7 @@ INCLUDE	=	include
 
 SRC	=	.//engine_lib/text.c	\
 		.//engine_lib/game_events.c	\
+		./src/player/player_move.c	\
 		./src/lib/my_putstr.c	\
 		./src/lib/my_strcmp.c	\
 		./src/lib/my_strdup.c	\

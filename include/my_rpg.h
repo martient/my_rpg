@@ -124,4 +124,5 @@ int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos);
 int rpg_inject_object_grass_list(object_first_t *info);
 map_info_t *rpg_map_info(void);
 int draw_element(game_global_t *game);
+void player_move(game_global_t *game, double delta_time, int direction);
 #endif /* !MY_RPG_H_ */
