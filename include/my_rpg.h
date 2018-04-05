@@ -38,6 +38,7 @@ typedef struct player_info_t {
 	int zone;
 	int health;
 	int max_health;
+	float power;
 	int mana;
 	double cd_q;
 	double cd_w;

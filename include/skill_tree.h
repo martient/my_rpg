@@ -27,7 +27,7 @@
 #endif
 
 #ifndef FIFTH_LIFE_H_
-#define FIFTH_LIFE_H_
+#define FIFTH_LIFE_H_ 200
 #endif
 
 #ifndef LIFE_UPGRADE_COST_H_

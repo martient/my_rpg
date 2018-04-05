@@ -17,5 +17,13 @@ int upgrade_power(struct game_global_t *game)
 		return (-1);
 	game->tree->power_level = game->tree->power_level + 1;
 	game->player->skill_point = game->player->skill_point - upgrade;
+	if (game->tree->power_level == 2)
+		game->player->power = SECOND_POWER_H_;
+	if (game->tree->power_level == 3)
+		game->player->power = THIRD_POWER_H_;
+	if (game->tree->power_level == 4)
+		game->player->power = FOURTH_POWER_H_;
+	if (game->tree->power_level == 5)
+		game->player->power = FIFTH_POWER_H_;
 	return (0);
 }
