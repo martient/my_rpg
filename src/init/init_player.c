@@ -46,7 +46,8 @@ player_info_t *init_player(game_global_t *game)
 		player->x = nx_json_get(json, "x")->dbl_value;
 		player->y = nx_json_get(json, "y")->dbl_value;
 		player->zone = nx_json_get(json, "zone")->int_value;
-		player->health = nx_json_get(json, "pv")->int_value;
+		player->health = nx_json_get(json, "health")->int_value;
+		player->max_health = nx_json_get(json, "max_health")->int_value;
 		player->mana = nx_json_get(json, "mana")->int_value;
 		player->skill_point = nx_json_get(json, "skill_point")->int_value;
 		player->direction = nx_json_get(json, "direction")->int_value;

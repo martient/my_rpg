@@ -37,6 +37,7 @@ typedef struct player_info_t {
 	double y;
 	int zone;
 	int health;
+	int max_health;
 	int mana;
 	double cd_q;
 	double cd_w;
@@ -125,4 +126,6 @@ int rpg_inject_object_grass_list(object_first_t *info);
 map_info_t *rpg_map_info(void);
 int draw_element(game_global_t *game);
 void player_move(game_global_t *game, double delta_time, int direction);
+void draw_ui(game_global_t *game);
+int draw_health(game_global_t *game);
 #endif /* !MY_RPG_H_ */

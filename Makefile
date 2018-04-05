@@ -42,6 +42,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src//event/main_event.c	\
 		./src/draw/draw_element.c		\
 		./src/main.c	\
+		./src/ui/draw_ui.c	\
+		./src/ui/draw_health.c
 
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
