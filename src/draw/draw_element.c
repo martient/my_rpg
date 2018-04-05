@@ -7,7 +7,6 @@
 
 #include "my_rpg.h"
 
-
 int draw_z(game_global_t *game, object_info_t *tile, int z)
 {
 	sfSprite *sprite;
@@ -19,6 +18,7 @@ int draw_z(game_global_t *game, object_info_t *tile, int z)
 		sfSprite_setPosition(sprite, pos);
 		sfSprite_setTexture(sprite, tile->texture, sfTrue);
 		sfRenderWindow_drawSprite(game->window, sprite, NULL);
+		sfSprite_destroy(sprite);
 	}
 	return (0);
 }

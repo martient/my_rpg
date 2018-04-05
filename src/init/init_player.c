@@ -14,7 +14,7 @@ static void init_player_sprite(player_info_t *player)
 	sfIntRect spritesheet_rect = {0, 0, 32, 32};
 	sfVector2f pos = {player->x, player->y};
 
-	player_texture = sfTexture_createFromFile("./resources/sprite/knight.png", NULL);
+	player_texture = sfTexture_createFromFile("./resources/sprites/knight.png", NULL);
 	player_sprite = sfSprite_create();
 	sfSprite_setTexture(player_sprite, player_texture, sfTrue);
 	sfSprite_setTextureRect(player_sprite, spritesheet_rect);
