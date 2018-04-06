@@ -24,6 +24,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/draw/shim.c	\
 		./src/draw/bar.c	\
 		./src/draw/draw_player.c	\
+		./src/draw/draw_spell_box.c	\
 		./src/json_parser/rpg_json_reader.c	\
 		./src/json_parser/rpg_map_json.c	\
 		./src/link_list/rpg_init_object_list.c \
@@ -43,7 +44,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src/draw/draw_element.c		\
 		./src/main.c	\
 		./src/ui/draw_ui.c	\
-		./src/ui/draw_health.c
+		./src/ui/draw_health.c	\
+		./src/ui/info_box.c
 
 
 TEST_SRC=	.//my_lib/remove_dup.c	\

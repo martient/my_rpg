@@ -59,7 +59,7 @@ static int rpg_inject_object_grass_list_m(object_first_t *info, int x, int y)
 
 int rpg_inject_object_grass_list(object_first_t *info)
 {
-	for (int i = 0; i < 100; i += 1) {
+	for (int i = 1; i < 100; i += 1) {
 		for (int j = 0; j < 100; j += 1) {
 			if (rpg_inject_object_grass_list_m(info, j, i) == -1)
 				return -1;

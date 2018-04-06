@@ -129,4 +129,6 @@ int draw_element(game_global_t *game);
 void player_move(game_global_t *game, double delta_time, int direction);
 void draw_ui(game_global_t *game);
 int draw_health(game_global_t *game);
+int draw_box(game_global_t *game, char *text, int kill);
+int draw_spell_cd_box(game_global_t *game, double percentage);
 #endif /* !MY_RPG_H_ */
