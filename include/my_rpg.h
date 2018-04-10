@@ -27,7 +27,7 @@
 #endif
 
 #ifndef PLAYER_SPEED
-#define PLAYER_SPEED 20
+#define PLAYER_SPEED 200
 #endif
 
 typedef struct player_info_t {
@@ -40,11 +40,12 @@ typedef struct player_info_t {
 	int max_health;
 	float power;
 	int mana;
-	double cd_q;
-	double cd_w;
-	double cd_e;
-	double cd_r;
-	double cd_a;
+	double spell_cd[5];
+	// double cd_q;
+	// double cd_w;
+	// double cd_e;
+	// double cd_r;
+	// double cd_a;
 	int skill_point;
 	int direction;
 	int moving;
@@ -131,4 +132,7 @@ void draw_ui(game_global_t *game);
 int draw_health(game_global_t *game);
 int draw_box(game_global_t *game, char *text, int kill);
 int draw_spell_cd_box(game_global_t *game, double percentage);
+void activate_spell(game_global_t *game, int spell);
+void spell_cooldown(game_global_t *game, double delta_time);
+void engine_create_text(game_global_t *global, char *text, int info[3], sfColor color);
 #endif /* !MY_RPG_H_ */

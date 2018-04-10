@@ -19,6 +19,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/lib/my_strdup.c	\
 		./src/lib/my_strlen.c	\
 		./src/lib/my_put_nbr.c	\
+		./src/spells/spell_manager.c	\
 		.//extern_lib/nxjson.c \
 		./src/draw/draw_hub.c	\
 		./src/draw/shim.c	\

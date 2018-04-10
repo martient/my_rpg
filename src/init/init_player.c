@@ -51,11 +51,11 @@ player_info_t *init_player(game_global_t *game)
 		player->mana = nx_json_get(json, "mana")->int_value;
 		player->skill_point = nx_json_get(json, "skill_point")->int_value;
 		player->direction = nx_json_get(json, "direction")->int_value;
-		player->cd_q = 0;
-		player->cd_w = 0;
-		player->cd_e = 0;
-		player->cd_r = 0;
-		player->cd_a = 0;
+		player->spell_cd[0] = 0;
+		player->spell_cd[1] = 0;
+		player->spell_cd[2] = 0;
+		player->spell_cd[3] = 0;
+		player->spell_cd[4] = 0;
 		init_player_sprite(player);
 		init_player_camera(game, player);
 		game->player = player;
