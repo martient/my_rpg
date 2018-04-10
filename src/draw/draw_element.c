@@ -25,13 +25,15 @@ int draw_z(game_global_t *game, object_info_t *tile, int z)
 int draw_element(game_global_t *game)
 {
 	object_info_t *map = game->info_map->first->first;
+	object_info_t *bck_map = map;
 	int player = 0;
 
-	for (int i = 0; i < Z_MAXIMUM; i++) {
+	for (int i = 0; i < 5; i++) {
 		if (i == 1 && player== 0) {
 			draw_player(game);
 			player = 1;
-		}	
+		}
+		map = bck_map;
 		while (map) {
 			draw_z(game, map, i);
 			map = map->next;
