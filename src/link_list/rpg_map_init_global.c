@@ -9,6 +9,8 @@
 
 int rpg_init_global_info(object_first_t *info)
 {
+	if (rpg_json_map_init(info) == -1)
+		return (0);
 	if (rpg_inject_object_grass_list(info) == -1)
 		return (0);
 	return (1);

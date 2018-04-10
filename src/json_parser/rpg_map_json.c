@@ -9,12 +9,12 @@
 
 int rpg_json_map_init(object_first_t *info)
 {
-	char *read_file = rpg_map_load("./map/obj.json");
+	char *read_file = rpg_map_load("./resources/obj.json");
 	const nx_json* json;
 	const nx_json* map;
 	if (!read_file) {
 		my_putstr("Error: File not found\n");
-		exit(84);
+		return (-1);
 	}
 	json = nx_json_parse(read_file, 0);
 
@@ -24,7 +24,6 @@ int rpg_json_map_init(object_first_t *info)
 		for (int i = 0; i < map->length; i++) {
 			rpg_inject_object_list(info, map, i);
 		}
-		return 0;
 	}
 	return (0);
 }
