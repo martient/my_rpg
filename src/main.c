@@ -29,6 +29,7 @@ void game_loop(game_global_t *game)
 {
 	sfClock *draw_clock = sfClock_create();
 
+	sfClock_restart(game->clock);
 	sfRenderWindow_setFramerateLimit(game->window, 60);
 	while (sfRenderWindow_isOpen(game->window)) {
 		analyse_event(game);
