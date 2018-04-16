@@ -16,6 +16,7 @@ int analyse_event(game_global_t *game)
 	spell_cooldown(game, delta_time);
 	while (sfRenderWindow_pollEvent(game->window, &event)) {
 		if (event.type == sfEvtClosed) {
+			rpg_player_save(game->player);
 			sfRenderWindow_close(game->window);
 			return (0);
 		}

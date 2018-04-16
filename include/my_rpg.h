@@ -134,5 +134,7 @@ int draw_box(game_global_t *game, char *text, int kill);
 int draw_spell_cd_box(game_global_t *game, double percentage);
 void activate_spell(game_global_t *game, int spell);
 void spell_cooldown(game_global_t *game, double delta_time);
+int rpg_player_save(player_info_t *player);
+int rpg_player_create_json(void);
 void engine_create_text(game_global_t *global, char *text, int info[3], sfColor color);
 #endif /* !MY_RPG_H_ */

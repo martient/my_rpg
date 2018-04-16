@@ -46,7 +46,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src/main.c	\
 		./src/ui/draw_ui.c	\
 		./src/ui/draw_health.c	\
-		./src/ui/info_box.c
+		./src/ui/info_box.c \
+		./src/save_player/rpg_save_player.c \
 
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
