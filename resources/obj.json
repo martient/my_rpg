@@ -9,9 +9,22 @@
 	    { "id": 1,"name": "Robin house", "x": 35, "y": 35, "width": 1, "height": 1}
     ],
     "map": [
-	    { "name": "NULL", "x": 0, "y": 0, "z": 1, "collider": 0, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/tree.png"},
-	    { "name": "NULL", "x": 0, "y": 0, "z": 2, "collider": 0, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/tree.png"},
-	    { "name": "NULL", "x": 3, "y": 3, "z": 1, "collider": 0, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/flowers.png"},
-	    { "name": "NULL", "x": 0, "y": 0, "z": 1, "collider": 0, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/tree.png"}
+	    { "name": "NULL", "x": 25, "y": 25, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 26, "y": 25, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 27, "y": 25, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 28, "y": 25, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 29, "y": 25, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 30, "y": 25, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 25, "y": 26, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 25, "y": 27, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 25, "y": 28, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 25, "y": 29, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 25, "y": 30, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 26, "y": 26, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 26, "y": 27, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 26, "y": 28, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 26, "y": 29, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 26, "y": 30, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/water.png"},
+	    { "name": "NULL", "x": 0, "y": 0, "z": 1, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/tree.png"}
     ],
 }
