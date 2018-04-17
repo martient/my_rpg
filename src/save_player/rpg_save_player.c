@@ -45,31 +45,32 @@ int rpg_player_save(player_info_t *player)
 	if (!player)
 		return 84;
 	fd = rpg_player_save_fd();
-	write(fd, "{\n\t\"name\": \"" , my_strlen("{\n\t\"name\":·\""));
+	write(fd, "{\n\t\"name\": \"" , my_strlen("{\n\t\"name\": \""));
 	write(fd, player->name, my_strlen(player->name));
-	write(fd, "\",\n\t\"x\": \"", my_strlen("\",\n\t\"x\": \""));
+	write(fd, "\",\n\t\"x\": ", my_strlen("\",\n\t\"x\": "));
 	tmp = player->x;
 	rpg_file_put_nbr(fd, tmp);
-	write(fd, "\",\n\t\"y\": \"", my_strlen("\",\n\t\"y\": \""));
+	write(fd, ",\n\t\"y\": ", my_strlen(",\n\t\"y\": "));
 	tmp = player->y;
 	rpg_file_put_nbr(fd, tmp);
-	write(fd, "\",\n\t\"health\": \"", my_strlen("\",\n\t\"health\": \""));
+	write(fd, ",\n\t\"health\": ", my_strlen(",\n\t\"health\": "));
 	rpg_file_put_nbr(fd, player->health);
-	write(fd, "\",\n\t\"max_health\": \"",
-	      my_strlen("\",\n\t\"max_health\": \""));
+	write(fd, ",\n\t\"max_health\": ",
+	      my_strlen(",\n\t\"max_health\": "));
 	rpg_file_put_nbr(fd, player->max_health);
-	write(fd, "\",\n\t\"mana\": \"", my_strlen("\",\n\t\"mana\": \""));
+	write(fd, ",\n\t\"mana\": ", my_strlen(",\n\t\"mana\": "));
 	rpg_file_put_nbr(fd, player->mana);
-	write(fd, "\",\n\t\"skill_point\": \"",
-	      my_strlen("\",\n\t\"skill_point\": \""));
+	write(fd, ",\n\t\"skill_point\": ",
+	      my_strlen(",\n\t\"skill_point\": "));
 	rpg_file_put_nbr(fd, player->skill_point);
-	write(fd, "\",\n\t\"inv_size\": \"",
-	      my_strlen("\",\n\t\"inv_size\": \""));
+	write(fd, ",\n\t\"inv_size\": ",
+	      my_strlen(",\n\t\"inv_size\": "));
 	//rpg_file_put_nbr(player->inv_size);
-	write(fd, "\",\n\t\"direction\": \"",
-	      my_strlen("\",\n\t\"direction\": \""));
+	rpg_file_put_nbr(fd, 1);
+	write(fd, ",\n\t\"direction\": ",
+	      my_strlen(",\n\t\"direction\": "));
 	rpg_file_put_nbr(fd, player->direction);
-	write(fd, "\",\n\t\"zone\": \"", my_strlen("\",\n\t\"zone\": \""));
+	write(fd, ",\n\t\"zone\": ", my_strlen(",\n\t\"zone\": "));
 	rpg_file_put_nbr(fd, player->zone);
 	write(fd, "\n}" , my_strlen("\n}"));
 	close(fd);
@@ -82,29 +83,29 @@ int rpg_player_create_json(void)
 
 	write(fd, "{\n\t\"name\": \"" , my_strlen("{\n\t\"name\": \""));
 	write(fd, "new", my_strlen("new"));
-	write(fd, "\",\n\t\"x\": \"", my_strlen("\",\n\t\"x\": \""));
+	write(fd, "\",\n\t\"x\": ", my_strlen("\",\n\t\"x\": "));
 	rpg_file_put_nbr(fd, 100);
-	write(fd, "\",\n\t\"y\": \"", my_strlen("\",\n\t\"y\": \""));
+	write(fd, ",\n\t\"y\": ", my_strlen(",\n\t\"y\": "));
 	rpg_file_put_nbr(fd, 100);
-	write(fd, "\",\n\t\"health\": \"", my_strlen("\",\n\t\"health\": \""));
+	write(fd, ",\n\t\"health\": ", my_strlen(",\n\t\"health\": "));
 	rpg_file_put_nbr(fd, 100);
-	write(fd, "\",\n\t\"max_health\": \"",
-	      my_strlen("\",\n\t\"max_health\": \""));
+	write(fd, ",\n\t\"max_health\": ",
+	      my_strlen(",\n\t\"max_health\": "));
 	rpg_file_put_nbr(fd, 100);
-	write(fd, "\",\n\t\"mana\": \"", my_strlen("\",\n\t\"mana\": \""));
+	write(fd, ",\n\t\"mana\": ", my_strlen(",\n\t\"mana\": "));
 	rpg_file_put_nbr(fd, 100);
-	write(fd, "\",\n\t\"skill_point\": \"",
-	      my_strlen("\",\n\t\"skill_point\": \""));
+	write(fd, ",\n\t\"skill_point\": ",
+	      my_strlen(",\n\t\"skill_point\": "));
 	rpg_file_put_nbr(fd, 0);
-	write(fd, "\",\n\t\"inv_size\": \"",
-	      my_strlen("\",\n\t\"inv_size\": \""));
+	write(fd, ",\n\t\"inv_size\": ",
+	      my_strlen(",\n\t\"inv_size\": "));
 	rpg_file_put_nbr(fd, 3);
-	write(fd, "\",\n\t\"direction\": \"",
-	      my_strlen("\",\n\t\"direction\": \""));
+	write(fd, ",\n\t\"direction\": ",
+	      my_strlen(",\n\t\"direction\": "));
 	rpg_file_put_nbr(fd, 0);
-	write(fd, "\",\n\t\"zone\": \"", my_strlen("\",\n\t\"zone\": \""));
+	write(fd, ",\n\t\"zone\": ", my_strlen(",\n\t\"zone\": "));
 	rpg_file_put_nbr(fd, 1);
-	write(fd, "\"\n}" , my_strlen("\"\n}"));
+	write(fd, "\n}" , my_strlen("\n}"));
 	close(fd);
 	my_putstr("Ok");
 	return (0);
