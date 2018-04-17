@@ -75,10 +75,13 @@ OFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog -g3
 
 TFLAGS	=	-Wall -pedantic -I./include -I./my_lib --criterion
 
-all:		$(NAME)
+all:		
+		gcc $(CFLAGS) $(SRC) -I./language/us_en/ -c
+		gcc $(CFLAGS) *.o -I./language/us_en/ -o $(NAME)
 
-$(NAME):	$(OBJ)
-		gcc $(CFLAGS) $(OBJ) -o $(NAME)
+fr:		
+		gcc $(CFLAGS) $(SRC) -I./language/fr_fr/ -c
+		gcc $(CFLAGS) *.o -I./language/fr_fr/ -o $(NAME)
 
 clean:
 		rm -f $(OBJ)

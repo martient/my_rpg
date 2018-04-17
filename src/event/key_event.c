@@ -11,13 +11,13 @@ void player_move(game_global_t *game, double delta_time, int direction);
 
 void key_event(game_global_t *game, double delta_time)
 {
-	if (sfKeyboard_isKeyPressed(sfKeyW))
+	if (sfKeyboard_isKeyPressed(UP_KEY))
 		player_move(game, delta_time, 4);
-	if (sfKeyboard_isKeyPressed(sfKeyS))
+	if (sfKeyboard_isKeyPressed(DOWN_KEY))
 		player_move(game, delta_time, 1);
-	if (sfKeyboard_isKeyPressed(sfKeyA))
+	if (sfKeyboard_isKeyPressed(LEFT_KEY))
 		player_move(game, delta_time, 2);
-	if (sfKeyboard_isKeyPressed(sfKeyD))
+	if (sfKeyboard_isKeyPressed(RIGHT_KEY))
 		player_move(game, delta_time, 3);
 	if (sfKeyboard_isKeyPressed(sfKeyNum1))
 		activate_spell(game, 0);
