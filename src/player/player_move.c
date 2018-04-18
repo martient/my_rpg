@@ -19,25 +19,14 @@ static int can_move(object_info_t *map, player_info_t *player)
 			map = map->next;
 			continue;
 		}
-		printf("%f:%f | %d:%d\n", x, y, map->x * 32, map->y * 32);
 		if (x <= (map->x * 32) + 20 &&
-		x + 28 >= (map->x * 32) &&
-		y <= (map->x * 39) + 32 &&
-		y >= (map->x * 32)) {
-			printf("COLLISION");
+		x + 25 >= (map->x * 32) &&
+		y <= (map->y * 39) + 32 &&
+		y >= (map->y * 32)) {
 			return (1);
 		}
 		map = map->next;
-		// if (x >= (map->x * 32)&&
-		// x <= (map->x * 32) + 32 &&
-		// y >= (map->y * 32) &&
-		// y <= (map->y * 32) + 32) {
-		// 	printf("COLLIDER\n");	
-		// 	return (1);
-		// }
-		// map = map->next;
 	}
-	printf("----\n");
 	return (0);
 }
 
