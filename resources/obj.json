@@ -186,6 +186,8 @@
 	    { "name": "NULL", "x": 88, "y": -1, "z": 1, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/tree/tree3.png"},
 
 
-	    { "name": "NULL", "x": 0, "y": 0, "z": 1, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/tree.png"}
+	{ "name": "NULL", "x": 0, "y": 0, "z": 1, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/tree.png"},
+	{ "name": "NULL", "x": 5, "y": 5, "z": 2, "collider": 0, "type": 0, "visible": 0, "event_func": "NULL", "texture": "./resources/sprites/map/tree/new_tree1.png"},
+	{ "name": "NULL", "x": 5, "y": 6, "z": 1, "collider": 1, "type": 0, "visible": 0, "event_func": "NULL", "texture": "./resources/sprites/map/tree/new_tree2.png"},
     ],
 }
