@@ -23,7 +23,7 @@ void draw__(game_global_t *game)
 	draw_element(game);
 	draw_ui(game);
 	draw_spell_cd_box(game, 100);
+	player_check_interaction(game);
 	player_cam(game);
-	// draw_player(game);
 	sfRenderWindow_display(game->window);	
 }
