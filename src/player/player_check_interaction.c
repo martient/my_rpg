@@ -12,15 +12,13 @@ int can_interact(object_info_t *map, player_info_t *player)
 	double x = player->x;
 	double y = player->y;
 
-	if (x < -10 || x > 99 * 32 || y < 10 || y > 99 * 32)
-		return 1;
 	while (map) {
 		if (map->type != 1) {
 			map = map->next;
 			continue;
 		}
 		if (x <= (map->x * 32) + 64 &&
-		x + 39 >= (map->x * 32) - 64 &&
+		x + 39 >= (map->x * 32) - 32 &&
 		y <= (map->y * 32) + 64 &&
 		y >= (map->y * 32) - 64) {
 			return (1);
@@ -38,6 +36,7 @@ void show_interact_button(game_global_t *game)
 
 	engine_create_text(game, text, info, color);
 }
+
 void player_check_interaction(game_global_t *game)
 {
 	object_info_t *map = game->info_map->first->first;
