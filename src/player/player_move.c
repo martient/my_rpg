@@ -21,7 +21,7 @@ static int can_move(object_info_t *map, player_info_t *player)
 		}
 		if (x <= (map->x * 32) + 20 &&
 		x + 25 >= (map->x * 32) &&
-		y <= (map->y * 39) + 32 &&
+		y <= (map->y * 32) + 32 &&
 		y >= (map->y * 32)) {
 			return (1);
 		}
