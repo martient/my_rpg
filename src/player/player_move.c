@@ -10,23 +10,34 @@
 static int can_move(object_info_t *map, player_info_t *player)
 {
 	double x = player->x;
-	double y = player->y;
+	double y = player->y + 39;
 
-	if (x < 0 || x > 99 * 32 || y < 0 || y > 99 * 32)
+	if (x < -10 || x > 99 * 32 || y < 10 || y > 99 * 32)
 		return 1;
 	while (map) {
 		if (map->collider != 1) {
 			map = map->next;
 			continue;
 		}
-		if (x >= map->x &&
-		x <= map->x + 32 &&
-		y >= map->y &&
-		y <= map->y + 32) {
+		printf("%f:%f | %d:%d\n", x, y, map->x * 32, map->y * 32);
+		if (x <= (map->x * 32) + 20 &&
+		x + 28 >= (map->x * 32) &&
+		y <= (map->x * 39) + 32 &&
+		y >= (map->x * 32)) {
+			printf("COLLISION");
 			return (1);
 		}
 		map = map->next;
+		// if (x >= (map->x * 32)&&
+		// x <= (map->x * 32) + 32 &&
+		// y >= (map->y * 32) &&
+		// y <= (map->y * 32) + 32) {
+		// 	printf("COLLIDER\n");	
+		// 	return (1);
+		// }
+		// map = map->next;
 	}
+	printf("----\n");
 	return (0);
 }
 
