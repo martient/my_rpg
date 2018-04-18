@@ -41,7 +41,7 @@ static int rpg_inject_object_grass_list_m(object_first_t *info, int x, int y)
 	new->name = NULL;
 	new->x = x;
 	new->y = y;
-	new->z = 0;
+	new->z = -1;
 	new->collider = 0;
 	new->type = 0;
 	new->visible = 1;
