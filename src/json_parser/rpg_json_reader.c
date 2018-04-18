@@ -20,10 +20,11 @@ char *rpg_map_load(char *filepath)
 	fd = open(filepath, O_RDONLY);
 	if (fd < 0) {
 		rpg_player_create_json();
-	} else {
-		while (read(fd, tmp_b, 1))
-		lenght += 1;
+		close(fd);
+		fd = open(filepath, O_RDONLY);
 	}
+	while (read(fd, tmp_b, 1))
+		lenght += 1;
 	close(fd);
 	board = malloc(sizeof(char) * lenght + 1);
 	fd = open(filepath, O_RDONLY);

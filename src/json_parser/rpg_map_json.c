@@ -17,9 +17,7 @@ int rpg_json_map_init(object_first_t *info)
 		return (-1);
 	}
 	json = nx_json_parse(read_file, 0);
-
 	if (json) {
-		//tele = nx_json_get(json, "teleportation");
 		map = nx_json_get(json, "map");
 		for (int i = 0; i < map->length; i++) {
 			rpg_inject_object_list(info, map, i);
