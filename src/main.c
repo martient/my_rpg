@@ -4,26 +4,7 @@
 ** File description:
 ** main
 */
-
 #include "my_rpg.h"
-
-
-int draw(game_global_t *game, int *infos, int *infos2)
-{
-	if (game->state != 0)
-		return (0);
-	sfColor colors[2] = {sfRed, sfGreen};
-	sfColor colors2[2] = {sfBlack, sfBlue};
-	draw_bar(game, colors, infos);
-	draw_bar(game, colors2, infos2);
-	sfRenderWindow_display(game->window);
-	infos[2] -= 5;
-	if (infos[2] >= 5)
-		infos[2] -= 5;
-	else
-		infos[2] = 100;
-	return (0);
-}
 
 void game_loop(game_global_t *game)
 {
