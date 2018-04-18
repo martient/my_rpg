@@ -46,9 +46,9 @@ void player_move(game_global_t *game, double delta_time, int direction)
 
 	game->player->direction = direction;
 	if (direction == 1 || direction == 4) {
-		game->player->y += new_pos;
+		game->player->y += new_pos * game->player->speed;
 	} else if (direction == 2 || direction == 3) {
-		game->player->x += new_pos;
+		game->player->x += new_pos * game->player->speed;
 	}
 	if (can_move(map, game->player)) {
 		game->player->x = default_x;

@@ -36,11 +36,13 @@ typedef struct player_info_t {
 	char *name;
 	double x;
 	double y;
+	double speed;
 	int zone;
 	int health;
 	int max_health;
 	float power;
 	int mana;
+	double spell_duration[5];
 	double spell_cd[5];
 	// double cd_q;
 	// double cd_w;
@@ -139,4 +141,6 @@ int rpg_player_save(player_info_t *player);
 int rpg_player_create_json(void);
 void engine_create_text(game_global_t *global, char *text, int info[3], sfColor color);
 void player_check_interaction(game_global_t *game);
+int spell_speed(game_global_t *game);
+int speed_spell_clock(game_global_t *game);
 #endif /* !MY_RPG_H_ */

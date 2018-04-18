@@ -56,6 +56,12 @@ player_info_t *init_player(game_global_t *game)
 		player->spell_cd[2] = 0;
 		player->spell_cd[3] = 0;
 		player->spell_cd[4] = 0;
+		player->spell_duration[0] = 0;
+		player->spell_duration[1] = 0;
+		player->spell_duration[2] = 0;
+		player->spell_duration[3] = 0;
+		player->spell_duration[4] = 0;
+		player->speed = 1;
 		init_player_sprite(player);
 		init_player_camera(game, player);
 		game->player = player;
