@@ -1,9 +1,5 @@
 {
-	"nb_mobs": 5,
-	"y": [
-		{ "y": 15}
-	],
-	"x": [
-		{ "x" : 10}
+	"list_mobs": [
+		{"id": 0, "name": "roberto le lapinous","attack_base": 1, "attack_grow": 5.5, "healt_base": 1, "healt_grow": 0.97, "armor_base": 1, "armor_grow": 0.97, "speed": 10}
 	],
 }
