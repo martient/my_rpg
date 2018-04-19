@@ -183,4 +183,5 @@ void engine_create_text(game_global_t *global, char *text, int info[3], sfColor 
 void player_check_interaction(game_global_t *game);
 int spell_speed(game_global_t *game);
 int speed_spell_clock(game_global_t *game);
+int destroy_map(game_global_t *game);
 #endif /* !MY_RPG_H_ */
