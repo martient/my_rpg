@@ -84,9 +84,9 @@ int rpg_player_create_json(void)
 	write(fd, "{\n\t\"name\": \"" , my_strlen("{\n\t\"name\": \""));
 	write(fd, "new", my_strlen("new"));
 	write(fd, "\",\n\t\"x\": ", my_strlen("\",\n\t\"x\": "));
-	rpg_file_put_nbr(fd, 20);
+	rpg_file_put_nbr(fd, 20 * 32);
 	write(fd, ",\n\t\"y\": ", my_strlen(",\n\t\"y\": "));
-	rpg_file_put_nbr(fd, 95);
+	rpg_file_put_nbr(fd, 95 * 32);
 	write(fd, ",\n\t\"health\": ", my_strlen(",\n\t\"health\": "));
 	rpg_file_put_nbr(fd, 100);
 	write(fd, ",\n\t\"max_health\": ",
