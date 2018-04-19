@@ -1,5 +1,5 @@
 {
 	"list_mobs": [
-		{"id": 0, "name": "roberto le lapinous", "attack_base": 1, "attack_grow": 5.5, "healt_base": 1, "healt_grow": 0.97, "armor_base": 1, "armor_grow": 0.97, "speed": 10, "texture": "./resources/sprite/knight.png"}
+		{"id": 0, "name": "roberto le lapinous", "attack_base": 1, "attack_grow": 5.5, "healt_base": 1, "healt_grow": 0.97, "armor_base": 1, "armor_grow": 0.97, "speed": 10, "texture": "./resources/sprites/knight.png"}
 	],
 }

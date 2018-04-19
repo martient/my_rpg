@@ -45,6 +45,8 @@ struct mob_data_t {
 	float armor_base;
 	float armor_grow;
 	float speed;
+	sfTexture *texture;
+	sfSprite *sprite;
 	mob_data_t *next;
 };
 
@@ -76,7 +78,8 @@ struct mob_info_t {
 	int x;
 	int type;
 	int agressive;
-	int rate;
+	int level;
+	sfSprite *sprite;
 	mob_info_t *next;
 };
 
@@ -161,6 +164,8 @@ typedef struct game_global_t {
 	struct mob_data_first_t *mob_data;
 } game_global_t;
 
+int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
+	mob_first_t *mobs, player_info_t *player);
 spawn_first_t *rpg_spawn_init(void);
 int rpg_spawn_remove(spawn_first_t *first);
 int rpg_spawn_init_list(spawn_first_t *first);
@@ -174,6 +179,7 @@ int rpg_mob_data_inject(mob_data_first_t *first, float *data, int id,
 int rpg_mob_data_remove(mob_data_first_t *first);
 int rpg_mob_data_init_list(mob_data_first_t *first);
 int rpg_json_init_mob_data(mob_data_first_t *first);
+int rpg_mob_data_tex_inject(mob_data_first_t *first, char *pathfile);
 
 mob_first_t *rpg_mob_init(void);
 
