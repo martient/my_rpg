@@ -33,6 +33,21 @@
 #define PLAYER_SPEED 200
 #endif
 
+typedef struct mob_data_t mob_data_t;
+struct mob_data_t {
+	int id;
+	int y;
+	int x;
+	int type;
+	int rate;
+	mob_data_t *next;
+};
+
+typedef struct mob_data_first_t mob_data_first_t;
+struct mob_data_first_t {
+	mob_data_t *first;
+};
+
 typedef struct spawn_mob_t spawn_mob_t;
 struct spawn_mob_t {
 	int id;
@@ -134,6 +149,7 @@ typedef struct game_global_t {
 	struct map_info_t *info_map;
 	struct skills_t *tree;
 	struct spawn_first_t *mob_spawn;
+	struct mob_first_t *mob_deploy;
 } game_global_t;
 
 spawn_first_t *rpg_spawn_init(void);
@@ -142,6 +158,8 @@ int rpg_spawn_init_list(spawn_first_t *first);
 int rpg_spawn_inject(spawn_first_t *first, int *data);
 int rpg_spawn_remove(spawn_first_t *first);
 int rpg_json_init_spawn(spawn_first_t *first);
+
+mob_first_t *rpg_mob_init(void);
 
 game_global_t *__init__(void);
 void engine_exit(game_global_t *global);
