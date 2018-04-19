@@ -1,6 +1,6 @@
 ##
 ## EPITECH PROJECT, 2017
-## matchstick
+## my_rpg
 ## File description:
 ## Makefile
 ##
