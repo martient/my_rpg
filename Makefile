@@ -50,6 +50,11 @@ SRC	=	.//engine_lib/text.c	\
 		./src/ui/draw_health.c	\
 		./src/ui/info_box.c \
 		./src/save_player/rpg_save_player.c \
+		./src/spawn_link_list/mob_spawn_init.c \
+		./src/spawn_link_list/spawn_mob_init.c \
+		./src/spawn_link_list/spawn_mob_inject.c \
+		./src/spawn_link_list/spawn_mob_remove.c \
+		./src/json_parser/rpg_spawn_json.c \
 
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
@@ -77,11 +82,11 @@ OFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog -g3
 
 TFLAGS	=	-Wall -pedantic -I./include -I./my_lib --criterion
 
-all:		
+all:
 		gcc $(CFLAGS) $(SRC) -I./language/us_en/ -c
 		gcc $(CFLAGS) *.o -I./language/us_en/ -o $(NAME)
 
-fr:		
+fr:
 		gcc $(CFLAGS) $(SRC) -I./language/fr_fr/ -c
 		gcc $(CFLAGS) *.o -I./language/fr_fr/ -o $(NAME)
 

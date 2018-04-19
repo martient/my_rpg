@@ -15,6 +15,7 @@
 #include "nxjson.h"
 #include "inventory.h"
 #include "skill_tree.h"
+#include "monster.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -30,6 +31,37 @@
 #ifndef PLAYER_SPEED
 #define PLAYER_SPEED 200
 #endif
+
+typedef struct spawn_mob_t spawn_mob_t;
+struct spawn_mob_t {
+	int id;
+	int y;
+	int x;
+	int type;
+	int rate;
+	spawn_mob_t *next;
+};
+
+typedef struct spawn_first_t spawn_first_t;
+struct spawn_first_t {
+	spawn_mob_t *first;
+};
+
+typedef struct mob_info_t mob_info_t;
+struct mob_info_t {
+	int id;
+	int y;
+	int x;
+	int type;
+	int agressive;
+	int rate;
+	mob_info_t *next;
+};
+
+typedef struct mob_first_t mob_first_t;
+struct mob_first_t {
+	mob_info_t *first;
+};
 
 typedef struct player_info_t {
 	sfView *camera;
@@ -100,7 +132,15 @@ typedef struct game_global_t {
 	struct inventory_list *invent;
 	struct map_info_t *info_map;
 	struct skills_t *tree;
+	struct spawn_first_t *mob_spawn;
 } game_global_t;
+
+spawn_first_t *rpg_spawn_init(void);
+int rpg_spawn_remove(spawn_first_t *first);
+int rpg_spawn_init_list(spawn_first_t *first);
+int rpg_spawn_inject(spawn_first_t *first, int *data);
+int rpg_spawn_remove(spawn_first_t *first);
+int rpg_json_init_spawn(spawn_first_t *first);
 
 game_global_t *__init__(void);
 void engine_exit(game_global_t *global);
