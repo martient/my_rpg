@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "keyboard.h"
+#include "text.h"
 #include "nxjson.h"
 #include "inventory.h"
 #include "skill_tree.h"
