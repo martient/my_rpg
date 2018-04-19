@@ -60,6 +60,7 @@ struct spawn_mob_t {
 	int x;
 	int type;
 	int rate;
+	int size;
 	spawn_mob_t *next;
 };
 

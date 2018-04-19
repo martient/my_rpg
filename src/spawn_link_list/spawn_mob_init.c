@@ -21,6 +21,7 @@ spawn_first_t *rpg_spawn_init(void)
 	new->x = 0;
 	new->type = 0;
 	new->rate = 0;
+	new->size= 0;
 	new->next = NULL;
 	first->first = new;
 	return (first);

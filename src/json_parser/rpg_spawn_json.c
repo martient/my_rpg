@@ -12,7 +12,7 @@
 
 static int rpg_json_spawn_list(spawn_first_t *first, const nx_json *mob)
 {
-	int *data = malloc(sizeof(int) * 4);
+	int *data = malloc(sizeof(int) * 5);
 
 	if (!data) {
 		my_putstr("Error: malloc not found\n");
@@ -22,7 +22,8 @@ static int rpg_json_spawn_list(spawn_first_t *first, const nx_json *mob)
 	data[1] = nx_json_get(mob, "y")->int_value;
 	data[2] = nx_json_get(mob, "type")->int_value;
 	data[3] = nx_json_get(mob, "rate")->int_value;
-	data[4] = -1;
+	data[4] = nx_json_get(mob, "size")->int_value;
+	data[5] = -1;
 	rpg_spawn_inject(first, data);
 	free(data);
 	return (0);
