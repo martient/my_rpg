@@ -29,3 +29,20 @@ int rpg_mob_data_inject(mob_data_first_t *first, float *data, int id,
 	first->first = new;
 	return (0);
 }
+
+int rpg_mob_data_tex_inject(mob_data_first_t *first, char *pathfile)
+{
+	mob_data_t *tmp;
+	sfIntRect spritesheet_rect = {0, 0, 32, 32};
+
+	if (!first) {
+		my_putstr("Error: Value gift not found\n");
+		return (-1);
+	}
+	tmp = first->first;
+	tmp->texture = sfTexture_createFromFile(pathfile, NULL);
+	tmp->sprite = sfSprite_create();
+	sfSprite_setTexture(tmp->sprite, tmp->texture, sfTrue);
+	sfSprite_setTextureRect(tmp->sprite, spritesheet_rect);
+	return (0);
+}

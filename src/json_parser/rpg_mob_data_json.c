@@ -28,6 +28,7 @@ static int rpg_json_mob_data_list(mob_data_first_t *first, const nx_json *mob)
 	data[7] = -1;
 	rpg_mob_data_inject(first, data, nx_json_get(mob, "id")->int_value,
 	(char*)&nx_json_get(mob, "name")->text_value);
+	rpg_mob_data_tex_inject(first, (char*)nx_json_get(mob, "texture")->text_value);
 	free(data);
 	return (0);
 }

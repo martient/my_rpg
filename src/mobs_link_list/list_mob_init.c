@@ -21,7 +21,7 @@ mob_first_t *rpg_mob_init(void)
 	new->x = 0;
 	new->type = 0;
 	new->agressive = 0;
-	new->rate = 0;
+	new->level = 0;
 	new->next = NULL;
 	first->first = new;
 	return (first);
