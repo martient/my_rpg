@@ -60,6 +60,10 @@ game_global_t *__init__(void)
 	game->mob_spawn = rpg_spawn_init();
 	if (rpg_spawn_init_list(game->mob_spawn) == -1)
 		return (NULL);
+	game->mob_deploy = rpg_mob_init();
+	game->mob_data = rpg_mob_data_init();
+	if (rpg_json_init_mob_data(game->mob_data) == -1)
+		return (NULL);
 	printf("Game finised loading (%lf ms)\n",
 	sfClock_getElapsedTime(clock).microseconds * 0.001);
 	sfClock_destroy(clock);
