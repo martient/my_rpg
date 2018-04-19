@@ -52,6 +52,7 @@ void draw_bar(game_global_t *game, sfColor colors[2], int *infos)
 	sfSprite_setPosition(bar_sprite, pos);
 	sfRenderWindow_drawSprite(game->window, bar_sprite, NULL);
 	free(pixels_front);
+	free(pixels_back);
 	sfSprite_destroy(bar_sprite);
 	sfTexture_destroy(bar_texture);
 }

@@ -27,4 +27,6 @@ void key_event(game_global_t *game, double delta_time)
 		activate_spell(game, 2);
 	if (sfKeyboard_isKeyPressed(sfKeyNum4))
 		activate_spell(game, 3);
+	if (sfKeyboard_isKeyPressed(sfKeyE))
+		interact_obj(game);
 }

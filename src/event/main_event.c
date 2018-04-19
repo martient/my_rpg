@@ -23,6 +23,7 @@ int analyse_event(game_global_t *game)
 		if (event.type == sfEvtResized)
 			update_screen_size(game);
 	}
+	obj_cooldown(game, delta_time);
 	key_event(game, delta_time);
 	sfClock_restart(game->clock);
 	return (0);

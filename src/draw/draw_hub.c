@@ -22,6 +22,7 @@ void draw__(game_global_t *game)
 	sfRenderWindow_clear(game->window, sfWhite);
 	draw_element(game);
 	draw_ui(game);
+	draw_inventory(game);
 	draw_spell_cd_box(game, 100);
 	player_check_interaction(game);
 	player_cam(game);

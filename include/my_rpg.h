@@ -85,6 +85,12 @@ struct mob_first_t {
 	mob_info_t *first;
 };
 
+typedef struct object_info_t object_info_t;
+typedef struct interaction_event_t {
+	int type;
+	object_info_t *obj;
+} interaction_event_t;
+
 typedef struct player_info_t {
 	sfView *camera;
 	char *name;
@@ -98,20 +104,14 @@ typedef struct player_info_t {
 	int mana;
 	double spell_duration[5];
 	double spell_cd[5];
-	// double cd_q;
-	// double cd_w;
-	// double cd_e;
-	// double cd_r;
-	// double cd_a;
 	int skill_point;
 	int direction;
 	int moving;
+	interaction_event_t *event;
 	sfSprite *sprite;
 	sfTexture *texture;
 } player_info_t;
 
-
-typedef struct object_info_t object_info_t;
 struct object_info_t {
 	char *name;
 	int x;
@@ -120,6 +120,7 @@ struct object_info_t {
 	int collider;
 	int type;
 	int visible;
+	double cooldown;
 	//Collision call back;
 	sfTexture *texture;
 	sfSprite *sprite;
@@ -218,4 +219,8 @@ void player_check_interaction(game_global_t *game);
 int spell_speed(game_global_t *game);
 int speed_spell_clock(game_global_t *game);
 int destroy_map(game_global_t *game);
+int interact_obj(game_global_t *game);
+int obj_cooldown(game_global_t *game, double sec);
+void draw_rect(game_global_t *game, int infos[4], sfColor color);
+int draw_inventory(game_global_t *game);
 #endif /* !MY_RPG_H_ */

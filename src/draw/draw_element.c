@@ -12,7 +12,7 @@ int draw_z(game_global_t *game, object_info_t *tile, int z)
 	sfSprite *sprite;
 	sfVector2f pos = {tile->x * 32, tile->y * 32};
 
-	if (tile->z == z) {
+	if (tile->z == z && tile->visible == 0) {
 		sprite = sfSprite_create();
 		sfSprite_setPosition(sprite, pos);
 		sfSprite_setTexture(sprite, tile->texture, sfTrue);

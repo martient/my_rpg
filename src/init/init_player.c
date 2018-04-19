@@ -35,6 +35,18 @@ static void init_player_camera(game_global_t *game, player_info_t *player)
 	player->camera = player_camera;
 }
 
+static player_info_t *init_player_event(player_info_t *player)
+{
+	interaction_event_t *event = malloc(sizeof(interaction_event_t));
+
+	if (event == NULL)
+		return (NULL);
+	event->type = 0;
+	event->obj = NULL;
+	player->event = event;
+	return (player);
+}
+
 player_info_t *init_player(game_global_t *game)
 {
 	char *file_content = rpg_map_load("./resources/player.json");
@@ -64,6 +76,8 @@ player_info_t *init_player(game_global_t *game)
 		player->speed = 1;
 		init_player_sprite(player);
 		init_player_camera(game, player);
+		if (init_player_event(player) == NULL)
+			return (NULL);
 		game->player = player;
 		return (player);
 	}

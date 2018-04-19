@@ -13,8 +13,11 @@ INCLUDE	=	include
 
 SRC	=	.//engine_lib/text.c	\
 		.//engine_lib/game_events.c	\
+		./engine_lib/draw_rect.c	\
 		./src/player/player_move.c	\
 		./src/player/player_check_interaction.c	\
+		./src/player_interaction/interact_obj.c	\
+		./src/map_objects/obj_cooldown.c	\
 		./src/lib/my_putstr.c	\
 		./src/lib/my_strcmp.c	\
 		./src/lib/my_strdup.c	\
@@ -27,6 +30,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/draw/shim.c	\
 		./src/draw/bar.c	\
 		./src/draw/draw_player.c	\
+		./src/draw/draw_inventory.c	\
 		./src/draw/draw_spell_box.c	\
 		./src/json_parser/rpg_json_reader.c	\
 		./src/json_parser/rpg_map_json.c	\

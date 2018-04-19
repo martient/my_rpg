@@ -21,6 +21,7 @@ int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos)
 	new->x = nx_json_get(item, "x")->int_value;
 	new->y = nx_json_get(item, "y")->int_value;
 	new->z = nx_json_get(item, "z")->int_value;
+	new->cooldown = 0;
 	new->collider = nx_json_get(item, "collider")->int_value;
 	new->type = nx_json_get(item, "type")->int_value;
 	new->visible = nx_json_get(item, "visible")->int_value;
@@ -44,7 +45,7 @@ static int rpg_inject_object_grass_list_m(object_first_t *info, int x, int y)
 	new->z = -1;
 	new->collider = 0;
 	new->type = 0;
-	new->visible = 1;
+	new->visible = 0;
 	new->texture = sfTexture_createFromFile("./resources/sprites/map/herb.png", NULL);
 	new->sprite = NULL;
 	if (!info->first) {
