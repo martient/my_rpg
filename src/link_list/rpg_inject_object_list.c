@@ -12,12 +12,12 @@ int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos)
 {
 	object_info_t *new = malloc(sizeof(object_info_t) * 2);
 	const nx_json *item = nx_json_item(data, pos);
-
+	const char *tmp = nx_json_get(item, "name")->text_value;
 	if (!new || !info || !data) {
 		my_putstr("Error: malloc new struct\n");
 		return (-1);
 	}
-	new->name = nx_json_get(item, "name")->text_value;
+	new->name = (char*)&tmp;
 	new->x = nx_json_get(item, "x")->int_value;
 	new->y = nx_json_get(item, "y")->int_value;
 	new->z = nx_json_get(item, "z")->int_value;
