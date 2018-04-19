@@ -35,10 +35,14 @@
 typedef struct mob_data_t mob_data_t;
 struct mob_data_t {
 	int id;
-	int y;
-	int x;
-	int type;
-	int rate;
+	char *name;
+	float attack_base;
+	float attack_grow;
+	float healt_base;
+	float healt_grow;
+	float armor_base;
+	float armor_grow;
+	float speed;
 	mob_data_t *next;
 };
 
