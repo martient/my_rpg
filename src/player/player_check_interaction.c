@@ -30,7 +30,7 @@ int can_interact(object_info_t *map, player_info_t *player)
 
 void show_interact_button(game_global_t *game)
 {
-	char *text = "Press {E} to interact.";
+	char *text = INTERACT;
 	int info[3] = {game->player->x - 150, game->player->y + (game->height / 2) - 120, 32};
 	sfColor color = sfWhite;
 
