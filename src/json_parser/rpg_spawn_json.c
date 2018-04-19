@@ -63,7 +63,7 @@ int rpg_json_init_spawn(spawn_first_t *first)
 	}
 	json = nx_json_parse(read_file, 0);
 	if (json) {
-		mob = nx_json_get(json, "list_mobs");
+		mob = nx_json_get(json, "list_spawn");
 		for (int i = 0; i < mob->length; i++) {
 			tmp = nx_json_item(mob, i);
 			rpg_json_spawn_list(first, tmp);

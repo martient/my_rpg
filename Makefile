@@ -56,7 +56,12 @@ SRC	=	.//engine_lib/text.c	\
 		./src/spawn_link_list/spawn_mob_remove.c \
 		./src/json_parser/rpg_spawn_json.c \
 		./src/destroy/destroy_map.c		\
-		# ./src/mobs_link_list/list_mob_init.c \
+		./src/mobs_link_list/list_mob_init.c \
+		./src/mobs_data_link_list/list_mob_data_init.c \
+		./src/mobs_data_link_list/list_mob_data_inject.c \
+		./src/mobs_data_link_list/list_mob_data_remove.c \
+		./src/mobs_data_link_list/mob_data_list_init.c \
+		./src/json_parser/rpg_mob_data_json.c \
 
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
