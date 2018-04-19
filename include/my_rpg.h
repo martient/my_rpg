@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <time.h>
 #include "keyboard.h"
 #include "nxjson.h"
 #include "inventory.h"

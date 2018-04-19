@@ -10,12 +10,13 @@
 int destroy_map(game_global_t *game)
 {
 	object_info_t *map = game->info_map->first->first;
+	object_info_t *bck;
 
 	while (map) {
 		sfTexture_destroy(map->texture);
-		free(name);
+		bck = map;
 		map = map->next;
-		if (map)
-			free(map->previous);
+		free(bck);
 	}
+	return (0);
 }
