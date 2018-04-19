@@ -150,6 +150,7 @@ typedef struct game_global_t {
 	int screen_id;
 	int frame_rate;
 	int state;
+	int inventory_show;
 	sfFont *font;
 	struct player_info_t *player;
 	struct inventory_list *invent;
