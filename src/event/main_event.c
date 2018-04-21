@@ -7,6 +7,12 @@
 
 #include "my_rpg.h"
 
+void keyboard_press_event(game_global_t *game, sfKeyEvent event)
+{
+	if (event.code == sfKeyI)
+		game->inventory_show = (game->inventory_show == 0) ? 1 : 0;
+}
+
 int analyse_event(game_global_t *game)
 {
 	sfEvent event;
@@ -22,6 +28,8 @@ int analyse_event(game_global_t *game)
 		}
 		if (event.type == sfEvtResized)
 			update_screen_size(game);
+		if (event.type == sfEvtKeyPressed)
+			keyboard_press_event(game, event.key);
 	}
 	obj_cooldown(game, delta_time);
 	key_event(game, delta_time);
