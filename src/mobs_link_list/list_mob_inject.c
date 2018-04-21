@@ -44,16 +44,15 @@ int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 		return (-1);
 	}
 	spawn_tmp = spawn->first;
-	my_putstr("== start ==\n");
 	while (spawn_tmp->next != NULL) {
-		my_putstr("SHEAR\n");
-		if ((player->x >= spawn_tmp->x - 10 && player->x <= spawn_tmp->x + 10) && (player->y >= spawn_tmp->y - 10 && player->y <= spawn_tmp->y + 10)) {
+//		my_putstr("SHEAR\n");
+		printf("%d >= %d : %d <= %d || %d >= %d : %d <= %d\n", (int)player->x / 32, (int)spawn_tmp->x - 10, (int)player->x / 32, (int)spawn_tmp->x + 10, (int)player->y / 32, (int)spawn_tmp->y - 10, (int)player->y / 32, (int)spawn_tmp->y + 10);
+		if (((int)player->x / 32 >= (int)spawn_tmp->x - 10 && (int)player->x / 32 <= (int)spawn_tmp->x + 10) && ((int)player->y / 32 >= (int)spawn_tmp->y - 10 && (int)player->y / 32 <= (int)spawn_tmp->y + 10)) {
 			rpg_mobs_inject(mobs, data, spawn_tmp);
 			my_putstr("MOBS SPAWN\n");
 			break;
 		}
-		spawn_tmp->next = spawn_tmp->next->next;
+		spawn_tmp = spawn_tmp->next;
 	}
-	my_putstr("== end ==\n");
 	return (0);
 }
