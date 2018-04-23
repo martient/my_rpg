@@ -19,7 +19,7 @@ static void player_cam(game_global_t *game)
 
 void draw__(game_global_t *game)
 {
-	sfRenderWindow_clear(game->window, sfWhite);
+	sfRenderWindow_clear(game->window, sfBlack);
 	draw_element(game);
 	draw_ui(game);
 	draw_inventory(game);

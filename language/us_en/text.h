@@ -9,4 +9,5 @@
 	#define TEXT_H_
 
 #define INTERACT "Press {E} to interact"
+#define INVENTORY "Inventory"
 #endif /* !TEXT_H_ */
