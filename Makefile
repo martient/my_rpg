@@ -66,6 +66,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src/mobs_data_link_list/mob_data_list_init.c \
 		./src/json_parser/rpg_mob_data_json.c \
 		./src/mobs_link_list/list_mob_inject.c \
+		./src/start_screen/draw_start_screen.c	\
+		./src/start_screen/event_start_screen.c	\
 
 
 TEST_SRC=	.//my_lib/remove_dup.c	\

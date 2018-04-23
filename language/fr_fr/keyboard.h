@@ -10,6 +10,7 @@
 
 #include <SFML/Graphics.h>
 
+#define KEYBOARD	("fr")
 #define UP_KEY		(sfKeyZ)
 #define DOWN_KEY	(sfKeyS)
 #define LEFT_KEY	(sfKeyQ)
