@@ -14,6 +14,7 @@ static void player_cam(game_global_t *game)
 
 	game->player->camera =  sfView_createFromRect(cam);
 	sfView_setCenter(game->player->camera, pos);
+	sfView_zoom(game->player->camera, game->zoom);
 	sfRenderWindow_setView(game->window, game->player->camera);
 }
 

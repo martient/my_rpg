@@ -68,6 +68,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src/mobs_link_list/list_mob_inject.c \
 		./src/start_screen/draw_start_screen.c	\
 		./src/start_screen/event_start_screen.c	\
+		./src/pause_screen/draw_pause_screen.c	\
+		./src/pause_screen/event_pause_screen.c	\
 
 
 TEST_SRC=	.//my_lib/remove_dup.c	\

@@ -11,15 +11,23 @@ void keyboard_press_event(game_global_t *game, sfKeyEvent event)
 {
 	if (event.code == sfKeyI)
 		game->inventory_show = (game->inventory_show == 0) ? 1 : 0;
+	if (event.code == sfKeyEscape)
+		pause_screen(game);
 }
 
-int analyse_event(game_global_t *game)
+void mouse_zoom(game_global_t *game, sfMouseWheelScrollEvent event)
+{
+	printf("%f\n", event.delta);
+	if (event.delta > 0)
+		game->zoom += 0.5;
+	else
+		game->zoom -= 0.5;
+}
+
+int poll_events(game_global_t *game)
 {
 	sfEvent event;
-	double delta_time =
-	sfClock_getElapsedTime(game->clock).microseconds / 1000000.0;
 
-	spell_cooldown(game, delta_time);
 	while (sfRenderWindow_pollEvent(game->window, &event)) {
 		if (event.type == sfEvtClosed) {
 			rpg_player_save(game->player);
@@ -30,7 +38,19 @@ int analyse_event(game_global_t *game)
 			update_screen_size(game);
 		if (event.type == sfEvtKeyPressed)
 			keyboard_press_event(game, event.key);
+		if (event.type == sfEvtMouseWheelScrolled)
+			mouse_zoom(game, event.mouseWheelScroll);
 	}
+	return (0);
+}
+
+int analyse_event(game_global_t *game)
+{
+	double delta_time =
+	sfClock_getElapsedTime(game->clock).microseconds / 1000000.0;
+
+	spell_cooldown(game, delta_time);
+	poll_events(game);
 	obj_cooldown(game, delta_time);
 	key_event(game, delta_time);
 	sfClock_restart(game->clock);
