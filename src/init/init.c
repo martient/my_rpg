@@ -20,6 +20,7 @@ static void init_screen(game_global_t *game)
 	game->clock = clock;
 	game->width = 800;
 	game->height = 600;
+	game->zoom = 1;
 }
 
 static int init_engine_ressources(game_global_t *game)

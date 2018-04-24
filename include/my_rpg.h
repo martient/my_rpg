@@ -153,6 +153,7 @@ typedef struct game_global_t {
 	int screen_id;
 	int frame_rate;
 	int state;
+	double zoom;
 	int inventory_show;
 	sfFont *font;
 	struct player_info_t *player;
@@ -230,4 +231,8 @@ int interact_obj(game_global_t *game);
 int obj_cooldown(game_global_t *game, double sec);
 void draw_rect(game_global_t *game, int infos[4], sfColor color);
 int draw_inventory(game_global_t *game);
+void start_game_loop(game_global_t *game);
+void pause_screen(game_global_t *game);
+int event_start_screen(game_global_t *game);
+int event_pause_screen(game_global_t *game);
 #endif /* !MY_RPG_H_ */
