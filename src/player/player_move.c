@@ -12,7 +12,7 @@ static int can_move(object_info_t *map, player_info_t *player)
 	double x = player->x;
 	double y = player->y + 39;
 
-	if (x < -10 || x > 99 * 32 || y < 10 || y > 99 * 32)
+	if (x < -10 || x > 99 * 32 || y < 10 || y > 100 * 32)
 		return 1;
 	while (map) {
 		if (map->collider != 1) {
