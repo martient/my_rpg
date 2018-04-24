@@ -5,19 +5,3 @@
 		{ "y": 100, "x": 100, "rate": 0, "type": 1, "size": 5}
 	],
 }
-
-attack_grow -> scaling
-base attack -> 1
-healt_grow -> % scaling
-healt_base -> 1
-armor_grow
-armor_base
-name
-id: 1
-speed: 1
-
-MOBS LINK
-level: 1
-pos
-x
-y
