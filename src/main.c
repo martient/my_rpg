@@ -18,6 +18,7 @@ void game_loop(game_global_t *game)
 			draw__(game);
 			sfClock_restart(draw_clock);
 		}
+		rpg_mob_generator(game->mob_spawn, game->mob_data, game->mob_deploy, game->player);
 	}
 	sfClock_destroy(draw_clock);
 }
