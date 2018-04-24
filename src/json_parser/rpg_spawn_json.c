@@ -23,7 +23,6 @@ static int rpg_json_spawn_list(spawn_first_t *first, const nx_json *mob)
 	data[2] = nx_json_get(mob, "type")->int_value;
 	data[3] = nx_json_get(mob, "rate")->int_value;
 	data[4] = nx_json_get(mob, "size")->int_value;
-	data[5] = -1;
 	rpg_spawn_inject(first, data);
 	free(data);
 	return (0);
