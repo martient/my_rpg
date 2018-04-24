@@ -20,6 +20,7 @@ static void player_cam(game_global_t *game)
 
 void draw__(game_global_t *game)
 {
+	printf("X:%f Y:%f\n", game->player->x, game->player->y);
 	sfRenderWindow_clear(game->window, sfBlack);
 	draw_element(game);
 	draw_mobs(game);
