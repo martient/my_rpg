@@ -17,10 +17,9 @@ void keyboard_press_event(game_global_t *game, sfKeyEvent event)
 
 void mouse_zoom(game_global_t *game, sfMouseWheelScrollEvent event)
 {
-	printf("%f\n", event.delta);
-	if (event.delta > 0)
+	if (event.delta > 0 && game->zoom < 2)
 		game->zoom += 0.5;
-	else
+	else if (event.delta < 0 && game->zoom > 0.5)
 		game->zoom -= 0.5;
 }
 
