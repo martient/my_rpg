@@ -21,7 +21,7 @@ spawn_mob_t *spawn)
 }
 
 static int rpg_mobs_inject(mob_first_t *first, mob_data_first_t *data,
-	spawn_mob_t *spawn)
+spawn_mob_t *spawn)
 {
 	mob_info_t *new = malloc(sizeof(mob_info_t));
 	mob_data_t *data_tmp = NULL;
@@ -36,17 +36,14 @@ static int rpg_mobs_inject(mob_first_t *first, mob_data_first_t *data,
 	data_tmp = data->first;
 	data_tmp = rpg_mobs_inject_shear(new, data_tmp, spawn);
 	new->agressive = 0;
-	if (data_tmp->sprite != NULL)
-		new->sprite = data_tmp->sprite;
-	else
-		my_putstr("NTM\n");
+	new->sprite = data_tmp->sprite;
 	new->next = first->first;
 	first->first = new;
 	return (0);
 }
 
 int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
-	mob_first_t *mobs, player_info_t *player)
+mob_first_t *mobs, player_info_t *player)
 {
 	spawn_mob_t *spawn_tmp = NULL;
 
@@ -61,7 +58,6 @@ int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 		((int)player->y / 32 >= (int)spawn_tmp->y - 10 &&
 		(int)player->y / 32 <= (int)spawn_tmp->y + 10)) {
 			rpg_mobs_inject(mobs, data, spawn_tmp);
-			printf("MOBS SPAWN\n");
 			break;
 		}
 		spawn_tmp = spawn_tmp->next;
