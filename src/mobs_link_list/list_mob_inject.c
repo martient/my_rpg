@@ -35,10 +35,8 @@ spawn_mob_t *spawn)
 		return (-1);
 	}
 	new->id = first->first->id + 1;
-	new->y = (float)spawn->y - (rand() % spawn->size + 1) +
-	(rand() % spawn->size + 1);
-	new->x = (float)spawn->x - (rand() % spawn->size + 1) +
-	(rand() % spawn->size + 1);
+	new->y = (float)spawn->y * 32 - (rand() % (spawn->size * 2));
+	new->x = (float)spawn->x * 32 - (rand() % (spawn->size * 2));
 	data_tmp = data->first;
 	data_tmp = rpg_mobs_inject_shear(new, data_tmp, spawn);
 	new->agressive = 0;
