@@ -31,12 +31,15 @@ static int rpg_mobs_inject(mob_first_t *first, mob_data_first_t *data,
 		return (-1);
 	}
 	new->id = first->first->id + 1;
-	new->y = spawn->x;
-	new->x = spawn->y;
+	new->y = spawn->y;
+	new->x = spawn->x;
 	data_tmp = data->first;
 	data_tmp = rpg_mobs_inject_shear(new, data_tmp, spawn);
 	new->agressive = 0;
-	new->sprite = data_tmp->sprite;
+	if (data_tmp->sprite != NULL)
+		new->sprite = data_tmp->sprite;
+	else
+		my_putstr("NTM\n");
 	new->next = first->first;
 	first->first = new;
 	return (0);
