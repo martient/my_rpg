@@ -5,6 +5,9 @@
 ** Epitech project
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "my_rpg.h"
 
 static mob_data_t *rpg_mobs_inject_shear(mob_info_t *new, mob_data_t *data_tmp,
@@ -13,6 +16,7 @@ spawn_mob_t *spawn)
 	while (data_tmp->next != NULL) {
 		if (data_tmp->id == spawn->type) {
 			new->type = spawn->type;
+			new->spawn = spawn;
 			break;
 		}
 		data_tmp->next = data_tmp->next->next;
@@ -27,12 +31,14 @@ spawn_mob_t *spawn)
 	mob_data_t *data_tmp = NULL;
 
 	if (!first || !new) {
-		my_putstr("Error: malloc doesn't sucesfull\n");
+		my_putstr("Error: malloc failed\n");
 		return (-1);
 	}
 	new->id = first->first->id + 1;
-	new->y = spawn->y;
-	new->x = spawn->x;
+	new->y = (float)spawn->y - (rand() % spawn->size + 1) +
+	(rand() % spawn->size + 1);
+	new->x = (float)spawn->x - (rand() % spawn->size + 1) +
+	(rand() % spawn->size + 1);
 	data_tmp = data->first;
 	data_tmp = rpg_mobs_inject_shear(new, data_tmp, spawn);
 	new->agressive = 0;
