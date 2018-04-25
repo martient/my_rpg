@@ -74,12 +74,13 @@ struct spawn_first_t {
 typedef struct mob_info_t mob_info_t;
 struct mob_info_t {
 	int id;
-	int y;
-	int x;
+	float y;
+ 	float x;
 	int type;
 	int agressive;
 	int level;
 	sfSprite *sprite;
+	spawn_mob_t *spawn;
 	mob_info_t *next;
 };
 
