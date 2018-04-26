@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-char *my_strdup(char *str)
+char *my_strdup(char const *str)
 {
 	char *dup = malloc(sizeof(char) * my_strlen(str) + 1);
 	int i = 0;

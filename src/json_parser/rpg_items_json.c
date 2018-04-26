@@ -21,8 +21,8 @@ static int rpg_json_items_data_list(items_data_first_t *first, const nx_json *it
 	}
 	data[0] = nx_json_get(items, "id")->int_value;
 	data[1] = nx_json_get(items, "type")->int_value;
-	string[0] = (char*)&nx_json_get(items, "name")->text_value;
-	string[1] = (char*)&nx_json_get(items, "texture")->text_value;
+	string[0] = my_strdup(nx_json_get(items, "name")->text_value);
+	string[1] = my_strdup(nx_json_get(items, "texture")->text_value);
 	rpg_items_data_inject(first, string, data,
 	nx_json_get(items, "stats")->dbl_value);
 	free(data);

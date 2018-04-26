@@ -17,7 +17,7 @@ int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos)
 		my_putstr("Error: malloc new struct\n");
 		return (-1);
 	}
-	new->name = (char*)&tmp;
+	new->name = my_strdup(tmp);
 	new->x = nx_json_get(item, "x")->int_value;
 	new->y = nx_json_get(item, "y")->int_value;
 	new->z = nx_json_get(item, "z")->int_value;
