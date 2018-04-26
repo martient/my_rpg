@@ -35,14 +35,14 @@
 #endif
 
 typedef struct items_data_s items_data_t;
-struct mob_data_s {
+struct items_data_s {
 	int id;
 	char *name;
 	int type;
 	float stats;
 	sfTexture *texture;
 	sfSprite *sprite;
-	mob_data_t *next;
+	items_data_t *next;
 };
 
 typedef struct items_data_first_t items_data_first_t;
@@ -180,7 +180,14 @@ typedef struct game_global_t {
 	struct spawn_first_t *mob_spawn;
 	struct mob_first_t *mob_deploy;
 	struct mob_data_first_t *mob_data;
+	struct items_data_first_t *items_data;
 } game_global_t;
+
+items_data_first_t *rpg_items_data_init(void);
+int rpg_init_link_list_items_data(items_data_first_t *first);
+int rpg_json_init_items_data(items_data_first_t *first);
+int rpg_items_data_inject(items_data_first_t *first, char **string, int *data,
+float stats);
 
 int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 	mob_first_t *mobs, player_info_t *player);
@@ -220,6 +227,7 @@ int main(int ac, char *argv[], char *env[]);
 player_info_t *init_player(game_global_t *game);
 int my_put_nbr(int nb);
 int my_putstr(char *str);
+char *my_strdup_cnst(char const *str);
 int my_strcmp(char *str, char *str2);
 char *my_strdup(char *str);
 int my_strlen(char *str);

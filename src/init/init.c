@@ -65,6 +65,9 @@ game_global_t *__init__(void)
 	game->mob_data = rpg_mob_data_init();
 	if (rpg_json_init_mob_data(game->mob_data) == -1)
 		return (NULL);
+	game->items_data = rpg_items_data_init();
+	if (rpg_init_link_list_items_data(game->items_data) == -1)
+		return (NULL);
 	printf("Game finised loading (%lf ms)\n",
 	sfClock_getElapsedTime(clock).microseconds * 0.001);
 	sfClock_destroy(clock);

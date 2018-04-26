@@ -72,7 +72,10 @@ SRC	=	.//engine_lib/text.c	\
 		./src/start_screen/event_start_screen.c	\
 		./src/pause_screen/draw_pause_screen.c	\
 		./src/pause_screen/event_pause_screen.c	\
-
+		./src/json_parser/rpg_items_json.c \
+		./src/items_data_link_list/init_all_items_data_link_list.c \
+		./src/items_data_link_list/items_data_init.c \
+		./src/items_data_link_list/items_data_inject.c \
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\

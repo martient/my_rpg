@@ -13,6 +13,7 @@
 static int rpg_json_items_data_list(items_data_first_t *first, const nx_json *items)
 {
 	int *data = malloc(sizeof(int) * 3);
+	char **string = malloc(sizeof(char*) * 3);
 
 	if (!data) {
 		my_putstr("Error: malloc not found\n");
@@ -20,8 +21,9 @@ static int rpg_json_items_data_list(items_data_first_t *first, const nx_json *it
 	}
 	data[0] = nx_json_get(items, "id")->int_value;
 	data[1] = nx_json_get(items, "type")->int_value;
-	rpg_spawn_inject(nx_json_get(items, "name")->text_value, data,
-	nx_json_get(items, "texture")->text_value,
+	string[0] = my_strdup_cnst(nx_json_get(items, "name")->text_value);
+	string[1] = my_strdup_cnst(nx_json_get(items, "texture")->text_value);
+	rpg_items_data_inject(first, string, data,
 	nx_json_get(items, "stats")->dbl_value);
 	free(data);
 	return (0);
@@ -36,7 +38,7 @@ static char *rpg_items_data_load(char *filepath)
 
 	fd = open(filepath, O_RDONLY);
 	if (fd < 0) {
-		my_putstr("Error: mob_spawn.json not found\n");
+		my_putstr("Error: items.json not found\n");
 		return (NULL);
 	}
 	while (read(fd, tmp_b, 1))
@@ -52,7 +54,7 @@ static char *rpg_items_data_load(char *filepath)
 
 int rpg_json_init_items_data(items_data_first_t *first)
 {
-	char *read_file = rpg_spawn_load("./resources/items.json");
+	char *read_file = rpg_items_data_load("./resources/items.json");
 	const nx_json* json;
 	const nx_json* items;
 	const nx_json* tmp;
@@ -65,7 +67,7 @@ int rpg_json_init_items_data(items_data_first_t *first)
 		items = nx_json_get(json, "items");
 		for (int i = 0; i < items->length; i++) {
 			tmp = nx_json_item(items, i);
-			rpg_json_spawn_list(first, tmp);
+			rpg_json_items_data_list(first, tmp);
 		}
 	}
 	return (0);

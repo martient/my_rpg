@@ -19,3 +19,16 @@ char *my_strdup(char *str)
 	dup[i] = '\0';
 	return (dup);
 }
+
+char *my_strdup_cnst(char const *str)
+{
+	char *dup = malloc(sizeof(char) * my_strlen(str) + 1);
+	int i = 0;
+
+	while (str[i] != '\0') {
+		dup[i] = str[i];
+		i = i + 1;
+	}
+	dup[i] = '\0';
+	return (dup);
+}

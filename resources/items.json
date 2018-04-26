@@ -1,0 +1,11 @@
+{
+	"items": [
+		{"id": "0", "name": "La grosse buche", "type": "0", "texture": "NULL", "stats": "0.12"}
+	],
+}
+
+type
+	0 = healt consumable
+	1 = healt wearable
+	2 = armor wearable
+	3 = attack wearable
