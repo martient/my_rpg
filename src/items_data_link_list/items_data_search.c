@@ -12,7 +12,7 @@ char *target)
 {
 	items_data_t *display = NULL;
 
-	if (!info) {
+	if (!info || !target) {
 		my_putstr("Error: malloc new struct\n");
 		return (NULL);
 	}

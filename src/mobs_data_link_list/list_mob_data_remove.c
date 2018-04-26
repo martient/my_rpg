@@ -7,7 +7,8 @@
 
 #include "my_rpg.h"
 
-int rpg_mob_data_remove(mob_data_first_t *first)
+/*
+static int rpg_mob_data_remove(mob_data_first_t *first)
 {
 	mob_data_t *remove = NULL;
 
@@ -21,3 +22,14 @@ int rpg_mob_data_remove(mob_data_first_t *first)
 	}
 	return (0);
 }
+
+int rpg_mob_data_remove_all(mob_data_first_t *first)
+{
+	mob_data_t *prepare = NULL;
+
+	while (first->first != NULL) {
+		rpg_mob_data_remove(prepare);
+	}
+	return (0);
+}
+*/

@@ -18,7 +18,7 @@ float stats)
 		return (-1);
 	}
 	new->id = data[0];
-	new->name = (char*)&string[0];
+	new->name = string[0];
 	new->type = data[1];
 	new->texture = sfTexture_createFromFile(string[1], NULL);
 	new->sprite = sfSprite_create();
