@@ -188,6 +188,8 @@ int rpg_init_link_list_items_data(items_data_first_t *first);
 int rpg_json_init_items_data(items_data_first_t *first);
 int rpg_items_data_inject(items_data_first_t *first, char **string, int *data,
 float stats);
+items_data_t *lemin_search_room(items_data_first_t *info,
+char *target);
 
 int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 	mob_first_t *mobs, player_info_t *player);
