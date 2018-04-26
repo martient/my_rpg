@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-int inventory_new_obj(struct inventory_list *list, char *name)
+int inventory_new_obj(inventory_list_t *list, char *name)
 {
 	static int limit = LIMIT_INVENTORY_1;
 
@@ -18,7 +18,7 @@ int inventory_new_obj(struct inventory_list *list, char *name)
 	return (0);
 }
 
-int inventory_del_obj(struct inventory_list *list, char *name)
+int inventory_del_obj(inventory_list_t *list, char *name)
 {
 	return (del_inventory(list, name));
 }

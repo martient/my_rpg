@@ -7,9 +7,9 @@
 
 #include "my_rpg.h"
 
-int get_inventory_size(struct inventory_list *ivnt)
+int get_inventory_size(inventory_list_t *ivnt)
 {
-	inventory *count = malloc(sizeof(inventory));
+	inventory_t *count = malloc(sizeof(inventory));
 	int size = 0;
 
 	if (ivnt == NULL)

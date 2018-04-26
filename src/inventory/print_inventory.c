@@ -9,7 +9,7 @@
 
 int print_inventory(inventory_list *ivnt)
 {
-	inventory *current = malloc(sizeof(inventory));
+	inventory_t *current = malloc(sizeof(inventory_t));
 
 	if (ivnt == NULL)
 		return (-1);
