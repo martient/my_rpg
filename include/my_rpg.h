@@ -95,6 +95,7 @@ struct mob_info_t {
 	int type;
 	int agressive;
 	int level;
+	double health;
 	sfSprite *sprite;
 	spawn_mob_t *spawn;
 	mob_info_t *next;

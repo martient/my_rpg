@@ -41,6 +41,7 @@ spawn_mob_t *spawn)
 	data_tmp = rpg_mobs_inject_shear(new, data_tmp, spawn);
 	new->agressive = 0;
 	new->sprite = data_tmp->sprite;
+	new->health = 100.0;
 	new->next = first->first;
 	first->first = new;
 	return (0);
