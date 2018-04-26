@@ -28,7 +28,7 @@ int draw_element(game_global_t *game)
 	object_info_t *bck_map = map;
 	int player = 0;
 
-	for (int i = -1; i < 5; i++) {
+	for (int i = Z_MINIMUM; i < Z_MAXIMUM; i++) {
 		if (i == 1 && player== 0) {
 			draw_player(game);
 			player = 1;

@@ -9,7 +9,7 @@
 
 static void draw_mob_sprite(game_global_t *game, mob_info_t *mob)
 {
-	sfVector2f pos = {mob->x * 32, mob->y * 32};
+	sfVector2f pos = {mob->x, mob->y};
 
 	if (mob->id != -1) {
 		sfSprite_setPosition(mob->sprite, pos);
