@@ -34,6 +34,22 @@
 #define PLAYER_SPEED 200
 #endif
 
+typedef struct items_data_s items_data_t;
+struct mob_data_s {
+	int id;
+	char *name;
+	int type;
+	float stats;
+	sfTexture *texture;
+	sfSprite *sprite;
+	mob_data_t *next;
+};
+
+typedef struct items_data_first_t items_data_first_t;
+struct items_data_first_t {
+	items_data_t *first;
+};
+
 typedef struct mob_data_t mob_data_t;
 struct mob_data_t {
 	int id;
