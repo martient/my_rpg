@@ -51,7 +51,7 @@ int analyse_event(game_global_t *game)
 
 	while (mob) {
 		if (mob->id != -1)
-			mob_move_passive(mob, delta_time);
+			mob_move_passive(game, mob, delta_time);
 		mob = mob->next;
 	}
 	spell_cooldown(game, delta_time);

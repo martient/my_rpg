@@ -7,8 +7,22 @@
 
 #include "my_rpg.h"
 
-static int can_move(float x, float y, int box_x, int box_y, long size)
+static int can_move(game_global_t *game, float x, float y, int box[3])
 {
+	int box_x = box[0];
+	int box_y = box[1];
+	int size = box[2];
+	object_info_t *map = game->info_map->first->first;
+
+	while (map) {
+		if (x <= (map->x * 32) + 32 &&
+		x + 39 >= (map->x * 32) &&
+		y <= (map->y * 32) + 32 &&
+		y >= (map->y * 32)) {
+			return (1);
+		}
+		map = map->next;
+	}
 	if (x >= box_x + size ||
 	x <= box_x ||
 	y >= box_y + size ||
@@ -28,21 +42,20 @@ int next_move(void)
 }
 
 //Passive
-int mob_move_passive(mob_info_t *mob, double delta_time)
+int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time)
 {
 	float x = mob->x;
 	float y = mob->y;
 	int move = rand() % 100;
 	int coef = next_move();
-	long size = mob->spawn->size * 32;
-	int box_x = mob->spawn->x * 32;
-	int box_y = mob->spawn->y * 32;
+	int box[3] = {mob->spawn->x * 32, mob->spawn->y * 32,
+	mob->spawn->size * 32};
 
 	if (move % 2)
 		x += PLAYER_SPEED * coef * delta_time;
 	else
 		y += PLAYER_SPEED * coef * delta_time;
-	if (can_move(x, y, box_x, box_y, size)) {
+	if (can_move(game, x, y, box)) {
 		if (move % 2)
 			x += PLAYER_SPEED * (coef * -2) * delta_time;
 		else
