@@ -14,16 +14,16 @@
 
 #include "my_rpg.h"
 
-static int check_play_click(game_global_t *game, sfMouseButtonEvent event)
-{
-	sfVector2f position = {game->width / 2 - (54 * 2), game->height / 2};
+// static int check_play_click(game_global_t *game, sfMouseButtonEvent event)
+// {
+// 	sfVector2f position = {game->width / 2 - (54 * 2), game->height / 2};
 
-	if (event.button == sfMouseLeft)
-		if (event.x > position.x && event.x < position.x + (54 * 4) &&
-		event.y > position.y && event.y < position.y + (54 * 2))
-			game_loop(game);
-	return (0);
-}
+// 	if (event.button == sfMouseLeft)
+// 		if (event.x > position.x && event.x < position.x + (54 * 4) &&
+// 		event.y > position.y && event.y < position.y + (54 * 2))
+// 			game_loop(game);
+// 	return (0);
+// }
 
 static void keyboard_press_event(game_global_t *game, sfKeyEvent event)
 {

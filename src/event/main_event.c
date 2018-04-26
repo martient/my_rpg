@@ -13,6 +13,8 @@ void keyboard_press_event(game_global_t *game, sfKeyEvent event)
 		game->inventory_show = (game->inventory_show == 0) ? 1 : 0;
 	if (event.code == sfKeyEscape)
 		pause_screen(game);
+	if (event.code == sfKeyE)
+		interact_obj(game);
 }
 
 void mouse_zoom(game_global_t *game, sfMouseWheelScrollEvent event)

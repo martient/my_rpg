@@ -14,7 +14,6 @@ static void player_cam(game_global_t *game)
 
 	game->player->camera =  sfView_createFromRect(cam);
 	sfView_setCenter(game->player->camera, pos);
-	sfView_zoom(game->player->camera, game->zoom);
 	sfRenderWindow_setView(game->window, game->player->camera);
 }
 
@@ -23,7 +22,8 @@ void draw__(game_global_t *game)
 	sfRenderWindow_clear(game->window, sfBlack);
 	draw_element(game);
 	draw_ui(game);
-	draw_inventory(game);
+	if (game->inventory_show == 0)
+		draw_inventory(game);
 	draw_spell_cd_box(game, 100);
 	player_check_interaction(game);
 	draw_mobs(game);
