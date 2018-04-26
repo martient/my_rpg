@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-items_data_t *lemin_search_room(items_data_first_t *info,
+items_data_t *inventory_get_items(items_data_first_t *info,
 char *target)
 {
 	items_data_t *display = NULL;
