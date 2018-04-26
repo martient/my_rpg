@@ -47,7 +47,13 @@ int analyse_event(game_global_t *game)
 {
 	double delta_time =
 	sfClock_getElapsedTime(game->clock).microseconds / 1000000.0;
+	mob_info_t *mob = game->mob_deploy->first;
 
+	while (mob) {
+		if (mob->id != -1)
+			mob_move_passive(game, mob, delta_time);
+		mob = mob->next;
+	}
 	spell_cooldown(game, delta_time);
 	poll_events(game);
 	obj_cooldown(game, delta_time);

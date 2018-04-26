@@ -9,6 +9,7 @@
 void game_loop(game_global_t *game)
 {
 	sfClock *draw_clock = sfClock_create();
+	int i = 0;
 
 	sfClock_restart(game->clock);
 	sfRenderWindow_setFramerateLimit(game->window, 60);
@@ -18,7 +19,8 @@ void game_loop(game_global_t *game)
 			draw__(game);
 			sfClock_restart(draw_clock);
 		}
-		rpg_mob_generator(game->mob_spawn, game->mob_data, game->mob_deploy, game->player);
+		if (i++ == 0)
+			rpg_mob_generator(game->mob_spawn, game->mob_data, game->mob_deploy, game->player);
 	}
 	sfClock_destroy(draw_clock);
 }

@@ -9,8 +9,12 @@
 
 static void draw_mob_sprite(game_global_t *game, mob_info_t *mob)
 {
-	if (mob->sprite != NULL)
+	sfVector2f pos = {mob->x, mob->y};
+
+	if (mob->id != -1) {
+		sfSprite_setPosition(mob->sprite, pos);
 		sfRenderWindow_drawSprite(game->window, mob->sprite, NULL);
+	}
 }
 
 int draw_mobs(game_global_t *game)

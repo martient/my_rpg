@@ -27,28 +27,12 @@
 #endif
 
 #ifndef Z_MAXIMUM
-#define Z_MAXIMUM 5
+#define Z_MAXIMUM 2
 #endif
 
 #ifndef PLAYER_SPEED
 #define PLAYER_SPEED 200
 #endif
-
-typedef struct items_data_s items_data_t;
-struct mob_data_s {
-	int id;
-	char *name;
-	int type;
-	float stats;
-	sfTexture *texture;
-	sfSprite *sprite;
-	mob_data_t *next;
-};
-
-typedef struct items_data_first_t items_data_first_t;
-struct items_data_first_t {
-	items_data_t *first;
-};
 
 typedef struct mob_data_t mob_data_t;
 struct mob_data_t {
@@ -90,13 +74,12 @@ struct spawn_first_t {
 typedef struct mob_info_t mob_info_t;
 struct mob_info_t {
 	int id;
-	float y;
- 	float x;
+	int y;
+	int x;
 	int type;
 	int agressive;
 	int level;
 	sfSprite *sprite;
-	spawn_mob_t *spawn;
 	mob_info_t *next;
 };
 
@@ -252,5 +235,7 @@ void start_game_loop(game_global_t *game);
 void pause_screen(game_global_t *game);
 int event_start_screen(game_global_t *game);
 int event_pause_screen(game_global_t *game);
-int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time);
+int draw_mobs(game_global_t *game);
+
+int mob_move_passive(mob_info_t *mob, double delta_time);
 #endif /* !MY_RPG_H_ */

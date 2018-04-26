@@ -20,14 +20,14 @@ static void player_cam(game_global_t *game)
 
 void draw__(game_global_t *game)
 {
-	printf("X:%f Y:%f\n", game->player->x, game->player->y);
 	sfRenderWindow_clear(game->window, sfBlack);
 	draw_element(game);
-	draw_mobs(game);
 	draw_ui(game);
 	draw_inventory(game);
 	draw_spell_cd_box(game, 100);
 	player_check_interaction(game);
+	draw_mobs(game);
 	player_cam(game);
+	
 	sfRenderWindow_display(game->window);	
 }

@@ -5,6 +5,9 @@
 ** Epitech project
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "my_rpg.h"
 
 static mob_data_t *rpg_mobs_inject_shear(mob_info_t *new, mob_data_t *data_tmp,
@@ -13,6 +16,7 @@ spawn_mob_t *spawn)
 	while (data_tmp->next != NULL) {
 		if (data_tmp->id == spawn->type) {
 			new->type = spawn->type;
+			new->spawn = spawn;
 			break;
 		}
 		data_tmp->next = data_tmp->next->next;
@@ -21,18 +25,18 @@ spawn_mob_t *spawn)
 }
 
 static int rpg_mobs_inject(mob_first_t *first, mob_data_first_t *data,
-	spawn_mob_t *spawn)
+spawn_mob_t *spawn)
 {
 	mob_info_t *new = malloc(sizeof(mob_info_t));
 	mob_data_t *data_tmp = NULL;
 
 	if (!first || !new) {
-		my_putstr("Error: malloc doesn't sucesfull\n");
+		my_putstr("Error: malloc failed\n");
 		return (-1);
 	}
 	new->id = first->first->id + 1;
-	new->y = spawn->x;
-	new->x = spawn->y;
+	new->y = (float)spawn->y * 32 - (rand() % (spawn->size * 2));
+	new->x = (float)spawn->x * 32 - (rand() % (spawn->size * 2));
 	data_tmp = data->first;
 	data_tmp = rpg_mobs_inject_shear(new, data_tmp, spawn);
 	new->agressive = 0;
@@ -43,7 +47,7 @@ static int rpg_mobs_inject(mob_first_t *first, mob_data_first_t *data,
 }
 
 int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
-	mob_first_t *mobs, player_info_t *player)
+mob_first_t *mobs, player_info_t *player)
 {
 	spawn_mob_t *spawn_tmp = NULL;
 
@@ -58,7 +62,6 @@ int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 		((int)player->y / 32 >= (int)spawn_tmp->y - 10 &&
 		(int)player->y / 32 <= (int)spawn_tmp->y + 10)) {
 			rpg_mobs_inject(mobs, data, spawn_tmp);
-			printf("MOBS SPAWN\n");
 			break;
 		}
 		spawn_tmp = spawn_tmp->next;
