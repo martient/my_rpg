@@ -16,7 +16,7 @@ spawn_first_t *rpg_spawn_init(void)
 		my_putstr("Error: malloc doesn't sucesfull\n");
 		exit(84);
 	}
-	new->id = 0;
+	new->id = -1;
 	new->y = 0;
 	new->x = 0;
 	new->type = 0;
