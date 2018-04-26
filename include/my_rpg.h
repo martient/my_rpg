@@ -175,7 +175,7 @@ typedef struct game_global_t {
 	int inventory_show;
 	sfFont *font;
 	struct player_info_t *player;
-	struct inventory_list *invent;
+	struct inventory_list_t *invent;
 	struct map_info_t *info_map;
 	struct skills_t *tree;
 	struct spawn_first_t *mob_spawn;
