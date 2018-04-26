@@ -227,7 +227,6 @@ int main(int ac, char *argv[], char *env[]);
 player_info_t *init_player(game_global_t *game);
 int my_put_nbr(int nb);
 int my_putstr(char *str);
-char *my_strdup_cnst(char const *str);
 int my_strcmp(char *str, char *str2);
 char *my_strdup(char *str);
 int my_strlen(char *str);
