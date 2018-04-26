@@ -1,6 +1,6 @@
 {
 	"items": [
-		{"id": "0", "name": "La grosse buche", "type": "0", "texture": "NULL", "stats": "0.12"}
+		{"id": "0", "name": "La grosse buche", "type": "0", "texture": "./resources/sprites/inventory/carrots.png", "stats": "0.12"}
 	],
 }
 
