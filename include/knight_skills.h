@@ -16,4 +16,8 @@
 #define HAMMER_JUSTICE_COST_H_ 3
 #endif
 
+#ifndef NORMAL_ATTACK
+#define NORMAL_ATTACK 20
+#endif
+
 #endif /* !KNIGHT_SKILLS_H_ */
