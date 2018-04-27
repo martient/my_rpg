@@ -32,6 +32,7 @@ int poll_events(game_global_t *game)
 	while (sfRenderWindow_pollEvent(game->window, &event)) {
 		if (event.type == sfEvtClosed) {
 			rpg_player_save(game->player);
+			rpg_inventory_save(game->invent);
 			sfRenderWindow_close(game->window);
 			return (0);
 		}

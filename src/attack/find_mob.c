@@ -37,12 +37,11 @@ void analyse_mob(struct mob_info_t *mob, struct player_info_t *player)
 			mob->health = mob->health - NORMAL_ATTACK;
 			printf("%g\n", mob->health);
 		}
-	}	
+	}
 }
 
 int find_mob(int opt, game_global_t *game)
 {
-	int i = 0;
 	mob_info_t *mob = game->mob_deploy->first;
 
 	if (opt == 1) {
@@ -51,4 +50,5 @@ int find_mob(int opt, game_global_t *game)
 			mob = mob->next;
 		}
 	}
+	return (0);
 }

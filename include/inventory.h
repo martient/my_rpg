@@ -45,6 +45,7 @@ struct inventory_list_s {
 #define LIMIT_INVENTORY_3 30
 #endif
 
+int rpg_inventory_save(inventory_list_t *first);
 int inventory_new_obj(inventory_list_t *list, char *name);
 int inventory_del_obj(inventory_list_t *list, char *name);
 int print_inventory(inventory_list_t *ivnt);

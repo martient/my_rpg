@@ -5,10 +5,6 @@
 ** This file saved data of player
 */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdio.h>
 #include "my_rpg.h"
 
 static int rpg_file_put_nbr(int fd, int nb)

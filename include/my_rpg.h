@@ -12,6 +12,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "keyboard.h"
 #include "text.h"
 #include "nxjson.h"
