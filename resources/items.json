@@ -1,6 +1,7 @@
 {
 	"items": [
-		{"id": "0", "name": "Carrots", "type": "0", "texture": "./resources/sprites/inventory/carrots.png", "stats": "0.12"}
+		{"id": "0", "name": "item_secret_defence", "type": "0", "texture": "./resources/sprites/inventory/carrots.png", "stats": "0.12"},
+		{"id": "1", "name": "Carrots", "type": "0", "texture": "./resources/sprites/inventory/carrots.png", "stats": "0.12"}
 	],
 }
 
