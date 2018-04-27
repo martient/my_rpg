@@ -9,7 +9,7 @@
 
 int get_inventory_size(inventory_list_t *ivnt)
 {
-	inventory_t *count = malloc(sizeof(inventory));
+	inventory_t *count = malloc(sizeof(inventory_t));
 	int size = 0;
 
 	if (ivnt == NULL)

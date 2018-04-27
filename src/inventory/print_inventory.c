@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-int print_inventory(inventory_list *ivnt)
+int print_inventory(inventory_list_t *ivnt)
 {
 	inventory_t *current = malloc(sizeof(inventory_t));
 

@@ -9,7 +9,7 @@
 
 inventory_t *new_ivnt_obj(char *path, char *name)
 {
-	inventory_t *new = malloc(sizeof(inventory));
+	inventory_t *new = malloc(sizeof(inventory_t));
 
 	if (path != NULL) {
 		new->text = sfTexture_createFromFile(path, NULL);
@@ -25,8 +25,8 @@ inventory_t *new_ivnt_obj(char *path, char *name)
 
 int add_inventory(inventory_list_t *ivnt, char *name)
 {
-	inventory_t *new = malloc(sizeof(inventory));
-	inventory_t *new2 = malloc(sizeof(inventory));
+	inventory_t *new = malloc(sizeof(inventory_t));
+	inventory_t *new2 = malloc(sizeof(inventory_t));
 
 	if (ivnt->first->name == NULL) {
 		ivnt->first = new_ivnt_obj(NULL, name);
@@ -47,8 +47,10 @@ int add_inventory(inventory_list_t *ivnt, char *name)
 
 int del_beginning(inventory_list_t *ivnt, inventory_t *del_list)
 {
+	inventory_t *to_delete;
+
 	if (del_list->quantity == 1) {
-		inventory *to_delete = ivnt->first;
+		to_delete = ivnt->first;
 		ivnt->first = ivnt->first->next;
 		free(to_delete);
 	} else {
