@@ -31,6 +31,8 @@ items_data_first_t *rpg_items_data_init(void)
 	new->id = -1;
 	new->name = NULL;
 	new->type = -1;
+	new->x = 0;
+	new->y = 0;
 	new->stats = -1;
 	rpg_items_data_init_tex(new);
 	new->next = NULL;

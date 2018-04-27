@@ -40,6 +40,8 @@ struct items_data_s {
 	char *name;
 	int type;
 	float stats;
+	int x;
+	int y;
 	sfTexture *texture;
 	sfSprite *sprite;
 	items_data_t *next;
@@ -191,6 +193,8 @@ int rpg_items_data_inject(items_data_first_t *first, char **string, int *data,
 float stats);
 items_data_t *inventory_get_items(items_data_first_t *info,
 char *target);
+int inventory_set_items(items_data_t *info, int x, int y);
+
 int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 	mob_first_t *mobs, player_info_t *player);
 spawn_first_t *rpg_spawn_init(void);
