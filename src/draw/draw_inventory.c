@@ -7,7 +7,20 @@
 
 #include "my_rpg.h"
 
-static int draw_inventory_items(game_global_t *game)
+void draw_item_box(game_global_t *game, items_data_t *invent_item)
+{
+	player_info_t *player = game->player;
+	sfColor sfBrown = {182, 155, 76, 255};
+	int info[5] = {100, 100, 100, invent_item->x + 32, invent_item->y + 32};
+	int text_info[3] = {player->x - ((my_strlen(INVENTORY) * 16) / 2), player->y - (game->height / 4), 32};
+	sfColor colors[2] = {sfRed, sfGreen};
+
+	draw_bar(game, colors, info);
+	engine_create_text(game, INVENTORY, text_info, sfWhite);
+	sfRenderWindow_display(game->window);
+}
+
+static void draw_inventory_items(game_global_t *game)
 {
 	inventory_t *inventory = game->invent->first;
 	items_data_t *invent_item;
@@ -24,13 +37,13 @@ static int draw_inventory_items(game_global_t *game)
 			y += 64;
 			x = 32;
 		}
+		inventory_set_items(invent_item, pos.x, pos.y);
 		sfSprite_setPosition(invent_item->sprite, pos);
 		sfRenderWindow_drawSprite(game->window, invent_item->sprite, NULL);
 		inventory = inventory->next;
 		if (inventory == NULL)
-			return (1);
+			break;
 	}
-	return (0);
 }
 
 int draw_inventory(game_global_t *game)
@@ -44,6 +57,8 @@ int draw_inventory(game_global_t *game)
 
 	draw_bar(game, colors, info);
 	engine_create_text(game, INVENTORY, text_info, sfWhite);
-	// draw_inventory_items(game);
+	draw_inventory_items(game);
+	if (game->invent_item != NULL)
+		draw_item_box(game, game->invent_item);
 	return (0);
 }

@@ -49,6 +49,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src//event/screen_event.c	\
 		./src//event/key_event.c	\
 		./src//event/main_event.c	\
+		./src//event/mouse_click.c	\
 		./src/draw/draw_element.c		\
 		./src/main.c	\
 		./src/ui/draw_ui.c	\

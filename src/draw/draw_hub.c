@@ -22,12 +22,11 @@ void draw__(game_global_t *game)
 	sfRenderWindow_clear(game->window, sfBlack);
 	draw_element(game);
 	draw_ui(game);
-	if (game->inventory_show == 0)
-		draw_inventory(game);
 	draw_spell_cd_box(game, 100);
 	player_check_interaction(game);
 	draw_mobs(game);
+	if (game->inventory_show == 1)
+		draw_inventory(game);
 	player_cam(game);
-	
 	sfRenderWindow_display(game->window);	
 }
