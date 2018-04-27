@@ -15,8 +15,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef struct inventory_s inventory_t;
-struct inventory_s {
+typedef struct inventory_t inventory_t;
+struct inventory_t {
 	sfTexture *text;
 	sfSprite *spr;
 	char *name;

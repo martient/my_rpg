@@ -34,22 +34,6 @@
 #define PLAYER_SPEED 200
 #endif
 
-typedef struct items_data_s items_data_t;
-struct items_data_s {
-	int id;
-	char *name;
-	int type;
-	float stats;
-	sfTexture *texture;
-	sfSprite *sprite;
-	items_data_t *next;
-};
-
-typedef struct items_data_first_t items_data_first_t;
-struct items_data_first_t {
-	items_data_t *first;
-};
-
 typedef struct mob_data_t mob_data_t;
 struct mob_data_t {
 	int id;
@@ -95,7 +79,6 @@ struct mob_info_t {
 	int type;
 	int agressive;
 	int level;
-	double health;
 	sfSprite *sprite;
 	spawn_mob_t *spawn;
 	mob_info_t *next;
@@ -175,22 +158,14 @@ typedef struct game_global_t {
 	int inventory_show;
 	sfFont *font;
 	struct player_info_t *player;
-	inventory_list_t *invent;
+	struct inventory_list *invent;
 	struct map_info_t *info_map;
 	struct skills_t *tree;
 	struct spawn_first_t *mob_spawn;
 	struct mob_first_t *mob_deploy;
 	struct mob_data_first_t *mob_data;
-	struct items_data_first_t *items_data;
 } game_global_t;
 
-items_data_first_t *rpg_items_data_init(void);
-int rpg_init_link_list_items_data(items_data_first_t *first);
-int rpg_json_init_items_data(items_data_first_t *first);
-int rpg_items_data_inject(items_data_first_t *first, char **string, int *data,
-float stats);
-items_data_t *inventory_get_items(items_data_first_t *info,
-char *target);
 int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 	mob_first_t *mobs, player_info_t *player);
 spawn_first_t *rpg_spawn_init(void);
@@ -199,6 +174,7 @@ int rpg_spawn_init_list(spawn_first_t *first);
 int rpg_spawn_inject(spawn_first_t *first, int *data);
 int rpg_spawn_remove(spawn_first_t *first);
 int rpg_json_init_spawn(spawn_first_t *first);
+
 mob_data_first_t *rpg_mob_data_init(void);
 int rpg_mob_data_inject(mob_data_first_t *first, float *data, int id,
 	char *name);
@@ -229,8 +205,8 @@ player_info_t *init_player(game_global_t *game);
 int my_put_nbr(int nb);
 int my_putstr(char *str);
 int my_strcmp(char *str, char *str2);
-char *my_strdup(char const *str);
-int my_strlen(char const *str);
+char *my_strdup(char *str);
+int my_strlen(char *str);
 void key_event(game_global_t *game, double delta_time);
 int rpg_init_global_info(object_first_t *info);
 object_first_t *rpg_init_object_list(void);
@@ -261,4 +237,5 @@ void pause_screen(game_global_t *game);
 int event_start_screen(game_global_t *game);
 int event_pause_screen(game_global_t *game);
 int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time);
+int draw_mobs(game_global_t *game);
 #endif /* !MY_RPG_H_ */
