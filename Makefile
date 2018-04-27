@@ -78,6 +78,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src/items_data_link_list/items_data_inject.c \
 		./src/items_data_link_list/items_data_search.c \
 		./src/items_data_link_list/set_items_position.c \
+		./src/attack/simple_attack.c	\
+		./src/attack/find_mob.c	\
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\
