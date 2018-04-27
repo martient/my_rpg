@@ -261,4 +261,5 @@ void pause_screen(game_global_t *game);
 int event_start_screen(game_global_t *game);
 int event_pause_screen(game_global_t *game);
 int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time);
+int draw_mobs(game_global_t *game);
 #endif /* !MY_RPG_H_ */
