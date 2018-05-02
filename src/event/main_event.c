@@ -44,6 +44,8 @@ int poll_events(game_global_t *game)
 			mouse_zoom(game, event.mouseWheelScroll);
 		if (game->inventory_show == 1 && event.type == sfEvtMouseMoved)
 			mouse_hover(game, event.mouseMove);
+		if (game->inventory_show == 1 && event.type == sfEvtMouseButtonPressed)
+			mouse_click(game, event.mouseButton);
 	}
 	return (0);
 }

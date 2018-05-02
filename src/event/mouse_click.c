@@ -17,6 +17,16 @@ sfVector2f screen_to_world(game_global_t *game, sfMouseMoveEvent event)
 	world_positions.y += event.y;
 	return (world_positions);
 }
+sfVector2f screen_to_world_click(game_global_t *game, sfMouseButtonEvent event)
+{
+	sfVector2f world_positions;
+
+	world_positions.x = game->player->x - game->width / 2;
+	world_positions.y = game->player->y - game->height / 2;
+	world_positions.x += event.x;
+	world_positions.y += event.y;
+	return (world_positions);
+}
 
 int mouse_hover(game_global_t *game, sfMouseMoveEvent event)
 {
@@ -33,6 +43,29 @@ int mouse_hover(game_global_t *game, sfMouseMoveEvent event)
 		pos.y < invent_item->y + 16 &&
 		pos.y > invent_item->y - 16)
 			game->invent_item = invent_item;
+		inventory = inventory->next;
+		if (inventory == NULL)
+			break;
+	}
+	return (0);
+}
+
+int mouse_click(game_global_t *game, sfMouseButtonEvent event)
+{
+	inventory_t *inventory = game->invent->first;
+	items_data_t *invent_item;
+	sfVector2f pos;
+
+	game->invent_item = NULL;
+	pos = screen_to_world_click(game, event);
+	while (inventory->name != NULL) {
+		invent_item = inventory_get_items(game->items_data, inventory->name);
+		if (pos.x < invent_item->x + 16 &&
+		pos.x > invent_item->x - 16 &&
+		pos.y < invent_item->y + 16 &&
+		pos.y > invent_item->y - 16) {
+			item_activat(game, invent_item);
+		}
 		inventory = inventory->next;
 		if (inventory == NULL)
 			break;

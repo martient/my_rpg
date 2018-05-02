@@ -45,6 +45,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/inventory/get_inventory_size.c	\
 		./src/inventory/modify_inventory.c	\
 		./src/inventory/init_inventory.c	\
+		./src/inventory/item_activated.c	\
 		./src/inventory/get_item_count.c	\
 		./src//init/init_player.c	\
 		./src//init/init.c	\
