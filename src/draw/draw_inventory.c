@@ -11,14 +11,16 @@ void draw_item_box(game_global_t *game, items_data_t *invent_item)
 {
 	player_info_t *player = game->player;
 	sfColor sfBrown = {182, 155, 76, 255};
+	char *quantity;
 	int info[5] = {my_strlen(invent_item->name) * 10, 70, 100, invent_item->x + 32, invent_item->y + 32};
 	int text_info[3] = {invent_item->x + 32, invent_item->y + 32, 20};
-	sfColor colors[2] = {sfRed, sfGreen};
+	sfColor colors[2] = {sfRed, sfBrown};
 
 	draw_bar(game, colors, info);
 	engine_create_text(game, invent_item->name, text_info, sfWhite);
 	text_info[1] += 32;
-	engine_create_text(game, "!", text_info, sfWhite);
+	quantity = int_to_string(inventory_get_count(game, invent_item->name));
+	engine_create_text(game, quantity, text_info, sfWhite);
 	sfRenderWindow_display(game->window);
 }
 

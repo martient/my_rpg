@@ -274,4 +274,5 @@ int simple_attack(struct game_global_t *game);
 int find_mob(int opt, game_global_t *game);
 void analyse_mob(struct mob_info_t *mob, struct player_info_t *player);
 char *int_to_string(int number);
+int inventory_get_count(game_global_t *game, char *item);
 #endif /* !MY_RPG_H_ */
