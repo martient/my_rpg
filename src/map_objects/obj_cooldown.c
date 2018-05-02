@@ -14,7 +14,7 @@ int obj_cooldown(game_global_t *game, double sec)
 	while (map) {
 		if (map->cooldown > 0) {
 			map->cooldown -= sec * 4;
-		}	
+		}
 		if (map->cooldown < 0)
 			map->cooldown = 0;
 		if (map->cooldown == 0)

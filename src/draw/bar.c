@@ -28,11 +28,10 @@ static int get_bar_size(int max, int percentage)
 	return (val);
 }
 
-
 // INFO:
 // 0 width
 // 1 height
-// 2 
+// 2
 void draw_bar(game_global_t *game, sfColor colors[2], int *infos)
 {
 	int front_width = get_bar_size(infos[0], infos[2]);

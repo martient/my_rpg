@@ -9,7 +9,7 @@
 
 int draw_health(game_global_t *game)
 {
-	player_info_t *player = game->player; 
+	player_info_t *player = game->player;
 	int health_perc = (player->health * 100) / player->max_health;
 	int bar_y = game->player->y + (game->height / 2) - 50;
 	int info[5] = {300, 20, health_perc, game->player->x - 150, bar_y};

@@ -7,7 +7,6 @@
 
 #include "my_rpg.h"
 
-
 void draw_player(game_global_t *game)
 {
 	static int anim = 0;
