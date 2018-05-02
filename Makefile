@@ -25,7 +25,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/lib/int_to_string.c	\
 		./src/spells/spell_manager.c	\
 		./src/spells/spell_1_speed.c	\
-		.//extern_lib/nxjson.c \
+		.//extern_libs/nxjson.c \
 		./src/mobs/mob_mouvement.c	\
 		./src/draw/draw_mobs.c	\
 		./src/draw/draw_hub.c	\
