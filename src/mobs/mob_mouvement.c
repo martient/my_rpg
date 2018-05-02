@@ -7,6 +7,19 @@
 
 #include "my_rpg.h"
 
+int collide_player(game_global_t *game, float x, float y)
+{
+	player_info_t *player = game->player;
+
+	if (x < player->x + 32 &&
+	x + 32 > player->x &&
+	y < player->y + 32 &&
+	y + 32 > player->y) {
+		return (1);
+	}
+	return (0);
+}
+
 static int can_move(game_global_t *game, float x, float y, int box[3])
 {
 	int box_x = box[0];
@@ -23,6 +36,8 @@ static int can_move(game_global_t *game, float x, float y, int box[3])
 		}
 		map = map->next;
 	}
+	if (collide_player(game, x, y))
+		return (1);
 	if (x >= box_x + size ||
 	x <= box_x ||
 	y >= box_y + size ||
