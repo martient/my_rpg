@@ -190,6 +190,14 @@ typedef struct game_global_t {
 	items_data_t *invent_item;
 } game_global_t;
 
+enum player_direction {
+	null_direction,
+	down,
+	left,
+	right,
+	up
+};
+
 items_data_first_t *rpg_items_data_init(void);
 int rpg_init_link_list_items_data(items_data_first_t *first);
 int rpg_json_init_items_data(items_data_first_t *first);

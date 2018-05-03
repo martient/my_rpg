@@ -31,19 +31,17 @@ static int can_move(game_global_t *game, float x, float y, int box[3])
 		if (x <= (map->x * 32) + 32 &&
 		x + 39 >= (map->x * 32) &&
 		y <= (map->y * 32) + 32 &&
-		y >= (map->y * 32)) {
+		y >= (map->y * 32))
 			return (1);
-		}
 		map = map->next;
 	}
 	if (collide_player(game, x, y))
 		return (1);
-	if (x >= box_x + size ||
-	x <= box_x ||
-	y >= box_y + size ||
-	y <= box_y) {
+	if (x >= box_x + size &&
+	x <= box_x &&
+	y >= box_y + size &&
+	y <= box_y)
 		return (1);
-	}
 	return (0);
 }
 
