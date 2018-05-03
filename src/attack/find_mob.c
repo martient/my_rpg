@@ -9,33 +9,31 @@
 
 void analyse_mob(struct mob_info_t *mob, struct player_info_t *player)
 {
-	int real_x = mob->x / 32;
-	int real_y = mob->y / 32;
-	int real_x2 = player->x / 32;
-	int real_y2 = player->y / 32;
+	double diff_x = player->x - mob->x;
+	double diff_y = player->y - mob->y;
 
 	if (player->direction == 1) {
-		if (real_x == real_x2 && real_y == real_y2 + 1) {
+		if (diff_x > -10 && diff_x < 10 && diff_y > -32 && diff_y < 0) {
 			mob->health = mob->health - NORMAL_ATTACK;
-			printf("%g\n", mob->health);
+			printf("down %g\n", mob->health);
 		}
 	}
 	if (player->direction == 2) {
-		if (real_x == real_x2 - 1 && real_y == real_y2) {
+		if (diff_x > -1 && diff_x < 32 && diff_y > -10 && diff_y < 10) {
 			mob->health = mob->health - NORMAL_ATTACK;
-			printf("%g\n", mob->health);
+			printf("left %g\n", mob->health);
 		}
 	}
 	if (player->direction == 3) {
-		if (real_x == real_x2 && real_y == real_y2 - 1) {
+		if (diff_x > -32 && diff_x < 1 && diff_y > -10 && diff_y < 10) {
 			mob->health = mob->health - NORMAL_ATTACK;
-			printf("%g\n", mob->health);
+			printf("right %g\n", mob->health);
 		}
 	}
 	if (player->direction == 4) {
-		if (real_x == real_x2 + 1 && real_y == real_y2) {
+		if (diff_x > -10 && diff_x < 10 && diff_y > 0 && diff_y < 32) {
 			mob->health = mob->health - NORMAL_ATTACK;
-			printf("%g\n", mob->health);
+			printf("up %g\n", mob->health);
 		}
 	}
 }
