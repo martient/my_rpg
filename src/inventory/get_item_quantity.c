@@ -1,25 +1,25 @@
 /*
 ** EPITECH PROJECT, 2018
-** get_inventory_size.c
+** get_item_quantity.c
 ** File description:
-** Function that returns the number of objects it founds in the current inventory
+** Function that take one item and returns it quantity
 */
 
 #include "global.h"
 #include "inventory.h"
 
-int get_inventory_size(inventory_list_t *ivnt)
+int get_item_quantity(game_global_t *game, char *item)
 {
 	inventory_t *count = malloc(sizeof(inventory_t));
-	int size = 0;
 
 	if (ivnt == NULL)
 		return (-1);
 	count = ivnt->first;
 	while (count != NULL) {
-		size = size + count->quantity;
+		if (my_strcmp(count->name, item) == 0)
+			return (count->quantity);
 		count = count->next;
 	}
 	free(count);
-	return (size);
+	return (0);
 }

@@ -51,6 +51,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/inventory/init_inventory.c	\
 		./src/inventory/item_activated.c	\
 		./src/inventory/get_item_count.c	\
+		./src/inventory/get_item_quantity.c	\
 		./src//init/init_player.c	\
 		./src//init/init.c	\
 		./src//event/screen_event.c	\
@@ -110,9 +111,9 @@ OBJ	=	$(SRC:.c=.o)
 
 TEST_OBJ=	$(TEST_SRC:.c=.o)
 
-CFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog -g3
+CFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog
 
-OFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog -g3
+OFLAGS	=	-Wall -pedantic -I./include -I./my_lib -lc_graph_prog
 
 TFLAGS	=	-Wall -pedantic -I./include -I./my_lib --criterion
 
