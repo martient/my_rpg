@@ -5,7 +5,7 @@
 ** int_to_string.c
 */
 
-#include "my_rpg.h"
+#include "lib.h"
 
 int get_int_len(int number)
 {

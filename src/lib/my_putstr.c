@@ -5,7 +5,7 @@
 ** Function that prints a string
 */
 
-#include "my_rpg.h"
+#include "lib.h"
 
 int my_putstr(char *str)
 {
