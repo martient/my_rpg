@@ -5,16 +5,17 @@
 ** Function that checks if you can add or remove something in the inventory
 */
 
-#include "my_rpg.h"
+#include "global.h"
+#include "inventory.h"
 
-int inventory_new_obj(inventory_list_t *list, char *name)
+int inventory_new_obj(game_global_t *game, char *name)
 {
-	static int limit = LIMIT_INVENTORY_1;
+	int limit = LIMIT_INVENTORY_1;
 
-	if (get_inventory_size(list) >= limit)
+	if (get_inventory_size(game->invent) >= limit)
 		return (-1);
 	else
-		add_inventory(list, name);
+		add_inventory(game->invent, name);
 	return (0);
 }
 

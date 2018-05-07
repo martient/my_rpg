@@ -5,7 +5,9 @@
 ** get number of item
 */
 
-#include "my_rpg.h"
+#include "global.h"
+#include "inventory.h"
+#include "lib.h"
 
 int inventory_get_count(game_global_t *game, char *item)
 {

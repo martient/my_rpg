@@ -46,7 +46,6 @@ struct inventory_list_s {
 #endif
 
 int rpg_inventory_save(inventory_list_t *first);
-int inventory_new_obj(inventory_list_t *list, char *name);
 int inventory_del_obj(inventory_list_t *list, char *name);
 int print_inventory(inventory_list_t *ivnt);
 inventory_t *new_ivnt_obj(char *path, char *name);

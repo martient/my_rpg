@@ -5,7 +5,9 @@
 ** Functions that manages the inventory chained list
 */
 
-#include "my_rpg.h"
+#include "global.h"
+#include "inventory.h"
+#include "lib.h"
 
 inventory_t *new_ivnt_obj(char *path, char *name)
 {
@@ -18,7 +20,6 @@ inventory_t *new_ivnt_obj(char *path, char *name)
 	}
 	new->name = my_strdup(name);
 	new->quantity = 1;
-	//new->id = get_id(name);
 	new->next = NULL;
 	return (new);
 }

@@ -5,7 +5,9 @@
 ** Function that print the name and quantity of each element in the inventory
 */
 
-#include "my_rpg.h"
+#include "global.h"
+#include "inventory.h"
+#include "lib.h"
 
 int print_inventory(inventory_list_t *ivnt)
 {

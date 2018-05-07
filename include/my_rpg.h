@@ -157,6 +157,7 @@ object_first_t *rpg_init_object_list(void);
 int rpg_inject_object_list(object_first_t *info, const nx_json *data, int pos);
 int rpg_inject_object_grass_list(object_first_t *info);
 map_info_t *rpg_map_info(void);
+int inventory_new_obj(game_global_t *game, char *name);
 int draw_element(game_global_t *game);
 void player_move(game_global_t *game, double delta_time, int direction);
 void draw_ui(game_global_t *game);

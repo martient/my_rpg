@@ -5,7 +5,9 @@
 ** Function that initialize the inventory
 */
 
-#include "my_rpg.h"
+#include "global.h"
+#include "inventory.h"
+#include "lib.h"
 
 inventory_list_t *init_inventory(void)
 {
