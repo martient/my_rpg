@@ -35,4 +35,6 @@ typedef struct game_global_t {
 	items_data_t *invent_item;
 } game_global_t;
 
+game_global_t *__init__(void);
+
 #endif /* !GLOBAL_H_ */

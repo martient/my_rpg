@@ -24,6 +24,7 @@
 #include "sound.h"
 #include "global.h"
 #include "items_data.h"
+#include "map.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -122,36 +123,6 @@ typedef struct player_info_t {
 	sfSprite *sprite;
 	sfTexture *texture;
 } player_info_t;
-
-struct object_info_t {
-	char *name;
-	int x;
-	int y;
-	int z;
-	int collider;
-	int type;
-	int visible;
-	double cooldown;
-	//Collision call back;
-	sfTexture *texture;
-	sfSprite *sprite;
-	object_info_t *next;
-};
-
-typedef struct object_first_t object_first_t;
-struct object_first_t {
-	object_info_t *first;
-};
-
-typedef struct map_info_t map_info_t;
-struct map_info_t {
-	char *name;
-	int width;
-	int height;
-	int start_x;
-	int start_y;
-	object_first_t *first;
-};
 
 enum player_direction {
 	null_direction,
