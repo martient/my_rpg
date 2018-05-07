@@ -5,7 +5,9 @@
 ** Function that prints a float
 */
 
-int my_float_len(float nb)
+#include "lib.h"
+
+static int my_float_len(float nb)
 {
 	int cmp = nb;
 	int len = 0;

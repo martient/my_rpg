@@ -5,7 +5,7 @@
 ** Function that returns the length of a string
 */
 
-#include "my_rpg.h"
+#include "lib.h"
 
 int my_strlen(char const *str)
 {

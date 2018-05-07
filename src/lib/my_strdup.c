@@ -5,7 +5,7 @@
 ** Function that duplicates a char *
 */
 
-#include "my_rpg.h"
+#include "lib.h"
 
 char *my_strdup(char const *str)
 {

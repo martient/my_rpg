@@ -5,7 +5,26 @@
 **
 */
 
-#include "my_rpg.h"
+#include "lib.h"
+
+int rpg_file_put_nbr(int fd, int nb)
+{
+	int val = 0;
+
+	if (nb < 0) {
+		write(fd, "-", 1);
+		nb = nb * (-1);
+	}
+	if (nb >= 0 && nb <= 9) {
+		val = nb + 48;
+		write(fd, &val, 1);
+	}
+	if (nb > 9) {
+		rpg_file_put_nbr(fd, nb / 10);
+		rpg_file_put_nbr(fd, nb % 10);
+	}
+	return (0);
+}
 
 int my_put_nbr(int nb)
 {

@@ -5,7 +5,7 @@
 ** Function that compare two strings
 */
 
-#include "my_rpg.h"
+#include "lib.h"
 
 int my_strcmp(char *str, char *str2)
 {
