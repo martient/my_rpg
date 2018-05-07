@@ -15,6 +15,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include "player.h"
 #include "keyboard.h"
 #include "text.h"
 #include "nxjson.h"
@@ -97,33 +98,6 @@ typedef struct mob_first_t mob_first_t;
 struct mob_first_t {
 	mob_info_t *first;
 };
-
-typedef struct object_info_t object_info_t;
-typedef struct interaction_event_t {
-	int type;
-	object_info_t *obj;
-} interaction_event_t;
-
-typedef struct player_info_t {
-	sfView *camera;
-	char *name;
-	double x;
-	double y;
-	double speed;
-	int zone;
-	int health;
-	int max_health;
-	float power;
-	int mana;
-	double spell_duration[5];
-	double spell_cd[5];
-	int skill_point;
-	int direction;
-	int moving;
-	interaction_event_t *event;
-	sfSprite *sprite;
-	sfTexture *texture;
-} player_info_t;
 
 enum player_direction {
 	null_direction,
