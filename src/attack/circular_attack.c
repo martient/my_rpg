@@ -32,6 +32,7 @@ int all_touched(mob_info_t *mob, player_info_t *player)
 			value = 1;
 		mob = mob->next;
 	}
+	printf("%f\n", mob->health);
 	return (value);
 }
 
