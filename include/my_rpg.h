@@ -25,6 +25,7 @@
 #include "global.h"
 #include "items_data.h"
 #include "map.h"
+#include "lib.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -176,11 +177,6 @@ void draw__(game_global_t *game);
 void game_loop(game_global_t *game);
 int main(int ac, char *argv[], char *env[]);
 player_info_t *init_player(game_global_t *game);
-int my_put_nbr(int nb);
-int my_putstr(char *str);
-int my_strcmp(char *str, char *str2);
-char *my_strdup(char const *str);
-int my_strlen(char const *str);
 void key_event(game_global_t *game, double delta_time);
 int rpg_init_global_info(object_first_t *info);
 object_first_t *rpg_init_object_list(void);
