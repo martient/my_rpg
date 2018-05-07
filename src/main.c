@@ -11,6 +11,7 @@ void game_loop(game_global_t *game)
 	sfClock *draw_clock = sfClock_create();
 	int i = 0;
 
+	only_play(game, "main_music");
 	sfClock_restart(game->clock);
 	sfRenderWindow_setFramerateLimit(game->window, 60);
 	while (sfRenderWindow_isOpen(game->window)) {

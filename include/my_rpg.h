@@ -21,6 +21,7 @@
 #include "inventory.h"
 #include "skill_tree.h"
 #include "monster.h"
+#include "sound.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -187,6 +188,7 @@ typedef struct game_global_t {
 	struct mob_first_t *mob_deploy;
 	struct mob_data_first_t *mob_data;
 	struct items_data_first_t *items_data;
+	struct sound_info_t *sound;
 	items_data_t *invent_item;
 } game_global_t;
 
@@ -286,4 +288,10 @@ int inventory_get_count(game_global_t *game, char *item);
 int mouse_click(game_global_t *game, sfMouseButtonEvent event);
 int mouse_hover(game_global_t *game, sfMouseMoveEvent event);
 int item_activat(game_global_t *game, items_data_t *item);
+int init_sound(game_global_t *game);
+int play_sound(game_global_t *game, char const *name);
+int stop_all_music(game_global_t *game);
+int stop_sound(game_global_t *game, char *name);
+int only_play(game_global_t *game, char *name);
+int destroy_sound(game_global_t *game);
 #endif /* !MY_RPG_H_ */

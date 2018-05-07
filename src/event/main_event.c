@@ -33,6 +33,7 @@ int poll_events(game_global_t *game)
 		if (event.type == sfEvtClosed) {
 			rpg_player_save(game->player);
 			rpg_inventory_save(game->invent);
+			destroy_sound(game);
 			sfRenderWindow_close(game->window);
 			return (0);
 		}
