@@ -22,6 +22,8 @@
 #include "skill_tree.h"
 #include "monster.h"
 #include "sound.h"
+#include "global.h"
+#include "items_data.h"
 #define GAME_NAME "Overlord Adventures"
 #define DEFAULT_FRAME_RATE 60
 #define START_SCREEN 0
@@ -37,24 +39,6 @@
 #ifndef PLAYER_SPEED
 #define PLAYER_SPEED 200
 #endif
-
-typedef struct items_data_s items_data_t;
-struct items_data_s {
-	int id;
-	char *name;
-	int type;
-	float stats;
-	int x;
-	int y;
-	sfTexture *texture;
-	sfSprite *sprite;
-	items_data_t *next;
-};
-
-typedef struct items_data_first_t items_data_first_t;
-struct items_data_first_t {
-	items_data_t *first;
-};
 
 typedef struct mob_data_t mob_data_t;
 struct mob_data_t {
@@ -168,29 +152,6 @@ struct map_info_t {
 	int start_y;
 	object_first_t *first;
 };
-
-typedef struct game_global_t {
-	sfRenderWindow *window;
-	sfClock *clock;
-	int height;
-	int width;
-	int screen_id;
-	int frame_rate;
-	int state;
-	double zoom;
-	int inventory_show;
-	sfFont *font;
-	struct player_info_t *player;
-	inventory_list_t *invent;
-	struct map_info_t *info_map;
-	struct skills_t *tree;
-	struct spawn_first_t *mob_spawn;
-	struct mob_first_t *mob_deploy;
-	struct mob_data_first_t *mob_data;
-	struct items_data_first_t *items_data;
-	struct sound_info_t *sound;
-	items_data_t *invent_item;
-} game_global_t;
 
 enum player_direction {
 	null_direction,
