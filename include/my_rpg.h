@@ -280,6 +280,7 @@ int event_start_screen(game_global_t *game);
 int event_pause_screen(game_global_t *game);
 int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time);
 int draw_mobs(game_global_t *game);
+int circular_attack(game_global_t *game);
 int simple_attack(struct game_global_t *game);
 int find_mob(int opt, game_global_t *game);
 void analyse_mob(struct mob_info_t *mob, struct player_info_t *player);

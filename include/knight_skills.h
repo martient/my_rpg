@@ -17,7 +17,11 @@
 #endif
 
 #ifndef NORMAL_ATTACK
-#define NORMAL_ATTACK 20
+#define NORMAL_ATTACK 25
+#endif
+
+#ifndef CIRCULAR_ATTACK
+#define CIRCULAR_ATTACK 15
 #endif
 
 #endif /* !KNIGHT_SKILLS_H_ */
