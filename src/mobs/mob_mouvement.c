@@ -15,6 +15,7 @@ int collide_player(game_global_t *game, float x, float y)
 	x + 32 > player->x &&
 	y < player->y + 32 &&
 	y + 32 > player->y) {
+		printf("Touching PLayer\n");
 		return (1);
 	}
 	return (0);
