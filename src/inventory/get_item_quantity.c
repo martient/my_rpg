@@ -12,9 +12,9 @@ int get_item_quantity(game_global_t *game, char *item)
 {
 	inventory_t *count = malloc(sizeof(inventory_t));
 
-	if (ivnt == NULL)
+	if (game->invent == NULL)
 		return (-1);
-	count = ivnt->first;
+	count = game->invent->first;
 	while (count != NULL) {
 		if (my_strcmp(count->name, item) == 0)
 			return (count->quantity);
