@@ -9,7 +9,6 @@
 
 void draw_item_box(game_global_t *game, items_data_t *invent_item)
 {
-	player_info_t *player = game->player;
 	sfColor sfBrown = {182, 155, 76, 255};
 	char *quantity;
 	int info[5] = {my_strlen(invent_item->name) * 10, 70, 100, invent_item->x + 32, invent_item->y + 32};

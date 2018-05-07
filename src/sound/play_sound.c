@@ -18,7 +18,8 @@ int check_sound(sound_data_t *sound, sound_info_t *info)
 	((sound->type == music) ? info->music_volume : info->sfx_volume));
 	return (1);
 }
-int play_sound(game_global_t *game, char const *name)
+
+int play_sound(game_global_t *game, char *name)
 {
 	sound_data_t *sound = game->sound->sound;
 	sound_info_t *info = game->sound;

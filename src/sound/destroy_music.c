@@ -10,7 +10,6 @@
 int destroy_sound(game_global_t *game)
 {
 	sound_data_t *sound = game->sound->sound;
-	sound_info_t *info = game->sound;
 	sound_data_t *bck;
 
 	while (sound) {
