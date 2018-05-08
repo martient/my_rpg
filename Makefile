@@ -90,6 +90,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/attack/simple_attack.c	\
 		./src/attack/find_mob.c	\
 		./src/attack/circular_attack.c	\
+		./src/attack/sky_attack.c	\
 		./src/save_player/rpg_save_inventory.c \
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
