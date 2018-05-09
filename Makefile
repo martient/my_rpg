@@ -54,6 +54,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src/inventory/get_item_quantity.c	\
 		./src//init/init_player.c	\
 		./src//init/init.c	\
+		./src/quest/quest_manager.c	\
+		./src/quest/harvest_quest.c	\
 		./src//event/screen_event.c	\
 		./src//event/key_event.c	\
 		./src//event/main_event.c	\
