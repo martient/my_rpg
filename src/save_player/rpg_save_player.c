@@ -43,10 +43,12 @@ int direction)
 	rpg_file_put_nbr(fd, direction);
 }
 
-static void rpg_player_save_phase_4(int fd, int zone, int quest_id)
+static void rpg_player_save_phase_4(int fd, int zone, int quest_id, float xp)
 {
 	write(fd, PLAYER_SAVE_Q_ID, my_strlen(PLAYER_SAVE_Q_ID));
 	rpg_file_put_nbr(fd, quest_id);
+	write(fd, PLAYER_SAVE_XP, my_strlen(PLAYER_SAVE_XP));
+	rpg_file_put_nbr(fd, (int)xp);
 	write(fd, PLAYER_SAVE_ZONE, my_strlen(PLAYER_SAVE_ZONE));
 	rpg_file_put_nbr(fd, zone);
 	write(fd, PLAYER_SAVE_END, my_strlen(PLAYER_SAVE_END));
@@ -56,7 +58,7 @@ int rpg_player_save(player_info_t *player)
 {
 	int fd = 0;
 
-	fd = open(PLAYER_SAVE_FILE, O_WRONLY | O_CREAT);
+	fd = open(PLAYER_SAVE_FILE, O_WRONLY | O_CREAT, 0666);
 	if (player) {
 		rpg_player_save_phase_1(fd, player->name, player->x, player->y);
 		rpg_player_save_phase_2(fd, player->health, player->max_health,
@@ -64,12 +66,12 @@ int rpg_player_save(player_info_t *player)
 		rpg_player_save_phase_3(fd, player->skill_point,
 		1, player->direction);
 		rpg_player_save_phase_4(fd, player->zone,
-		player->current_quest_id);
+		player->current_quest_id, player->xp);
 	} else {
 		rpg_player_save_phase_1(fd, "Player", 10, 90);
 		rpg_player_save_phase_2(fd, 100, 100, 0);
 		rpg_player_save_phase_3(fd, 0, 1, 0);
-		rpg_player_save_phase_4(fd, 1, 0);
+		rpg_player_save_phase_4(fd, 1, 0, 0.0);
 	}
 	close(fd);
 	return (0);

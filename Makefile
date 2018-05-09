@@ -22,6 +22,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/lib/my_strdup.c	\
 		./src/lib/my_strlen.c	\
 		./src/lib/my_put_nbr.c	\
+		./src/lib/my_put_float.c	\
 		./src/lib/int_to_string.c	\
 		./src/sound/init_sound.c	\
 		./src/sound/play_sound.c	\
