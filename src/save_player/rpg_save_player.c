@@ -51,7 +51,6 @@ static void rpg_player_save_phase_4(int fd, int zone, int quest_id, float xp)
 	rpg_file_put_nbr(fd, (int)xp);
 	write(fd, PLAYER_SAVE_ZONE, my_strlen(PLAYER_SAVE_ZONE));
 	rpg_file_put_nbr(fd, zone);
-	write(fd, PLAYER_SAVE_END, my_strlen(PLAYER_SAVE_END));
 }
 
 int rpg_player_save(player_info_t *player)
@@ -67,11 +66,13 @@ int rpg_player_save(player_info_t *player)
 		1, player->direction);
 		rpg_player_save_phase_4(fd, player->zone,
 		player->current_quest_id, player->xp);
+		rpg_player_save_phase_5(fd, player->level);
 	} else {
 		rpg_player_save_phase_1(fd, "Player", 10, 90);
 		rpg_player_save_phase_2(fd, 100, 100, 0);
 		rpg_player_save_phase_3(fd, 0, 1, 0);
 		rpg_player_save_phase_4(fd, 1, 0, 0.0);
+		rpg_player_save_phase_5(fd, 1);
 	}
 	close(fd);
 	return (0);

@@ -77,6 +77,7 @@ player_info_t *init_player(game_global_t *game)
 		player->current_quest_id = nx_json_get(json, "current_quest_id")->int_value;
 		player->xp = 0.0;
 		player->xp = nx_json_get(json, "xp")->dbl_value;
+		player->level = nx_json_get(json, "level")->int_value;
 		init_player_sprite(player);
 		init_player_camera(game, player);
 		if (init_player_event(player) == NULL)

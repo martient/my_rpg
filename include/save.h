@@ -30,9 +30,11 @@
 #define PLAYER_SAVE_DIR ",\n\t\"direction\": "
 #define PLAYER_SAVE_Q_ID ",\n\t\"current_quest_id\": "
 #define PLAYER_SAVE_XP ",\n\t\"xp\": "
+#define PLAYER_SAVE_LVL ",\n\t\"level\": "
 #define PLAYER_SAVE_ZONE ",\n\t\"zone\": "
 #define PLAYER_SAVE_END "\n}"
 
 int rpg_inventory_save(inventory_list_t *first);
 int rpg_player_save(player_info_t *player);
+void rpg_player_save_phase_5(int fd, int lvl);
 #endif
