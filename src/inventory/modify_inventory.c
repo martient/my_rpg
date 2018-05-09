@@ -8,9 +8,21 @@
 #include "global.h"
 #include "inventory.h"
 
+int get_limit(game_global_t *game)
+{
+	int limit = 0;
+
+	if (game->tree->invent_size == 1)
+		limit = LIMIT_INVENTORY_1;
+	if (game->tree->invent_size == 2)
+		limit = LIMIT_INVENTORY_2;
+	if (game->tree->invent_size == 3)
+		limit = LIMIT_INVENTORY_3;
+}
+
 int inventory_new_obj(game_global_t *game, char *name)
 {
-	int limit = LIMIT_INVENTORY_1;
+	int limit = get_limit(game);
 
 	if (get_inventory_size(game->invent) >= limit)
 		return (-1);
