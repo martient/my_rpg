@@ -18,10 +18,10 @@ inventory_list_t *init_inventory(void)
 		return (NULL);
 	element->text = NULL;
 	element->spr = NULL;
-	element->name = "item_secret_defence";
+	element->name = NULL;
 	element->desc = NULL;
-	element->quantity = -1;
-	element->id = -1;
+	element->quantity = 0;
+	element->id = 0;
 	element->x = 0;
 	element->y = 0;
 	element->next = NULL;
