@@ -63,6 +63,7 @@ int analyse_event(game_global_t *game)
 		mob = mob->next;
 	}
 	spell_cooldown(game, delta_time);
+	quest_manager(game);
 	poll_events(game);
 	obj_cooldown(game, delta_time);
 	key_event(game, delta_time);

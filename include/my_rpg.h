@@ -200,4 +200,7 @@ int stop_all_music(game_global_t *game);
 int stop_sound(game_global_t *game, char *name);
 int only_play(game_global_t *game, char *name);
 int destroy_sound(game_global_t *game);
+void engine_exit(game_global_t *global);
+int draw_quest_message(game_global_t *game);
+void quest_manager(game_global_t *game);
 #endif /* !MY_RPG_H_ */

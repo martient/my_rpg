@@ -37,12 +37,14 @@ object_info_t *can_interact(object_info_t *map, player_info_t *player, int *type
 	double y = player->y;
 
 	while (map) {
-		if (map->type == 1 && map->visible == 0 && interaction_type_1(map, x, y)) {
+		if (map->type == 1 && map->visible == 0
+		&& interaction_type_1(map, x, y)) {
 			*type = 1;
 			return (map);
 		}
-		if (map->type == 2 && map->visible == 0 && interaction_type_2(map, x, y)) {
-			*type = 2;
+		if (map->type >= 2 && map->visible == 0
+		&& interaction_type_2(map, x, y)) {
+			*type = map->type;
 			return (map);
 		}
 		map = map->next;

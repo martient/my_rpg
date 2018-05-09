@@ -1,12 +1,12 @@
 {
 	"name": "Patrick",
-	"x": 984,
-	"y": 2972,
+	"x": 519,
+	"y": 1422,
 	"health": 100,
 	"max_health": 100,
 	"mana": 100,
 	"skill_point": 0,
 	"inv_size": 1,
-	"direction": 2,
+	"direction": 4,
 	"zone": 1
 }

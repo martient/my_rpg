@@ -37,5 +37,9 @@ int init_sound(game_global_t *game)
 	"./resources/sounds/music/MainMusic.ogg", "main_music");
 	game->sound->sound = add_sound(game->sound->sound, sfx,
 	"./resources/sounds/sfx/eating_noise.ogg", "eating");
+	game->sound->sound = add_sound(game->sound->sound, sfx,
+	"./resources/sounds/sfx/win_sound.ogg", "success");
+	game->sound->sound = add_sound(game->sound->sound, sfx,
+	"./resources/sounds/sfx/error_sound.ogg", "error");
 	return (0);
 }
