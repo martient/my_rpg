@@ -28,6 +28,7 @@
 #define PLAYER_SAVE_SKILL_POINT ",\n\t\"skill_point\": "
 #define PLAYER_SAVE_INV_SIZE ",\n\t\"inv_size\": "
 #define PLAYER_SAVE_DIR ",\n\t\"direction\": "
+#define PLAYER_SAVE_Q_ID ",\n\t\"current_quest_id\": "
 #define PLAYER_SAVE_ZONE ",\n\t\"zone\": "
 #define PLAYER_SAVE_END "\n}"
 

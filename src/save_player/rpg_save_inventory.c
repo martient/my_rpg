@@ -27,7 +27,7 @@ int rpg_inventory_save(inventory_list_t *first)
 	int fd = 0;
 
 	if (!first) {
-		my_putstr("Error: with the value gift\n");
+		my_putstr("Error: with the value gift (inv)\n");
 		return (84);
 	}
 	move = first->first;

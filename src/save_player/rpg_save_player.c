@@ -43,8 +43,10 @@ int direction)
 	rpg_file_put_nbr(fd, direction);
 }
 
-static void rpg_player_save_phase_4(int fd, int zone)
+static void rpg_player_save_phase_4(int fd, int zone, int quest_id)
 {
+	write(fd, PLAYER_SAVE_Q_ID, my_strlen(PLAYER_SAVE_Q_ID));
+	rpg_file_put_nbr(fd, quest_id);
 	write(fd, PLAYER_SAVE_ZONE, my_strlen(PLAYER_SAVE_ZONE));
 	rpg_file_put_nbr(fd, zone);
 	write(fd, PLAYER_SAVE_END, my_strlen(PLAYER_SAVE_END));
@@ -61,12 +63,13 @@ int rpg_player_save(player_info_t *player)
 		player->mana);
 		rpg_player_save_phase_3(fd, player->skill_point,
 		1, player->direction);
-		rpg_player_save_phase_4(fd, player->zone);
+		rpg_player_save_phase_4(fd, player->zone,
+		player->current_quest_id);
 	} else {
 		rpg_player_save_phase_1(fd, "Player", 10, 90);
 		rpg_player_save_phase_2(fd, 100, 100, 0);
 		rpg_player_save_phase_3(fd, 0, 1, 0);
-		rpg_player_save_phase_4(fd, 1);
+		rpg_player_save_phase_4(fd, 1, 0);
 	}
 	close(fd);
 	return (0);
