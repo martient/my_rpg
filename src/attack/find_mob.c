@@ -34,15 +34,19 @@ void analyse_mob(struct mob_info_t *mob, struct player_info_t *player)
 int touched(mob_info_t *mob, player_info_t *player)
 {
 	int health = 0;
+	int value = 0;
+	mob_info_t *first = mob;
 
 	while (mob->next != NULL) {
 		health = mob->health;
 		analyse_mob(mob, player);
 		if (health != mob->health)
-			return (1);
+			value = 1;
+		if (mob->health <= 0)
+			rpg_mob_remove_spe(first, mob);
 		mob = mob->next;
 	}
-	return (0);
+	return (value);
 }
 
 int find_mob(int opt, game_global_t *game)

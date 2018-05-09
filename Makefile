@@ -74,6 +74,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/json_parser/rpg_spawn_json.c \
 		./src/destroy/destroy_map.c		\
 		./src/mobs_link_list/list_mob_init.c \
+		./src/mobs_link_list/list_mob_remove.c	\
 		./src/mobs_data_link_list/list_mob_data_init.c \
 		./src/mobs_data_link_list/list_mob_data_inject.c \
 		./src/mobs_data_link_list/list_mob_data_remove.c \

@@ -15,7 +15,7 @@ void analyse_circle(mob_info_t *mob, player_info_t *player)
 	if (diff_x > -48 && diff_x < 35) {
 		if (diff_y > -48 && diff_y < 35) {
 			mob->health = mob->health - CIRCULAR_ATTACK;
-			printf("Circular");
+			printf("Circular\n");
 		}
 	}
 }
@@ -24,15 +24,19 @@ int all_touched(mob_info_t *mob, player_info_t *player)
 {
 	int health = 0;
 	int value = 0;
+	mob_info_t *first = mob;
 
 	while (mob->next != NULL) {
 		health = mob->health;
 		analyse_circle(mob, player);
 		if (health != mob->health)
 			value = 1;
+		if (mob->health <= 0) {
+			printf("Killed !\n");
+			rpg_mob_remove_spe(first, mob);
+		}
 		mob = mob->next;
 	}
-	printf("%f\n", mob->health);
 	return (value);
 }
 

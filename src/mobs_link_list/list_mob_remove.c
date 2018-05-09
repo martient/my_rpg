@@ -28,9 +28,9 @@ int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs)
 
 	if (!mobs || !first) {
 		my_putstr("Error: value gift is NULL\n");
-		return (-1);<
+		return (-1);
 	} else {
-		remove = mobs
+		remove = mobs;
 		first->first = remove->next;
 		free(remove);
 	}
