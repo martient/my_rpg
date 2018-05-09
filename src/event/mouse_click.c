@@ -53,6 +53,7 @@ int mouse_hover(game_global_t *game, sfMouseMoveEvent event)
 int which_click(game_global_t *game, sfMouseButtonEvent event, items_data_t *item)
 {
 	if (event.button == sfMouseRight) {
+		//inventory_del_obj(game->invent, item->name);
 		return (1);
 	} else {
 		item_activat(game, item);
