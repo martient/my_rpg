@@ -50,6 +50,16 @@ int mouse_hover(game_global_t *game, sfMouseMoveEvent event)
 	return (0);
 }
 
+int which_click(game_global_t *game, sfMouseButtonEvent event, items_data_t *item)
+{
+	if (event.button == sfMouseRight) {
+		return (1);
+	} else {
+		item_activat(game, item);
+	}
+	return (0);
+}
+
 int mouse_click(game_global_t *game, sfMouseButtonEvent event)
 {
 	inventory_t *inventory = game->invent->first;
@@ -63,9 +73,8 @@ int mouse_click(game_global_t *game, sfMouseButtonEvent event)
 		if (pos.x < invent_item->x + 16 &&
 		pos.x > invent_item->x - 16 &&
 		pos.y < invent_item->y + 16 &&
-		pos.y > invent_item->y - 16) {
-			item_activat(game, invent_item);
-		}
+		pos.y > invent_item->y - 16)
+			which_click(game, event, invent_item);
 		inventory = inventory->next;
 		if (inventory == NULL)
 			break;

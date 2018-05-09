@@ -17,5 +17,6 @@ int my_putstr(char *str);
 int my_strcmp(char *str, char *str2);
 char *my_strdup(char const *str);
 int my_strlen(char const *str);
+int my_strcmp(char *str, char *str2);
 int my_put_float(float nb);
 #endif /* !LIB_H_ */

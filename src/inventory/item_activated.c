@@ -13,10 +13,14 @@ int item_eat(game_global_t *game, items_data_t *item)
 {
 	player_info_t *player = game->player;
 	if (player->health < player->max_health) {
-		if ((player->health + (int)item->stats) > player->max_health)
+		printf("%s gives %f\n", item->name ,item->stats);
+		if ((player->health + (int)item->stats) > player->max_health) {
+			printf("!\n");
 			player->health = player->max_health;
-		else
+		} else {
+			printf("@\n");
 			player->health += (int)item->stats;
+		}
 		printf("Added %d hp\n", (int)item->stats);
 		play_sound(game, "eating");
 		inventory_del_obj(game->invent, item->name);
