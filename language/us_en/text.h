@@ -11,4 +11,5 @@
 #define LANGUAGE	"en"
 #define INTERACT	"Press {E} to interact"
 #define INVENTORY	"Inventory"
+#define QUEST		"Quest"
 #endif /* !TEXT_H_ */
