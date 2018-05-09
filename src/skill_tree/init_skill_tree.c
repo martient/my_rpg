@@ -14,5 +14,6 @@ skills_t *init_skill_tree(void)
 	tree->attack_level = 1;
 	tree->life_level = 1;
 	tree->power_level = 1;
+	tree->invent_size = 1;
 	return (tree);
 }
