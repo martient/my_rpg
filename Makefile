@@ -95,6 +95,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/attack/circular_attack.c	\
 		./src/attack/sky_attack.c	\
 		./src/save_player/rpg_save_inventory.c \
+		./src/save_player/rpg_save_player_bis.c \
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\

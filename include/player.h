@@ -34,6 +34,7 @@ typedef struct player_info_t {
 	int moving;
 	int current_quest_id;
 	int xp;
+	int level;
 	interaction_event_t *event;
 	sfSprite *sprite;
 	sfTexture *texture;
