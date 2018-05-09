@@ -19,4 +19,5 @@ char *my_strdup(char const *str);
 int my_strlen(char const *str);
 int my_strcmp(char *str, char *str2);
 int my_put_float(float nb);
+int my_put_file_float(int fd, float nb);
 #endif /* !LIB_H_ */

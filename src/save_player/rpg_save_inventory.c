@@ -31,7 +31,7 @@ int rpg_inventory_save(inventory_list_t *first)
 		return (84);
 	}
 	move = first->first;
-	fd = open(INVENTORY_SAVE_FILE, O_WRONLY | O_CREAT);
+	fd = open(INVENTORY_SAVE_FILE, O_WRONLY | O_CREAT, 0666);
 	write(fd, INVENTORY_SAVE_START, my_strlen(INVENTORY_SAVE_START));
 	while (!move) {
 		rpg_inventory_save_items(move, fd);
