@@ -18,6 +18,7 @@ int get_limit(game_global_t *game)
 		limit = LIMIT_INVENTORY_2;
 	if (game->tree->invent_size == 3)
 		limit = LIMIT_INVENTORY_3;
+	return (limit);
 }
 
 int inventory_new_obj(game_global_t *game, char *name)
