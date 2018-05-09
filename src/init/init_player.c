@@ -74,6 +74,7 @@ player_info_t *init_player(game_global_t *game)
 		player->spell_duration[3] = 0;
 		player->spell_duration[4] = 0;
 		player->speed = 1;
+		player->current_quest_id = nx_json_get(json, "current_quest_id")->int_value;
 		init_player_sprite(player);
 		init_player_camera(game, player);
 		if (init_player_event(player) == NULL)

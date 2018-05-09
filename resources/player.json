@@ -8,5 +8,6 @@
 	"skill_point": 0,
 	"inv_size": 1,
 	"direction": 4,
-	"zone": 1
+	"zone": 1,
+	"current_quest_id": 0
 }
