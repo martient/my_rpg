@@ -6,7 +6,8 @@
 */
 
 #include "global.h"
-#include "my_rpg.h"
+
+int find_mob(int opt, game_global_t *game);
 
 int double_attack(game_global_t *game)
 {

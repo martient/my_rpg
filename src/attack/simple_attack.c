@@ -5,7 +5,9 @@
 ** Function that makes a simple attack
 */
 
-#include "my_rpg.h"
+#include "global.h"
+
+int find_mob(int opt, game_global_t *game);
 
 int simple_attack(struct game_global_t *game)
 {

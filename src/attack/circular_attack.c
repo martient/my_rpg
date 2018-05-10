@@ -5,7 +5,13 @@
 ** Function that calls the circular attack
 */
 
-#include "my_rpg.h"
+#include "global.h"
+#include "mobs.h"
+#include "player.h"
+#include "knight_skills.h"
+
+int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs);
+int find_mob(int opt, game_global_t *game);
 
 void analyse_circle(mob_info_t *mob, player_info_t *player)
 {
@@ -14,9 +20,7 @@ void analyse_circle(mob_info_t *mob, player_info_t *player)
 
 	if (diff_x > -48 && diff_x < 35) {
 		if (diff_y > -48 && diff_y < 35) {
-			player->health = player->health - 20;
 			mob->health = mob->health - CIRCULAR_ATTACK;
-			printf("Circular\n");
 		}
 	}
 }
@@ -32,10 +36,8 @@ int all_touched(mob_first_t *first, player_info_t *player)
 		analyse_circle(mob, player);
 		if (health != mob->health)
 			value = 1;
-		if (mob->health <= 0) {
-			printf("Killed !\n");
+		if (mob->health <= 0)
 			rpg_mob_remove_spe(first, mob);
-		}
 		mob = mob->next;
 	}
 	return (value);

@@ -9,8 +9,8 @@
 
 int upgrade_knight_attacks(struct game_global_t *game)
 {
-	int up = CIRCULAR_ATTACK_COST;
-	int up2 = HAMMER_JUSTICE_COST;
+	int up = DOUBLE_ATTACK_COST;
+	int up2 = CIRCULAR_ATTACK_COST;
 
 	if (game->tree->attack_level == 1) {
 		if (game->player->skill_point < up)

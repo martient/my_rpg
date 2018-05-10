@@ -5,28 +5,35 @@
 ** Function that finds any mob on the map
 */
 
-#include "my_rpg.h"
+#include "global.h"
+#include "mobs.h"
+#include "player.h"
+#include "knight_skills.h"
+
+int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs);
+int all_touched(mob_first_t *first, player_info_t *player);
 
 void analyse_mob(int type, mob_info_t *mob, player_info_t *player)
 {
 	double diff_x = player->x - mob->x;
 	double diff_y = player->y - mob->y;
+	float power = player->power;
 
 	if (player->direction == 1) {
 		if (diff_x > -20 && diff_x < 20 && diff_y > -48 && diff_y < 32)
-			mob->health = mob->health - (NORMAL_ATTACK * type);
+			mob->health = mob->health - (NORMAL_ATTACK * type * power);
 	}
 	if (player->direction == 2) {
 		if (diff_x > -32 && diff_x < 32 && diff_y > -15 && diff_y < 15)
-			mob->health = mob->health - (NORMAL_ATTACK * type);
+			mob->health = mob->health - (NORMAL_ATTACK * type * power);
 	}
 	if (player->direction == 3) {
 		if (diff_x > -32 && diff_x < 32 && diff_y > -15 && diff_y < 15)
-			mob->health = mob->health - (NORMAL_ATTACK * type);
+			mob->health = mob->health - (NORMAL_ATTACK * type * power);
 	}
 	if (player->direction == 4) {
 		if (diff_x > -20 && diff_x < 20 && diff_y > -32 && diff_y < 32)
-			mob->health = mob->health - (NORMAL_ATTACK * type);
+			mob->health = mob->health - (NORMAL_ATTACK * type * power);
 	}
 }
 
