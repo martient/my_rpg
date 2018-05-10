@@ -14,7 +14,7 @@ int check_sound(sound_data_t *sound, sound_info_t *info)
 		return (0);
 	}
 	sfSound_play(sound->sound);
-	sfSound_setVolume(sound->sound,100 *
+	sfSound_setVolume(sound->sound, 100 *
 	((sound->type == music) ? info->music_volume : info->sfx_volume));
 	return (1);
 }

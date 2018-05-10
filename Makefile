@@ -53,14 +53,16 @@ SRC	=	.//engine_lib/text.c	\
 		./src/inventory/item_activated.c	\
 		./src/inventory/get_item_count.c	\
 		./src/inventory/get_item_quantity.c	\
-		./src//init/init_player.c	\
-		./src//init/init.c	\
+		./src/init/init_player.c	\
+		./src/init/init.c	\
+		./src/init/basic_init.c	\
+		./src/init/saved_init.c	\
 		./src/quest/quest_manager.c	\
 		./src/quest/harvest_quest.c	\
-		./src//event/screen_event.c	\
-		./src//event/key_event.c	\
-		./src//event/main_event.c	\
-		./src//event/mouse_click.c	\
+		./src/event/screen_event.c	\
+		./src/event/key_event.c	\
+		./src/event/main_event.c	\
+		./src/event/mouse_click.c	\
 		./src/draw/draw_element.c		\
 		./src/main.c	\
 		./src/ui/draw_ui.c	\
@@ -103,6 +105,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/skill_tree/upgrade_power.c	\
 		./src/save_player/rpg_save_inventory.c \
 		./src/save_player/rpg_save_player_bis.c \
+		./src/save_player/rpg_save_player_default.c	\
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\

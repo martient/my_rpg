@@ -62,7 +62,6 @@ float stats);
 items_data_t *inventory_get_items(items_data_first_t *info,
 char *target);
 int inventory_set_items(items_data_t *info, int x, int y);
-
 int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 	mob_first_t *mobs, player_info_t *player);
 spawn_first_t *rpg_spawn_init(void);
@@ -78,10 +77,7 @@ int rpg_mob_data_remove(mob_data_first_t *first);
 int rpg_mob_data_init_list(mob_data_first_t *first);
 int rpg_json_init_mob_data(mob_data_first_t *first);
 int rpg_mob_data_tex_inject(mob_data_first_t *first, char *pathfile);
-
 mob_first_t *rpg_mob_init(void);
-
-
 game_global_t *__init__(void);
 void engine_exit(game_global_t *global);
 void draw_shim(game_global_t *game, sfColor color);
@@ -130,15 +126,17 @@ int obj_cooldown(game_global_t *game, double sec);
 void draw_rect(game_global_t *game, int infos[4], sfColor color);
 int draw_inventory(game_global_t *game);
 int all_touched(mob_first_t *first, player_info_t *player);
-int double_attack(game_global_t *game);
+int double_(game_global_t *game);
 void start_game_loop(game_global_t *game);
 void pause_screen(game_global_t *game);
+void basic_init(player_info_t *player);
+void saved_init(player_info_t *player, const nx_json* json);
 int event_start_screen(game_global_t *game);
 int event_pause_screen(game_global_t *game);
 int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time);
 int draw_mobs(game_global_t *game);
-int circular_attack(game_global_t *game);
-int simple_attack(struct game_global_t *game);
+int circular_(game_global_t *game);
+int simple_(struct game_global_t *game);
 int find_mob(int opt, game_global_t *game);
 void analyse_mob(int type, mob_info_t *mob, player_info_t *player);
 char *int_to_string(int number);
