@@ -13,7 +13,7 @@ int item_eat(game_global_t *game, items_data_t *item)
 {
 	player_info_t *player = game->player;
 	if (player->health < player->max_health) {
-		printf("%s gives %f\n", item->name ,item->stats);
+		printf("%s gives %f\n", item->name , item->stats);
 		if ((player->health + (int)item->stats) > player->max_health) {
 			printf("!\n");
 			player->health = player->max_health;
@@ -34,6 +34,6 @@ int item_activat(game_global_t *game, items_data_t *item)
 	item_acti_t items_act[3] = {item_eat, NULL, NULL};
 
 	if (items_act[item->type](game, item))
-		printf("Failed\n");
+		write(1, "Failed\n", 7);
 	return (0);
 }

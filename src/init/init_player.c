@@ -54,31 +54,9 @@ player_info_t *init_player(game_global_t *game)
 	const nx_json* json = nx_json_parse(file_content, 0);
 
 	if (json && player) {
-		player->name = "Patrick";
-		player->x = nx_json_get(json, "x")->dbl_value;
-		player->y = nx_json_get(json, "y")->dbl_value;
-		player->zone = nx_json_get(json, "zone")->int_value;
-		player->health = nx_json_get(json, "health")->int_value;
-		player->max_health = nx_json_get(json, "max_health")->int_value;
-		player->mana = nx_json_get(json, "mana")->int_value;
-		player->skill_point = nx_json_get(json, "skill_point")->int_value;
-		player->direction = nx_json_get(json, "direction")->int_value;
-		player->spell_cd[0] = 0;
-		player->spell_cd[1] = 0;
-		player->spell_cd[2] = 0;
-		player->spell_cd[3] = 0;
-		player->spell_cd[4] = 0;
-		player->spell_duration[0] = 0;
-		player->spell_duration[1] = 0;
-		player->spell_duration[2] = 0;
-		player->spell_duration[3] = 0;
-		player->spell_duration[4] = 0;
-		player->speed = 1;
-		player->power = 1;
-		player->current_quest_id = nx_json_get(json, "current_quest_id")->int_value;
+		saved_init(player, json);
+		basic_init(player);
 		player->xp = 0.0;
-		player->xp = nx_json_get(json, "xp")->dbl_value;
-		player->level = nx_json_get(json, "level")->int_value;
 		init_player_sprite(player);
 		init_player_camera(game, player);
 		if (init_player_event(player) == NULL)

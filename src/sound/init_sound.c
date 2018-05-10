@@ -11,7 +11,7 @@
 sound_data_t *add_sound(sound_data_t *head, int type, char *path, char *name)
 {
 	sound_data_t *new_sound = malloc(sizeof(sound_data_t));
-	
+
 	new_sound->sound = sfSound_create();
 	new_sound->buffer = sfSoundBuffer_createFromFile(path);
 	sfSound_setBuffer(new_sound->sound, new_sound->buffer);

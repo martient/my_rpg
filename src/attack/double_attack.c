@@ -9,7 +9,7 @@
 
 int find_mob(int opt, game_global_t *game);
 
-int double_attack(game_global_t *game)
+int double_(game_global_t *game)
 {
 	if (find_mob(2, game) == 1)
 		return (1);

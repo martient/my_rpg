@@ -11,7 +11,9 @@
 #include "lib.h"
 #include "save.h"
 
-static void rpg_player_save_phase_1(int fd, char *name, int x, int y)
+void default_save(int fd);
+
+void rpg_player_save_phase_1(int fd, char *name, int x, int y)
 {
 	write(fd, PLAYER_SAVE_NAME, my_strlen(PLAYER_SAVE_NAME));
 	write(fd, name, my_strlen(name));
@@ -21,7 +23,7 @@ static void rpg_player_save_phase_1(int fd, char *name, int x, int y)
 	rpg_file_put_nbr(fd, y);
 }
 
-static void rpg_player_save_phase_2(int fd, int health, int max_health,
+void rpg_player_save_phase_2(int fd, int health, int max_health,
 int mana)
 {
 	write(fd, PLAYER_SAVE_HEALTH, my_strlen(PLAYER_SAVE_HEALTH));
@@ -32,7 +34,7 @@ int mana)
 	rpg_file_put_nbr(fd, mana);
 }
 
-static void rpg_player_save_phase_3(int fd, int skill_point, int inv_size,
+void rpg_player_save_phase_3(int fd, int skill_point, int inv_size,
 int direction)
 {
 	write(fd, PLAYER_SAVE_SKILL_POINT, my_strlen(PLAYER_SAVE_SKILL_POINT));
@@ -43,7 +45,7 @@ int direction)
 	rpg_file_put_nbr(fd, direction);
 }
 
-static void rpg_player_save_phase_4(int fd, int zone, int quest_id, float xp)
+void rpg_player_save_phase_4(int fd, int zone, int quest_id, float xp)
 {
 	write(fd, PLAYER_SAVE_Q_ID, my_strlen(PLAYER_SAVE_Q_ID));
 	rpg_file_put_nbr(fd, quest_id);
@@ -59,7 +61,8 @@ int rpg_player_save(player_info_t *player)
 
 	fd = open(PLAYER_SAVE_FILE, O_WRONLY | O_CREAT, 0666);
 	if (player) {
-		rpg_player_save_phase_1(fd, player->name, player->x, player->y);
+		rpg_player_save_phase_1(fd, player->name, player->x,
+		player->y);
 		rpg_player_save_phase_2(fd, player->health, player->max_health,
 		player->mana);
 		rpg_player_save_phase_3(fd, player->skill_point,
@@ -68,11 +71,7 @@ int rpg_player_save(player_info_t *player)
 		player->current_quest_id, player->xp);
 		rpg_player_save_phase_5(fd, player->level);
 	} else {
-		rpg_player_save_phase_1(fd, "Player", 10, 90);
-		rpg_player_save_phase_2(fd, 100, 100, 0);
-		rpg_player_save_phase_3(fd, 0, 1, 0);
-		rpg_player_save_phase_4(fd, 1, 0, 0.0);
-		rpg_player_save_phase_5(fd, 1);
+		default_save(fd);
 	}
 	close(fd);
 	return (0);

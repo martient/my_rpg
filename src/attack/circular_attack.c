@@ -43,7 +43,7 @@ int all_touched(mob_first_t *first, player_info_t *player)
 	return (value);
 }
 
-int circular_attack(game_global_t *game)
+int circular_(game_global_t *game)
 {
 	if (find_mob(3, game) == 1)
 		return (1);

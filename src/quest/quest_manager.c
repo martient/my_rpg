@@ -22,7 +22,7 @@ void quest_manager(game_global_t *game)
 
 	// printf("Quest %d\n", player->current_quest_id);
 	if (player->current_quest_id >= 3) {
-		if(quest_list[player->current_quest_id - 2](game) == 0)
+		if (quest_list[player->current_quest_id - 2](game) == 0)
 			player->current_quest_id = 0;
 	} else {
 		player->current_quest_id = 0;

@@ -9,7 +9,7 @@
 
 int find_mob(int opt, game_global_t *game);
 
-int simple_attack(struct game_global_t *game)
+int simple_(struct game_global_t *game)
 {
 	if (find_mob(1, game) == 1) {
 		return (1);
