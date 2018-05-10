@@ -15,6 +15,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include "mobs_data.h"
+#include "mobs.h"
 #include "mobs_attack.h"
 #include "player.h"
 #include "keyboard.h"
@@ -43,62 +45,6 @@
 #ifndef PLAYER_SPEED
 #define PLAYER_SPEED 200
 #endif
-
-typedef struct mob_data_t mob_data_t;
-struct mob_data_t {
-	int id;
-	char *name;
-	float attack_base;
-	float attack_grow;
-	float healt_base;
-	float healt_grow;
-	float armor_base;
-	float armor_grow;
-	float speed;
-	sfTexture *texture;
-	sfSprite *sprite;
-	mob_data_t *next;
-};
-
-typedef struct mob_data_first_t mob_data_first_t;
-struct mob_data_first_t {
-	mob_data_t *first;
-};
-
-typedef struct spawn_mob_t spawn_mob_t;
-struct spawn_mob_t {
-	int id;
-	int y;
-	int x;
-	int type;
-	int rate;
-	int size;
-	spawn_mob_t *next;
-};
-
-typedef struct spawn_first_t spawn_first_t;
-struct spawn_first_t {
-	spawn_mob_t *first;
-};
-
-typedef struct mob_info_t mob_info_t;
-struct mob_info_t {
-	int id;
-	float y;
- 	float x;
-	int type;
-	int agressive;
-	int level;
-	double health;
-	sfSprite *sprite;
-	spawn_mob_t *spawn;
-	mob_info_t *next;
-};
-
-typedef struct mob_first_t mob_first_t;
-struct mob_first_t {
-	mob_info_t *first;
-};
 
 enum player_direction {
 	null_direction,
@@ -177,6 +123,7 @@ void engine_create_text(game_global_t *global, char *text, int info[3], sfColor 
 void player_check_interaction(game_global_t *game);
 int spell_speed(game_global_t *game);
 int speed_spell_clock(game_global_t *game);
+void mobs_basic_attack(game_global_t *game);
 int destroy_map(game_global_t *game);
 int interact_obj(game_global_t *game);
 int obj_cooldown(game_global_t *game, double sec);
