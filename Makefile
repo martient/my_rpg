@@ -94,7 +94,12 @@ SRC	=	.//engine_lib/text.c	\
 		./src/attack/simple_attack.c	\
 		./src/attack/find_mob.c	\
 		./src/attack/circular_attack.c	\
-		./src/attack/sky_attack.c	\
+		./src/attack/double_attack.c	\
+		./src/skill_tree/init_skill_tree.c	\
+		./src/skill_tree/upgrade_attack.c	\
+		./src/skill_tree/upgrade_inventory.c	\
+		./src/skill_tree/upgrade_life.c	\
+		./src/skill_tree/upgrade_power.c	\
 		./src/save_player/rpg_save_inventory.c \
 		./src/save_player/rpg_save_player_bis.c \
 
