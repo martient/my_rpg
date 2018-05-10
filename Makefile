@@ -95,6 +95,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/attack/find_mob.c	\
 		./src/attack/circular_attack.c	\
 		./src/attack/double_attack.c	\
+		./src/mobs_attack/mobs_basic_attack.c	\
 		./src/skill_tree/init_skill_tree.c	\
 		./src/skill_tree/upgrade_attack.c	\
 		./src/skill_tree/upgrade_inventory.c	\
