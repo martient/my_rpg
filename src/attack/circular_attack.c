@@ -14,17 +14,18 @@ void analyse_circle(mob_info_t *mob, player_info_t *player)
 
 	if (diff_x > -48 && diff_x < 35) {
 		if (diff_y > -48 && diff_y < 35) {
+			player->health = player->health - 20;
 			mob->health = mob->health - CIRCULAR_ATTACK;
 			printf("Circular\n");
 		}
 	}
 }
 
-int all_touched(mob_info_t *mob, player_info_t *player)
+int all_touched(mob_first_t *first, player_info_t *player)
 {
 	int health = 0;
 	int value = 0;
-	mob_info_t *first = mob;
+	mob_info_t *mob = first->first;
 
 	while (mob->next != NULL) {
 		health = mob->health;
@@ -42,7 +43,7 @@ int all_touched(mob_info_t *mob, player_info_t *player)
 
 int circular_attack(game_global_t *game)
 {
-	if (find_mob(2, game) == 1)
+	if (find_mob(3, game) == 1)
 		return (1);
 	return (0);
 }

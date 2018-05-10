@@ -5,6 +5,7 @@
 ** Function that checks if you can add or remove something in the inventory
 */
 
+#include "skill_tree.h"
 #include "global.h"
 #include "inventory.h"
 

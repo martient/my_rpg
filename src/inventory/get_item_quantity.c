@@ -7,6 +7,7 @@
 
 #include "global.h"
 #include "inventory.h"
+#include "lib.h"
 
 int get_item_quantity(game_global_t *game, char *item)
 {

@@ -48,12 +48,9 @@ int add_inventory(inventory_list_t *ivnt, char *name)
 
 int del_beginning(inventory_list_t *ivnt, inventory_t *del_list)
 {
-	inventory_t *to_delete;
-
 	if (del_list->quantity == 1) {
-		to_delete = ivnt->first;
-		ivnt->first = ivnt->first->next;
-		free(to_delete);
+		del_list->quantity = 0;
+		del_list->name = NULL;
 	} else {
 		del_list->quantity = del_list->quantity - 1;
 	}
