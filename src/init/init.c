@@ -50,6 +50,7 @@ game_global_t *__init__(void)
 	init_game(game);
 	init_screen(game);
 	game->invent = init_inventory();
+	game->tree = init_skill_tree();
 	if (game->invent == NULL)
 		return (NULL);
 	if (init_player(game) == NULL)
