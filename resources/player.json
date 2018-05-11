@@ -1,13 +1,15 @@
 {
 	"name": "Patrick",
-	"x": 519,
-	"y": 1422,
+	"x": 1020,
+	"y": 734,
 	"health": 100,
 	"max_health": 100,
 	"mana": 100,
 	"skill_point": 0,
 	"inv_size": 1,
-	"direction": 4,
+	"direction": 1,
+	"current_quest_id": 0,
+	"xp": 0,
 	"zone": 1,
-	"current_quest_id": 0
+	"level": 0
 }
