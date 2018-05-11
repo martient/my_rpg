@@ -26,5 +26,4 @@ void draw_player(game_global_t *game)
 	if (anim > 2)
 		anim = 0;
 	game->player->moving = 0;
-	// player_cam(game);
 }

@@ -16,11 +16,11 @@ void spell_cooldown(game_global_t *game, double delta_time)
 
 	for (int i = 0; i < 5; i++) {
 		if (player->spell_cd[i] > 0)
-			player->spell_cd[i] -= sec * 4;
+			player->spell_cd[i] -= sec;
 		if (player->spell_cd[i] < 0)
 			player->spell_cd[i] = 0;
 		if (player->spell_duration[i] > 0)
-			player->spell_duration[i] -= sec * 4;
+			player->spell_duration[i] -= sec;
 		if (player->spell_duration[i] < 0)
 			player->spell_duration[i] = 0;
 		speed_spell_clock(game);

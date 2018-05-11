@@ -12,9 +12,11 @@ int draw_start_button(game_global_t *game)
 	sfTexture *texture;
 	sfSprite *sprite;
 	sfVector2f scale = {2 * (game->width / 800), 2};
-	sfVector2f position = {game->width / 2 - (54 * scale.x), game->height / 2};
+	sfVector2f position =
+	{game->width / 2 - (54 * scale.x), game->height / 2};
 
-	texture = sfTexture_createFromFile("./resources/ui/start_btn.png", NULL);
+	texture =
+	sfTexture_createFromFile("./resources/ui/start_btn.png", NULL);
 	sprite = sfSprite_create();
 	if (sprite == NULL)
 		return (1);
@@ -45,7 +47,8 @@ void start_game_loop(game_global_t *game)
 	sfRenderWindow_setFramerateLimit(game->window, 60);
 	while (sfRenderWindow_isOpen(game->window)) {
 		event_start_screen(game);
-		if (sfClock_getElapsedTime(draw_clock).microseconds / 1000000.0 > 0.1) {
+		if (sfClock_getElapsedTime(draw_clock).microseconds
+		/ 1000000.0 > 0.1) {
 			draw_start_screen(game);
 			sfClock_restart(draw_clock);
 		}

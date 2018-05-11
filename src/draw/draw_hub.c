@@ -27,7 +27,6 @@ void draw__(game_global_t *game)
 	draw_mobs(game);
 	if (game->inventory_show == 1)
 		draw_inventory(game);
-	// draw_quest_message(game);
 	player_cam(game);
 	sfRenderWindow_display(game->window);
 }

@@ -43,7 +43,7 @@
 #endif
 
 #ifndef PLAYER_SPEED
-#define PLAYER_SPEED 200
+#define PLAYER_SPEED 150
 #endif
 
 enum player_direction {

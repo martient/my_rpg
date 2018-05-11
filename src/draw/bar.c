@@ -28,6 +28,15 @@ static int get_bar_size(int max, int percentage)
 	return (val);
 }
 
+static void bar_destroy(sfUint8 *pixels_front, sfUint8 *pixels_back,
+sfTexture *bar_texture, sfSprite *bar_sprite)
+{
+	free(pixels_front);
+	free(pixels_back);
+	sfSprite_destroy(bar_sprite);
+	sfTexture_destroy(bar_texture);
+}
+
 // INFO:
 // 0 width
 // 1 height
@@ -45,13 +54,12 @@ void draw_bar(game_global_t *game, sfColor colors[2], int *infos)
 		engine_exit(game);
 	color_bar(pixels_back, colors[0], infos[0], infos[1]);
 	color_bar(pixels_front, colors[1], front_width, infos[1]);
-	sfTexture_updateFromPixels(bar_texture, pixels_back, infos[0], infos[1], 0, 0);
-	sfTexture_updateFromPixels(bar_texture, pixels_front, front_width, infos[1], 0, 0);
+	sfTexture_updateFromPixels(bar_texture,
+	pixels_back, infos[0], infos[1], 0, 0);
+	sfTexture_updateFromPixels(bar_texture,
+	pixels_front, front_width, infos[1], 0, 0);
 	sfSprite_setTexture(bar_sprite, bar_texture, sfTrue);
 	sfSprite_setPosition(bar_sprite, pos);
 	sfRenderWindow_drawSprite(game->window, bar_sprite, NULL);
-	free(pixels_front);
-	free(pixels_back);
-	sfSprite_destroy(bar_sprite);
-	sfTexture_destroy(bar_texture);
+	bar_destroy(pixels_front, pixels_back, bar_texture, bar_sprite);
 }
