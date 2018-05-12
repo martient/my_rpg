@@ -12,8 +12,9 @@ int rpg_json_map_init(object_first_t *info)
 	char *read_file = rpg_map_load("./resources/obj.json");
 	const nx_json* json;
 	const nx_json* map;
+
 	if (!read_file) {
-		my_putstr("Error: File not found\n");
+		my_putstr("Error: File obj.json not found\n");
 		return (-1);
 	}
 	json = nx_json_parse(read_file, 0);

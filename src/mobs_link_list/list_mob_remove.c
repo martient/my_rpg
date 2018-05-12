@@ -7,6 +7,23 @@
 
 #include "my_rpg.h"
 
+static int rpg_mob_remove_previoux(mob_first_t *first, int id)
+{
+	mob_info_t *tmp = NULL;
+
+	if (!first)
+		return (84);
+	tmp = first->first;
+	while (tmp != NULL) {
+		if (tmp->id + 1 == id) {
+			tmp->next = tmp->next->next;
+			break;
+		}
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
 int rpg_mob_remove(mob_first_t *first)
 {
 	mob_info_t *remove = NULL;
@@ -31,7 +48,7 @@ int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs)
 		return (-1);
 	} else {
 		remove = mobs;
-		first->first = remove->next;
+		rpg_mob_remove_previoux(first, remove->id);
 		free(remove);
 	}
 	return (0);
