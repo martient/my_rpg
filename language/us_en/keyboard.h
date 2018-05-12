@@ -15,5 +15,7 @@
 #define DOWN_KEY	(sfKeyS)
 #define LEFT_KEY	(sfKeyA)
 #define RIGHT_KEY	(sfKeyD)
+#define QUEST_KEY	(sfKeyQ)
+#define INVENTORY_KEY	(sdKeyI)
 
 #endif /* !KEYBOARD_H_ */

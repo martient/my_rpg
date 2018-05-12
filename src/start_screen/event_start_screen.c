@@ -24,7 +24,7 @@ int event_start_screen(game_global_t *game)
 
 	while (sfRenderWindow_pollEvent(game->window, &event)) {
 		if (event.type == sfEvtClosed) {
-			sfRenderWindow_close(game->window);
+			exit_game(game);
 			return (0);
 		}
 		if (event.type == sfEvtResized)

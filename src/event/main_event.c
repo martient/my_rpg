@@ -15,6 +15,12 @@ void keyboard_press_event(game_global_t *game, sfKeyEvent event)
 		pause_screen(game);
 	if (event.code == sfKeyE)
 		interact_obj(game);
+	if (event.code == QUEST_KEY) {
+		if (game->player->state == 2 || game->player->state == 0)
+			game->player->state = game->player->current_quest_id;
+		else
+			game->player->state = 0;
+	}
 }
 
 void reset_quest_draw(game_global_t *game)
