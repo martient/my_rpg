@@ -39,6 +39,7 @@ int all_touched(mob_first_t *first, player_info_t *player)
 		if (mob->health <= 0) {
 			rpg_mob_remove_spe(first, mob);
 			fallen_killed_monster(player, 1);
+			player->xp = player->xp + 50;
 		}
 		mob = mob->next;
 	}
