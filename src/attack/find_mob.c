@@ -48,8 +48,10 @@ int touched(int type, mob_first_t *first, player_info_t *player)
 		analyse_mob(type, mob, player);
 		if (health != mob->health)
 			value = 1;
-		if (mob->health <= 0)
+		if (mob->health <= 0) {
 			rpg_mob_remove_spe(first, mob);
+			fallen_killed_monster(player, 1);
+		}
 		mob = mob->next;
 	}
 	return (value);
