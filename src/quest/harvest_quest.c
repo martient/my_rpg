@@ -9,8 +9,7 @@
 
 int is_harvest_done(game_global_t *game)
 {
-	printf("Checking harvest_qust\n");
-	printf("Current status: %d, %d, %d\n",
+	printf("%d, %d, %d\n",
 	get_item_quantity(game, "Carrots"),
 	get_item_quantity(game, "Mushrooms"),
 	get_item_quantity(game, "Egg Plant"));
@@ -21,6 +20,26 @@ int is_harvest_done(game_global_t *game)
 	if (get_item_quantity(game, "Egg Plant") < 3)
 		return (1);
 	play_sound(game, "success");
-	printf("Quest Done\n");
+	return (0);
+}
+
+int harvest_draw_quest(game_global_t *game)
+{
+	sfTexture *texture;
+	sfSprite *sprite;
+	sfVector2f pos = {game->player->x - (game->width / 3),
+	game->player->y - (game->height / 3)};
+
+	texture = sfTexture_createFromFile(harvest_quest_url, NULL);
+	if (texture == NULL) {
+		my_putstr("Failed to get quest ressources\n");
+		return (1);
+	}
+	sprite = sfSprite_create();
+	sfSprite_setTexture(sprite, texture, sfTrue);
+	sfSprite_setPosition(sprite, pos);
+	sfRenderWindow_drawSprite(game->window, sprite, NULL);
+	sfSprite_destroy(sprite);
+	sfTexture_destroy(texture);
 	return (0);
 }

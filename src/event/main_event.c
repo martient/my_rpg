@@ -25,6 +25,12 @@ void mouse_zoom(game_global_t *game, sfMouseWheelScrollEvent event)
 		game->zoom -= 0.5;
 }
 
+void reset_quest_draw(game_global_t *game)
+{
+	if (game->player->state != 0 && game->player->state != 2)
+		game->player->state = 0;
+}
+
 int poll_events(game_global_t *game)
 {
 	sfEvent event;
@@ -43,6 +49,8 @@ int poll_events(game_global_t *game)
 			keyboard_press_event(game, event.key);
 		if (event.type == sfEvtMouseWheelScrolled)
 			mouse_zoom(game, event.mouseWheelScroll);
+		if (event.type == sfEvtMouseButtonPressed)
+			reset_quest_draw(game);
 		if (game->inventory_show == 1 && event.type == sfEvtMouseMoved)
 			mouse_hover(game, event.mouseMove);
 		if (game->inventory_show == 1 && event.type == sfEvtMouseButtonPressed)

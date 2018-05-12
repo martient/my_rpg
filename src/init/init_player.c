@@ -44,6 +44,7 @@ static player_info_t *init_player_event(player_info_t *player)
 	event->type = 0;
 	event->obj = NULL;
 	player->event = event;
+	player->state = 0;
 	return (player);
 }
 
