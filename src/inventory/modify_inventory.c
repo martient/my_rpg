@@ -26,7 +26,6 @@ int inventory_new_obj(game_global_t *game, char *name)
 {
 	int limit = get_limit(game);
 
-	printf("invent\n");
 	if (get_inventory_size(game->invent) >= limit)
 		return (-1);
 	else
