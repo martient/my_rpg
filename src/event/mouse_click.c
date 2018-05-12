@@ -72,7 +72,7 @@ int mouse_click(game_global_t *game, sfMouseButtonEvent event)
 
 	game->invent_item = NULL;
 	pos = screen_to_world_click(game, event);
-	while (inventory != NULL) {
+	while (inventory->name != NULL) {
 		invent_item = inventory_get_items(game->items_data, inventory->name);
 		if (pos.x < invent_item->x + 16 &&
 		pos.x > invent_item->x - 16 &&
