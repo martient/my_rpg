@@ -1,8 +1,5 @@
 {
 	"items": [
-	],
-}	"yolo": 10,
-	"items": [
-
+		{ "name": "Egg Plant", "amount": 5},
 	],
 }
