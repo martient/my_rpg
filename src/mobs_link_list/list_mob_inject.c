@@ -51,6 +51,9 @@ int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 mob_first_t *mobs, player_info_t *player)
 {
 	spawn_mob_t *spawn_tmp = NULL;
+	static int max = 100;
+	static int min = 0;
+	int mob_rand = 0;
 
 	if (!spawn || !data || !mobs || !player) {
 		my_putstr("Error: one value gift is NULL\n");
@@ -58,12 +61,10 @@ mob_first_t *mobs, player_info_t *player)
 	}
 	spawn_tmp = spawn->first;
 	while (spawn_tmp->next != NULL) {
-		if (((int)player->x / 32 >= (int)spawn_tmp->x - 10 &&
-		(int)player->x / 32 <= (int)spawn_tmp->x + 10) &&
-		((int)player->y / 32 >= (int)spawn_tmp->y - 10 &&
-		(int)player->y / 32 <= (int)spawn_tmp->y + 10)) {
+		srand(time(NULL));
+		mob_rand = (rand() % (max - min + 1)) + min;
+		if (spawn_tmp->rate >= mob_rand) {
 			rpg_mobs_inject(mobs, data, spawn_tmp);
-			break;
 		}
 		spawn_tmp = spawn_tmp->next;
 	}
