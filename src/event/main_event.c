@@ -53,7 +53,8 @@ int poll_events(game_global_t *game)
 			reset_quest_draw(game);
 		if (game->inventory_show == 1 && event.type == sfEvtMouseMoved)
 			mouse_hover(game, event.mouseMove);
-		if (game->inventory_show == 1 && event.type == sfEvtMouseButtonPressed)
+		if (game->inventory_show == 1 &&
+		event.type == sfEvtMouseButtonPressed)
 			mouse_click(game, event.mouseButton);
 	}
 	return (0);
