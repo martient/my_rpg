@@ -15,6 +15,12 @@ int is_harvest_done(game_global_t *game)
 		return (1);
 	if (get_item_quantity(game, "Egg Plant") < 3)
 		return (1);
+	for (int i = 0; i < 5; i++)
+		inventory_del_obj(game->invent, "Carrots");
+	for (int i = 0; i < 2; i++)
+		inventory_del_obj(game->invent, "Mushrooms");
+	for (int i = 0; i < 3; i++)
+		inventory_del_obj(game->invent, "Egg Plant");
 	play_sound(game, "success");
 	return (0);
 }
