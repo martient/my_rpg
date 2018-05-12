@@ -164,4 +164,8 @@ void quest_manager(game_global_t *game);
 int is_harvest_done(game_global_t *game);
 int no_quest(game_global_t *game);
 int harvest_draw_quest(game_global_t *game);
+void quest_draw_manager(game_global_t *game);
+int fallen_draw_quest(game_global_t *game);
+int is_fallen_done(game_global_t *game);
+int fallen_killed_monster(game_global_t *game, int reset);
 #endif /* !MY_RPG_H_ */

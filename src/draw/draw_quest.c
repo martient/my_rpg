@@ -11,7 +11,8 @@ typedef int (*quests_t)(game_global_t *);
 
 void quest_draw_manager(game_global_t *game)
 {
-	quests_t quest_list[3] = {no_quest, harvest_draw_quest, no_quest};
+	quests_t quest_list[3] = {no_quest,
+	harvest_draw_quest, fallen_draw_quest};
 
 	if (game->player->state == 0)
 		game->player->state = 2;

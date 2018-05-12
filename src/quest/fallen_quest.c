@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-int fallen_killed_monster(game_global_t *game, int rest)
+int fallen_killed_monster(game_global_t *game, int reset)
 {
 	int static count = 0;
 

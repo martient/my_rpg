@@ -12,7 +12,6 @@ typedef int (*quests_t)(game_global_t *);
 int interact_obj(game_global_t *game)
 {
 	player_info_t *player = game->player;
-	quests_t quest_list[3] = {no_quest, harvest_draw_quest, no_quest};
 
 	if (player->event->type == 2) {
 		inventory_new_obj(game, game->player->event->obj->name);
