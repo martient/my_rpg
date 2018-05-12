@@ -11,27 +11,36 @@ int draw_play_button(game_global_t *game)
 {
 	sfTexture *texture;
 	sfSprite *sprite;
-	// sfVector2f scale = {2 * (game->width / 800), 2};
-	sfVector2f position = {game->width / 2, game->height / 2};
+	sfVector2f scale = {2 * (game->width / 800), 2 * (game->height / 600)};
+	sfVector2f position =
+	{(game->width / 2) - (108 * scale.x / 2), (game->height / 2)
+	- (48 * scale.y / 2)};
 
-	texture = sfTexture_createFromFile("./resources/ui/start_btn.png", NULL);
+	texture = sfTexture_createFromFile("./resources/ui/start_btn.png",
+	NULL);
 	sprite = sfSprite_create();
 	sfSprite_setTexture(sprite, texture, sfTrue);
 	sfSprite_setPosition(sprite, position);
-	// sfSprite_setScale(sprite, scale);
+	sfSprite_setScale(sprite, scale);
 	sfRenderWindow_drawSprite(game->window, sprite, NULL);
 	return (0);
 }
 
+static void player_cam_reset(game_global_t *game)
+{
+	sfFloatRect cam = {0, 0, game->width, game->height};
+
+	game->player->camera =  sfView_createFromRect(cam);
+	sfView_reset(game->player->camera, cam);
+	sfRenderWindow_setView(game->window, game->player->camera);
+}
+
 int draw_pause_screen(game_global_t *game)
 {
-	float x = (float)game->width / 2;
-	float y = (float)game->height / 2;
-	int info[3] = {x, y, 32};
-
 	sfRenderWindow_clear(game->window, sfBlack);
-	engine_create_text(game, "PAUSE", info, sfRed);
 	draw_play_button(game);
+	draw_music_button(game);
+	draw_sfx_button(game);
 	sfRenderWindow_display(game->window);
 	return (0);
 }
@@ -42,6 +51,7 @@ void pause_screen(game_global_t *game)
 	sfRenderWindow_setFramerateLimit(game->window, 60);
 	while (sfRenderWindow_isOpen(game->window)) {
 		event_pause_screen(game);
+		player_cam_reset(game);
 		draw_pause_screen(game);
 	}
 }

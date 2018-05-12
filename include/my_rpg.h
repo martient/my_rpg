@@ -153,6 +153,7 @@ int mouse_click(game_global_t *game, sfMouseButtonEvent event);
 int mouse_hover(game_global_t *game, sfMouseMoveEvent event);
 int item_activat(game_global_t *game, items_data_t *item);
 int init_sound(game_global_t *game);
+void update_sound(game_global_t *game);
 int play_sound(game_global_t *game, char *name);
 int stop_all_music(game_global_t *game);
 int stop_sound(game_global_t *game, char *name);
