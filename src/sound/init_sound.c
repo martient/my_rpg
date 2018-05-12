@@ -41,5 +41,9 @@ int init_sound(game_global_t *game)
 	"./resources/sounds/sfx/win_sound.ogg", "success");
 	game->sound->sound = add_sound(game->sound->sound, sfx,
 	"./resources/sounds/sfx/error_sound.ogg", "error");
+	game->sound->sound = add_sound(game->sound->sound, sfx,
+	"./resources/sounds/sfx/simple_sword.ogg", "sword");
+	game->sound->sound = add_sound(game->sound->sound, sfx,
+	"./resources/sounds/sfx/double_sword.ogg", "d_sword");
 	return (0);
 }
