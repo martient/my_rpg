@@ -26,7 +26,7 @@ int draw_play_button(game_global_t *game)
 	return (0);
 }
 
-static void player_cam_reset(game_global_t *game)
+void player_cam_reset(game_global_t *game)
 {
 	sfFloatRect cam = {0, 0, game->width, game->height};
 

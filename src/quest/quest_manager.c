@@ -9,7 +9,6 @@
 
 typedef int (*quests_t)(game_global_t *);
 
-
 int no_quest(game_global_t *game)
 {
 	return (0);
