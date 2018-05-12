@@ -9,10 +9,6 @@
 
 int is_harvest_done(game_global_t *game)
 {
-	printf("%d, %d, %d\n",
-	get_item_quantity(game, "Carrots"),
-	get_item_quantity(game, "Mushrooms"),
-	get_item_quantity(game, "Egg Plant"));
 	if (get_item_quantity(game, "Carrots") < 5)
 		return (1);
 	if (get_item_quantity(game, "Mushrooms") < 2)
