@@ -22,15 +22,8 @@ sound_data_t *add_sound(sound_data_t *head, int type, char *path, char *name)
 	return (new_sound);
 }
 
-int init_sound(game_global_t *game)
+void get_sounds(game_global_t *game)
 {
-	game->sound = malloc(sizeof(sound_data_t));
-
-	if (game->sound == NULL)
-		return (1);
-	game->sound->music_volume = 1;
-	game->sound->sfx_volume = 1;
-	game->sound->sound = NULL;
 	game->sound->sound = add_sound(game->sound->sound, music,
 	"./resources/sounds/music/IntroMusic.ogg", "main_menu");
 	game->sound->sound = add_sound(game->sound->sound, music,
@@ -45,5 +38,17 @@ int init_sound(game_global_t *game)
 	"./resources/sounds/sfx/simple_sword.ogg", "sword");
 	game->sound->sound = add_sound(game->sound->sound, sfx,
 	"./resources/sounds/sfx/double_sword.ogg", "d_sword");
+}
+
+int init_sound(game_global_t *game)
+{
+	game->sound = malloc(sizeof(sound_data_t));
+
+	if (game->sound == NULL)
+		return (1);
+	game->sound->music_volume = 1;
+	game->sound->sfx_volume = 1;
+	game->sound->sound = NULL;
+	get_sounds(game);
 	return (0);
 }

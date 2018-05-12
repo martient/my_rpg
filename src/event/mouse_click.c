@@ -37,9 +37,8 @@ int mouse_hover(game_global_t *game, sfMouseMoveEvent event)
 	game->invent_item = NULL;
 	pos = screen_to_world(game, event);
 	while (inventory->name != NULL) {
-		invent_item = inventory_get_items(game->items_data, inventory->name);
-		if (invent_item == NULL)
-			return (1);
+		invent_item =
+		inventory_get_items(game->items_data, inventory->name);
 		if (pos.x < invent_item->x + 16 &&
 		pos.x > invent_item->x - 16 &&
 		pos.y < invent_item->y + 16 &&
@@ -52,7 +51,8 @@ int mouse_hover(game_global_t *game, sfMouseMoveEvent event)
 	return (0);
 }
 
-int which_click(game_global_t *game, sfMouseButtonEvent event, items_data_t *item)
+int which_click(game_global_t *game, sfMouseButtonEvent event,
+items_data_t *item)
 {
 	if (event.button == sfMouseRight) {
 		inventory_del_obj(game->invent, item->name);
@@ -73,7 +73,8 @@ int mouse_click(game_global_t *game, sfMouseButtonEvent event)
 	game->invent_item = NULL;
 	pos = screen_to_world_click(game, event);
 	while (inventory->name != NULL) {
-		invent_item = inventory_get_items(game->items_data, inventory->name);
+		invent_item =
+		inventory_get_items(game->items_data, inventory->name);
 		if (pos.x < invent_item->x + 16 &&
 		pos.x > invent_item->x - 16 &&
 		pos.y < invent_item->y + 16 &&
