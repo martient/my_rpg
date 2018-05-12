@@ -93,6 +93,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/pause_screen/music_manager.c	\
 		./src/pause_screen/sfx_manager.c	\
 		./src/json_parser/rpg_items_json.c \
+		./src/exit_game/exit.c			\
 		./src/items_data_link_list/init_all_items_data_link_list.c \
 		./src/items_data_link_list/items_data_init.c \
 		./src/items_data_link_list/items_data_inject.c \
