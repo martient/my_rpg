@@ -107,6 +107,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/save_player/rpg_save_inventory.c \
 		./src/save_player/rpg_save_player_bis.c \
 		./src/save_player/rpg_save_player_default.c	\
+		./src/json_parser/rpg_player_inventory_json.c \
 
 TEST_SRC=	.//my_lib/remove_dup.c	\
 		.//my_lib/my_putstr.c	\

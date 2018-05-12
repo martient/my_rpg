@@ -72,6 +72,7 @@ game_global_t *__init__(void)
 		return (NULL);
 	if (init_sound(game))
 		return (NULL);
+	rpg_json_init_inventory_data(game);
 	printf("Game finised loading (%lf ms)\n",
 	sfClock_getElapsedTime(clock).microseconds * 0.001);
 	sfClock_destroy(clock);

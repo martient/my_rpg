@@ -15,7 +15,7 @@ void rpg_player_save_phase_5(int fd, int lvl);
 
 void default_save(int fd)
 {
-	rpg_player_save_phase_1(fd, "Player", 10, 90);
+	rpg_player_save_phase_1(fd, "Player", 86, 3113);
 	rpg_player_save_phase_2(fd, 100, 100, 0);
 	rpg_player_save_phase_3(fd, 0, 1, 0);
 	rpg_player_save_phase_4(fd, 1, 0, 0.0);

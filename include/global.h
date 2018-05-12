@@ -36,5 +36,6 @@ typedef struct game_global_t {
 } game_global_t;
 
 game_global_t *__init__(void);
+int rpg_json_init_inventory_data(game_global_t *global);
 
 #endif /* !GLOBAL_H_ */
