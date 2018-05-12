@@ -16,8 +16,8 @@ int rpg_spawn_inject(spawn_first_t *first, int *data)
 		return (-1);
 	}
 	new->id = first->first->id + 1;
-	new->y = data[0];
-	new->x = data[1];
+	new->y = data[1];
+	new->x = data[0];
 	new->type = data[2];
 	new->rate = data[3];
 	new->size = data[4];
