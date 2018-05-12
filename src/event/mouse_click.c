@@ -36,8 +36,10 @@ int mouse_hover(game_global_t *game, sfMouseMoveEvent event)
 
 	game->invent_item = NULL;
 	pos = screen_to_world(game, event);
-	while (inventory != NULL) {
+	while (inventory->name != NULL) {
 		invent_item = inventory_get_items(game->items_data, inventory->name);
+		if (invent_item == NULL)
+			return (1);
 		if (pos.x < invent_item->x + 16 &&
 		pos.x > invent_item->x - 16 &&
 		pos.y < invent_item->y + 16 &&
@@ -54,6 +56,7 @@ int which_click(game_global_t *game, sfMouseButtonEvent event, items_data_t *ite
 {
 	if (event.button == sfMouseRight) {
 		inventory_del_obj(game->invent, item->name);
+		game->player->xp += OBJ_DISCARD_EXP;
 		return (1);
 	} else {
 		item_activat(game, item);

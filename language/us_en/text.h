@@ -12,4 +12,5 @@
 #define INTERACT	"Press {E} to interact"
 #define INVENTORY	"Inventory"
 #define QUEST		"Quest"
+#define harvest_quest_url "./resources/sprites/quests/us/harvest_quest_us.png"
 #endif /* !TEXT_H_ */
