@@ -39,6 +39,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/draw/draw_player.c	\
 		./src/draw/draw_inventory.c	\
 		./src/draw/draw_spell_box.c	\
+		./src/draw/draw_quest.c		\
 		./src/json_parser/rpg_json_reader.c	\
 		./src/json_parser/rpg_map_json.c	\
 		./src/link_list/rpg_init_object_list.c \

@@ -50,6 +50,10 @@
 #define OBJ_DISCARD_EXP 50
 #endif
 
+#ifndef QUEST_COMPLETED
+#define QUEST_COMPLETED 500
+#endif
+
 enum player_direction {
 	null_direction,
 	down,

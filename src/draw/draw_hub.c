@@ -28,5 +28,6 @@ void draw__(game_global_t *game)
 	if (game->inventory_show == 1)
 		draw_inventory(game);
 	player_cam(game);
+	quest_draw_manager(game);
 	sfRenderWindow_display(game->window);
 }

@@ -22,9 +22,6 @@ int interact_obj(game_global_t *game)
 	if (player->event->type >= 3) {
 		player->current_quest_id = player->event->type;
 		player->state = player->current_quest_id;
-	} else {
-		player->state = 0;
-		player->current_quest_id = 0;
 	}
 	return (0);
 }
