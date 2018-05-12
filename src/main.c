@@ -29,10 +29,7 @@ int main(int ac, char *argv[], char *env[])
 	if (game == NULL)
 		return (84);
 	srand(time(NULL));
-	if (ac > 1)
-		game_loop(game);
-	else
-		start_game_loop(game);
+	start_game_loop(game);
 	free(game->player);
 	destroy_map(game);
 	sfRenderWindow_destroy(game->window);
