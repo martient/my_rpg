@@ -1,5 +1,9 @@
 {
 	"nb_mobs": 100,
 	"list_spawn": [
-		{ "y": 12, "x": 10, "rate": 100, "type": 0, "size": 5}	]
+		{ "y": 1, "x": 1, "rate": 100, "type": 0, "size": 1},
+		{ "y": 10, "x": 10, "rate": 100, "type": 0, "size": 1},
+		{ "y": 10, "x": 45, "rate": 100, "type": 0, "size": 5},
+		{ "y": 25, "x": 55, "rate": 100, "type": 0, "size": 5},
+		{ "y": 5, "x": 85, "rate": 100, "type": 0, "size": 5}	]
 }

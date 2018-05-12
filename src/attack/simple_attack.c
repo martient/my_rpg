@@ -8,6 +8,7 @@
 #include "global.h"
 
 int find_mob(int opt, game_global_t *game);
+int play_sound(game_global_t *game, char *name);
 
 int simple_(struct game_global_t *game)
 {

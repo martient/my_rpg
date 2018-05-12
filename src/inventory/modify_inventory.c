@@ -9,6 +9,8 @@
 #include "global.h"
 #include "inventory.h"
 
+int play_sound(game_global_t *game, char *name);
+
 int get_limit(game_global_t *game)
 {
 	int limit = 0;
@@ -26,9 +28,10 @@ int inventory_new_obj(game_global_t *game, char *name)
 {
 	int limit = get_limit(game);
 
-	if (get_inventory_size(game->invent) >= limit)
+	if (get_inventory_size(game->invent) >= limit) {
+		play_sound(game, "error");
 		return (-1);
-	else
+	} else
 		add_inventory(game->invent, name);
 	return (0);
 }

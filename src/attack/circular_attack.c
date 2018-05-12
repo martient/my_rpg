@@ -12,6 +12,7 @@
 
 int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs);
 int find_mob(int opt, game_global_t *game);
+int play_sound(game_global_t *game, char *name);
 
 void analyse_circle(mob_info_t *mob, player_info_t *player)
 {
