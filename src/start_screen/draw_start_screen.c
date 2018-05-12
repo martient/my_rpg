@@ -43,7 +43,7 @@ void draw_start_screen(game_global_t *game)
 	sfRenderWindow_clear(game->window, sfBlack);
 	player_cam_reset(game);
 	engine_create_text(game, GAME_NAME, info, sfRed);
-	draw_play_button(game);
+	draw_start_button(game);
 	sfRenderWindow_display(game->window);
 }
 
