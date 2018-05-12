@@ -26,6 +26,7 @@ typedef struct player_info_t {
 	int health;
 	int max_health;
 	float power;
+	int state;
 	int mana;
 	double spell_duration[5];
 	double spell_cd[5];

@@ -46,6 +46,10 @@
 #define PLAYER_SPEED 150
 #endif
 
+#ifndef OBJ_DISCARD_EXP
+#define OBJ_DISCARD_EXP 50
+#endif
+
 enum player_direction {
 	null_direction,
 	down,
@@ -153,4 +157,7 @@ int destroy_sound(game_global_t *game);
 void engine_exit(game_global_t *global);
 int draw_quest_message(game_global_t *game);
 void quest_manager(game_global_t *game);
+int is_harvest_done(game_global_t *game);
+int no_quest(game_global_t *game);
+int harvest_draw_quest(game_global_t *game);
 #endif /* !MY_RPG_H_ */
