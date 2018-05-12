@@ -547,7 +547,7 @@
 	{ "name": "Wooden Cross", "x": 16, "y": 18, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/wood_cross.png"},
 	{ "name": "Billboard", "x": 10, "y": 19, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/billboard.png"},
 
-	{ "name": "OldMan", "x": 19, "y": 97, "z": 0, "collider": 1, "type": 3, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/OldMan.png"},
+	{ "name": "OldMan", "x": 19, "y": 97, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/OldMan.png"},
 
 	{ "name": "NULL", "x": 1, "y": 16, "z": 2, "collider": 0, "type": 0, "visible": 0, "event_func": "NULL", "texture": "./resources/sprites/map/tree/big_tree1.png"},
 	{ "name": "NULL", "x": 2, "y": 16, "z": 2, "collider": 0, "type": 0, "visible": 0, "event_func": "NULL", "texture": "./resources/sprites/map/tree/big_tree2.png"},
@@ -1762,7 +1762,7 @@
 	{ "name": "NULL", "x": 21, "y": 81, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/barril.png"},
 	{ "name": "Wizard1", "x": 9, "y": 85, "z": 1, "collider": 0, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/Wizard/Wizard1.png"},
 	{ "name": "Wizard2", "x": 9, "y": 86, "z": 0, "collider": 1, "type": 3, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/Wizard/Wizard2.png"},
-	{ "name": "OldWoman", "x": 15, "y": 15, "z": 0, "collider": 1, "type": 3, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/OldWoman.png"},
+	{ "name": "OldWoman", "x": 15, "y": 15, "z": 0, "collider": 1, "type": 4, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/OldWoman.png"},
 	{ "name": "Direction", "x": 24, "y": 70, "z": 0, "collider": 1, "type": 0, "visible": 0,"event_func": "NULL", "texture": "./resources/sprites/map/direction.png"},
 	{ "name": "NULL", "x": 0, "y": 99, "z": -1, "collider": 0, "type": 0, "visible": 0, "event_func": "NULL", "texture": "./resources/sprites/map/rock_road.png"},
 	{ "name": "NULL", "x": 0, "y": 98, "z": -1, "collider": 0, "type": 0, "visible": 0, "event_func": "NULL", "texture": "./resources/sprites/map/rock_road.png"},
