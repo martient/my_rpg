@@ -60,6 +60,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/init/saved_init.c	\
 		./src/quest/quest_manager.c	\
 		./src/quest/harvest_quest.c	\
+		./src/quest/fallen_quest.c	\
 		./src/event/screen_event.c	\
 		./src/event/key_event.c	\
 		./src/event/main_event.c	\
