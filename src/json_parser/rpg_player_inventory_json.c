@@ -19,7 +19,7 @@ const nx_json *mob)
 	}
 	for (int i = 0; i < nx_json_get(mob, "amount")->int_value; i++)
 		if (inventory_new_obj(global,
-		my_strdup(nx_json_get(mob,"name")->text_value)) == 1)
+		my_strdup(nx_json_get(mob, "name")->text_value)) == 1)
 			return (0);
 	return (0);
 }

@@ -5,9 +5,7 @@
 ** Function that checks if you can add or remove something in the inventory
 */
 
-#include "skill_tree.h"
-#include "global.h"
-#include "inventory.h"
+#include "my_rpg.h"
 
 int get_limit(game_global_t *game)
 {
@@ -26,9 +24,10 @@ int inventory_new_obj(game_global_t *game, char *name)
 {
 	int limit = get_limit(game);
 
-	if (get_inventory_size(game->invent) >= limit)
+	if (get_inventory_size(game->invent) >= limit) {
+		play_sound(game, "error");
 		return (-1);
-	else
+	} else
 		add_inventory(game->invent, name);
 	return (0);
 }

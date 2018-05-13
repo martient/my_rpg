@@ -9,6 +9,8 @@
 
 void saved_init(player_info_t *player, const nx_json* json)
 {
+	char *quest = my_strdup("current_quest_id");
+
 	player->name = "Patrick";
 	player->x = nx_json_get(json, "x")->dbl_value;
 	player->y = nx_json_get(json, "y")->dbl_value;
@@ -20,5 +22,6 @@ void saved_init(player_info_t *player, const nx_json* json)
 	player->direction = nx_json_get(json, "direction")->int_value;
 	player->xp = nx_json_get(json, "xp")->dbl_value;
 	player->level = nx_json_get(json, "level")->int_value;
-	player->current_quest_id = nx_json_get(json, "current_quest_id")->int_value;
+	player->current_quest_id = nx_json_get(json, quest)->int_value;
+	free(quest);
 }

@@ -5,9 +5,7 @@
 ** Function that manage the double attack
 */
 
-#include "global.h"
-
-int find_mob(int opt, game_global_t *game);
+#include "my_rpg.h"
 
 int double_(game_global_t *game)
 {

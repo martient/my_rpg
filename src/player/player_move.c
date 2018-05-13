@@ -39,7 +39,8 @@ static int direction_modifier(int direction)
 
 void player_move(game_global_t *game, double delta_time, int direction)
 {
-	double new_pos = PLAYER_SPEED * delta_time * direction_modifier(direction);
+	double tmp = PLAYER_SPEED * delta_time;
+	double new_pos = tmp * direction_modifier(direction);
 	double default_x = game->player->x;
 	double default_y = game->player->y;
 	object_info_t *map = game->info_map->first->first;

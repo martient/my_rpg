@@ -5,13 +5,7 @@
 ** Function that finds any mob on the map
 */
 
-#include "global.h"
-#include "mobs.h"
-#include "player.h"
-#include "knight_skills.h"
-
-int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs);
-int all_touched(mob_first_t *first, player_info_t *player);
+#include "my_rpg.h"
 
 void analyse_mob(int t, mob_info_t *mob, player_info_t *player)
 {

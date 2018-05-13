@@ -7,8 +7,6 @@
 
 #include "my_rpg.h"
 
-void player_move(game_global_t *game, double delta_time, int direction);
-
 void key_event(game_global_t *game, double delta_time)
 {
 	if (sfKeyboard_isKeyPressed(UP_KEY))

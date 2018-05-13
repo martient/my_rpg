@@ -10,7 +10,7 @@
 #include <fcntl.h>
 #include "my_rpg.h"
 
-static int rpg_json_items_data_list(items_data_first_t *first, const nx_json *items)
+static int rpg_json_items_data_list(items_data_first_t *f, const nx_json *i)
 {
 	int *data = malloc(sizeof(int) * 3);
 	char **string = malloc(sizeof(char*) * 3);
@@ -19,12 +19,12 @@ static int rpg_json_items_data_list(items_data_first_t *first, const nx_json *it
 		my_putstr("Error: malloc not found\n");
 		return (-1);
 	}
-	data[0] = nx_json_get(items, "id")->int_value;
-	data[1] = nx_json_get(items, "type")->int_value;
-	string[0] = my_strdup(nx_json_get(items, "name")->text_value);
-	string[1] = my_strdup(nx_json_get(items, "texture")->text_value);
-	rpg_items_data_inject(first, string, data,
-	nx_json_get(items, "stats")->dbl_value);
+	data[0] = nx_json_get(i, "id")->int_value;
+	data[1] = nx_json_get(i, "type")->int_value;
+	string[0] = my_strdup(nx_json_get(i, "name")->text_value);
+	string[1] = my_strdup(nx_json_get(i, "texture")->text_value);
+	rpg_items_data_inject(f, string, data,
+	nx_json_get(i, "stats")->dbl_value);
 	free(data);
 	return (0);
 }
