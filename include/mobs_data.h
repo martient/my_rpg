@@ -31,4 +31,5 @@ struct mob_data_first_t {
 	mob_data_t *first;
 };
 
+int rpg_mob_data_remove_all(mob_data_first_t *first);
 #endif /* !MOBS_DATA_H_ */

@@ -53,7 +53,7 @@ static player_info_t *init_player_event(player_info_t *player)
 
 player_info_t *init_player(game_global_t *game)
 {
-	char *file_content = rpg_map_load("./resources/player.json");
+	char *file_content = rpg_player_load("./resources/player.json");
 	player_info_t *player = malloc(sizeof(player_info_t));
 	const nx_json* json = nx_json_parse(file_content, 0);
 

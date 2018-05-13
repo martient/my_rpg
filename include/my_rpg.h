@@ -178,4 +178,5 @@ void draw_music_button(game_global_t *game);
 void draw_sfx_button(game_global_t *game);
 int check_sfx_status(game_global_t *game, int reset);
 int check_music_status(game_global_t *game, int reset);
+char *rpg_player_load(char *filepath);
 #endif /* !MY_RPG_H_ */
