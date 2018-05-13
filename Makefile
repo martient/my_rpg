@@ -109,6 +109,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/skill_tree/upgrade_inventory.c	\
 		./src/skill_tree/upgrade_life.c	\
 		./src/skill_tree/upgrade_power.c	\
+		./src/xp/level_up.c	\
 		./src/save_player/rpg_save_inventory.c \
 		./src/save_player/rpg_save_player_bis.c \
 		./src/save_player/rpg_save_player_default.c	\

@@ -10,6 +10,7 @@
 void level_up(game_global_t *game)
 {
 	while (game->player->xp >= 500) {
+		play_sound(game, "success");
 		game->player->level = game->player->level + 1;
 		game->player->xp = game->player->xp - 500;
 		game->player->skill_point = game->player->skill_point + 2;

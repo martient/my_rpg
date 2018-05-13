@@ -42,6 +42,8 @@ int all_touched(mob_first_t *first, player_info_t *player)
 
 int circular_(game_global_t *game)
 {
+	if (game->tree->attack_level < 3)
+		return (-1);
 	play_sound(game, "sword");
 	if (find_mob(3, game) == 1)
 		return (1);

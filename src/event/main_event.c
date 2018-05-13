@@ -74,6 +74,7 @@ int analyse_event(game_global_t *game)
 	spell_cooldown(game, delta_time);
 	quest_manager(game);
 	poll_events(game);
+	level_up(game);
 	obj_cooldown(game, delta_time);
 	key_event(game, delta_time);
 	sfClock_restart(game->clock);
