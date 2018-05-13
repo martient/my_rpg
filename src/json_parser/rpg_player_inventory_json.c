@@ -32,10 +32,8 @@ static char *rpg_mob_inventory_load(char *filepath)
 	int fd = 0;
 
 	fd = open(filepath, O_RDONLY);
-	if (fd < 0) {
-		my_putstr("Error: player_inventory.json not found\n");
+	if (fd < 0)
 		return (NULL);
-	}
 	while (read(fd, tmp_b, 1))
 		lenght += 1;
 	close(fd);
@@ -55,10 +53,8 @@ int rpg_json_init_inventory_data(game_global_t *global)
 	const nx_json* mob;
 	const nx_json* tmp;
 
-	if (!read_file) {
-		my_putstr("Error: File not found\n");
+	if (!read_file)
 		return (-1);
-	}
 	json = nx_json_parse(read_file, 0);
 	if (json) {
 		mob = nx_json_get(json, "items");
