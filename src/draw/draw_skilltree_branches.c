@@ -72,7 +72,7 @@ void st_draw_health(game_global_t *game)
 	sfSprite_setScale(sprite, scale);
 	sfSprite_setPosition(sprite, position);
 	sfRenderWindow_drawSprite(game->window, sprite, NULL);
-	draw_sk_level(game, position, game->tree->power_level);
+	draw_sk_level(game, position, game->tree->life_level);
 }
 
 void st_draw_attack(game_global_t *game)

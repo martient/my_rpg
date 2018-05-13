@@ -29,12 +29,21 @@ void draw_sk_level(game_global_t *game, sfVector2f position, int level)
 	sfTexture_destroy(texture);
 }
 
+void draw_player_level(game_global_t *game)
+{
+	int info[3] = {game->player->x - ((my_strlen(SKILL_TREE) * 16) / 2),
+	game->player->y - game->height / 4};
+
+	engine_create_text(game, "TEST", info, sfBlack);
+}
+
 void draw_skills(game_global_t *game)
 {
 	st_draw_strength(game);
 	st_draw_inventory(game);
 	st_draw_health(game);
 	st_draw_attack(game);
+	draw_player_level(game);
 }
 
 int draw_skill_tree(game_global_t *game)
@@ -43,7 +52,7 @@ int draw_skill_tree(game_global_t *game)
 	sfColor sfBrown = {182, 155, 76, 255};
 	int invent_x = player->x - (game->width / 4);
 	int len_1 = game->width / 2;
-	int len_2 = game->height  - (game->height / 4);
+	int len_2 = game->height - (game->height / 4);
 	int len_3 = player->y - (game->height / 4);
 	int len_4 = player->x - ((my_strlen(SKILL_TREE) * 16) / 2);
 	int info[5] = {len_1, len_2, 100, invent_x, len_3};
