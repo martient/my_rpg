@@ -30,15 +30,14 @@ void spell_cooldown(game_global_t *game, double delta_time)
 void activate_spell(game_global_t *game, int spell)
 {
 	player_info_t *player = game->player;
+	int spell_cds[4] = {5, 2, 5, 5};
 	spell_t spells[5] = {spell_speed, simple_, double_, circular_, NULL};
 
 	if (player->spell_cd[spell] <= 0) {
-		if (spell >= 2 && game->tree->attack_level >= spell)
-			player->spell_cd[spell] = 5;
 		if (spell >= 2 && game->tree->attack_level < spell)
 			player->spell_cd[spell] = 0;
-		if (spell == 0 || spell == 1)
-			player->spell_cd[spell] = 2;
+		else
+			player->spell_cd[spell] = spell_cds[spell];
 		spells[spell](game);
 	}
 }
