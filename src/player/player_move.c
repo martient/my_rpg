@@ -46,11 +46,10 @@ void player_move(game_global_t *game, double delta_time, int direction)
 	object_info_t *map = game->info_map->first->first;
 
 	game->player->direction = direction;
-	if (direction == 1 || direction == 4) {
+	if (direction == up || direction == down)
 		game->player->y += new_pos * game->player->speed;
-	} else if (direction == 2 || direction == 3) {
+	else if (direction == left || direction == right)
 		game->player->x += new_pos * game->player->speed;
-	}
 	if (can_move(map, game->player)) {
 		game->player->x = default_x;
 		game->player->y = default_y;

@@ -9,11 +9,16 @@
 
 int check_play_click(game_global_t *game, sfMouseButtonEvent event)
 {
-	sfVector2f position = {game->width / 2 - (54 * 2), game->height / 2};
+	sfVector2f scale = {2 * (game->width / 800), 2 * (game->height / 600)};
+	sfVector2f position =
+	{(game->width / 2) - (108 * scale.x / 2), (game->height / 2)
+	- (48 * scale.y / 2)};
 
 	if (event.button == sfMouseLeft)
-		if (event.x > position.x && event.x < position.x + (54 * 4) &&
-		event.y > position.y && event.y < position.y + (54 * 2))
+		if (event.x > position.x &&
+		event.x < position.x + (108 * scale.x) &&
+		event.y > position.y &&
+		event.y < position.y + (48 * scale.y))
 			game_loop(game);
 	return (0);
 }

@@ -70,6 +70,7 @@ int analyse_event(game_global_t *game)
 			mob_move_passive(game, mob, delta_time);
 		mob = mob->next;
 	}
+	printf("DT %lf\n", delta_time);
 	mobs_basic_attack(game);
 	spell_cooldown(game, delta_time);
 	quest_manager(game);
