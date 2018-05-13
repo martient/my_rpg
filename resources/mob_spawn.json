@@ -1,18 +1,18 @@
 {
 	"nb_mobs": 100,
 	"list_spawn": [
-		{ "y": 7, "x": 10, "rate": 75, "type": 0, "size": 1},
-		{ "y": 10, "x": 45, "rate": 90, "type": 0, "size": 1},
-		{ "y": 25, "x": 55, "rate": 100, "type": 0, "size": 1},
-		{ "y": 5, "x": 85, "rate": 60, "type": 0, "size": 1},
-		{ "y": 92, "x": 92, "rate": 80, "type": 0, "size": 1},
-		{ "y": 70, "x": 65, "rate": 80, "type": 0, "size": 1},
-		{ "y": 85, "x": 35, "rate": 75, "type": 0, "size": 1},
-		{ "y": 65, "x": 15, "rate": 100, "type": 0, "size": 1},
-		{ "y": 70, "x": 80, "rate": 20, "type": 0, "size": 1},
-		{ "y": 45, "x": 50, "rate": 50, "type": 0, "size": 1},
-		{ "y": 40, "x": 7, "rate": 100, "type": 0, "size": 1},
-		{ "y": 27, "x": 10, "rate": 75, "type": 0, "size": 1},
-		{ "y": 50, "x": 86, "rate": 75, "type": 0, "size": 1},
-		{ "y": 30, "x": 93, "rate": 75, "type": 0, "size": 1}	]
+		{ "y": 7, "x": 10, "rate": 40, "type": 0, "size": 1},
+		{ "y": 10, "x": 45, "rate": 40, "type": 0, "size": 1},
+		{ "y": 25, "x": 55, "rate": 40, "type": 0, "size": 1},
+		{ "y": 5, "x": 85, "rate": 40, "type": 0, "size": 1},
+		{ "y": 92, "x": 92, "rate": 40, "type": 0, "size": 1},
+		{ "y": 70, "x": 65, "rate": 40, "type": 0, "size": 1},
+		{ "y": 85, "x": 35, "rate": 40, "type": 0, "size": 1},
+		{ "y": 65, "x": 15, "rate": 40, "type": 0, "size": 1},
+		{ "y": 70, "x": 80, "rate": 40, "type": 0, "size": 1},
+		{ "y": 45, "x": 50, "rate": 40, "type": 0, "size": 1},
+		{ "y": 40, "x": 7, "rate": 40, "type": 0, "size": 1},
+		{ "y": 27, "x": 10, "rate": 40, "type": 0, "size": 1},
+		{ "y": 50, "x": 86, "rate": 40, "type": 0, "size": 1},
+		{ "y": 30, "x": 93, "rate": 40, "type": 0, "size": 1}	]
 }
