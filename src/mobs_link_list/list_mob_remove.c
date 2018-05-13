@@ -9,17 +9,23 @@
 
 static int rpg_mob_remove_previoux(mob_first_t *first, int id)
 {
-	mob_info_t *tmp = NULL;
+	mob_info_t *current = NULL;
+	mob_info_t *previous = NULL;
 
 	if (!first)
 		return (84);
-	tmp = first->first;
-	while (tmp != NULL) {
-		if (tmp->id + 1 == id) {
-			tmp->next = tmp->next->next;
+	current = first->first;
+	while (current != NULL) {
+		if (current->id == id && previous == NULL) {
+			first->first = first->first->next;
 			break;
 		}
-		tmp = tmp->next;
+		if (current->id == id && previous != NULL) {
+			previous->next = current->next;
+			break;
+		}
+		previous = current;
+		current = current->next;
 	}
 	return (0);
 }
@@ -51,7 +57,7 @@ int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs)
 	} else {
 		remove = mobs;
 		rpg_mob_remove_previoux(first, remove->id);
-		sfSprite_destroy(remove->sprite);
+		//sfSprite_destroy(remove->sprite);
 		free(remove);
 	}
 	return (0);
