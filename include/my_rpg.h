@@ -173,7 +173,7 @@ int harvest_draw_quest(game_global_t *game);
 void quest_draw_manager(game_global_t *game);
 int fallen_draw_quest(game_global_t *game);
 int is_fallen_done(game_global_t *game);
-int fallen_killed_monster(game_global_t *game, int reset);
+int fallen_killed_monster(player_info_t *player, int reset);
 void exit_game(game_global_t *game);
 void draw_music_button(game_global_t *game);
 void draw_sfx_button(game_global_t *game);
