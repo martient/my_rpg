@@ -18,6 +18,8 @@ sound_data_t *add_sound(sound_data_t *head, int type, char *path, char *name)
 	new_sound->path = my_strdup(path);
 	new_sound->name = my_strdup(name);
 	new_sound->type = type;
+	if (type == music)
+		sfSound_setLoop(new_sound->sound, sfTrue);
 	new_sound->next = head;
 	return (new_sound);
 }
