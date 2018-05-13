@@ -7,7 +7,8 @@
 
 #include "my_rpg.h"
 
-void engine_create_text(game_global_t *global, char *text, int info[3], sfColor color)
+void engine_create_text(game_global_t *global,
+char *text, int info[3], sfColor color)
 {
 	sfText *engine_text;
 	sfVector2f position = {info[0], info[1]};

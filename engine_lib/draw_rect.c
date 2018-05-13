@@ -30,7 +30,8 @@ void draw_rect(game_global_t *game, int infos[4], sfColor color)
 	if (pixels_back == NULL)
 		engine_exit(game);
 	color_bar(pixels_back, color, infos[0], infos[1]);
-	sfTexture_updateFromPixels(bar_texture, pixels_back, infos[0], infos[1], 0, 0);
+	sfTexture_updateFromPixels(
+	bar_texture, pixels_back, infos[0], infos[1], 0, 0);
 	sfSprite_setTexture(bar_sprite, bar_texture, sfTrue);
 	sfSprite_setPosition(bar_sprite, pos);
 	sfRenderWindow_drawSprite(game->window, bar_sprite, NULL);

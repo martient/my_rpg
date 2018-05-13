@@ -21,6 +21,7 @@ int is_harvest_done(game_global_t *game)
 		inventory_del_obj(game->invent, "Mushrooms");
 	for (int i = 0; i < 3; i++)
 		inventory_del_obj(game->invent, "Egg Plant");
+	game->player->xp += 500;
 	play_sound(game, "success");
 	return (0);
 }
