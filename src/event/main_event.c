@@ -65,12 +65,12 @@ int analyse_event(game_global_t *game)
 	sfClock_getElapsedTime(game->clock).microseconds / 1000000.0;
 	mob_info_t *mob = game->mob_deploy->first;
 
+	sfClock_restart(game->clock);
 	while (mob) {
 		if (mob->id != -1)
 			mob_move_passive(game, mob, delta_time);
 		mob = mob->next;
 	}
-	printf("DT %lf\n", delta_time);
 	mobs_basic_attack(game);
 	spell_cooldown(game, delta_time);
 	quest_manager(game);
@@ -78,6 +78,5 @@ int analyse_event(game_global_t *game)
 	level_up(game);
 	obj_cooldown(game, delta_time);
 	key_event(game, delta_time);
-	sfClock_restart(game->clock);
 	return (0);
 }

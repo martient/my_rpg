@@ -17,8 +17,8 @@ void game_loop(game_global_t *game)
 	sfRenderWindow_setFramerateLimit(game->window, 60);
 	while (sfRenderWindow_isOpen(game->window)) {
 		analyse_event(game);
-		rpg_mob_generator(game->mob_spawn, game->mob_data,
-		game->mob_deploy, game->player);
+		// rpg_mob_generator(game->mob_spawn, game->mob_data,
+		// game->mob_deploy, game->player);
 		draw__(game);
 	}
 }
