@@ -32,7 +32,6 @@ static void init_game(game_global_t *game)
 
 game_global_t *__init__(void)
 {
-	sfClock *clock = sfClock_create();
 	game_global_t *game = malloc(sizeof(game_global_t));
 
 	if (game == NULL)
@@ -44,8 +43,5 @@ game_global_t *__init__(void)
 	game->tree = init_skill_tree();
 	if (init_game_data(game) == -1)
 		return (NULL);
-	printf("Game finised loading (%lf ms)\n",
-	sfClock_getElapsedTime(clock).microseconds * 0.001);
-	sfClock_destroy(clock);
 	return (game);
 }

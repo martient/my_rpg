@@ -54,7 +54,7 @@ static char *rpg_items_data_load(char *filepath)
 
 int rpg_json_init_items_data(items_data_first_t *first)
 {
-	char *read_file = rpg_items_data_load("./resources/items.json");
+	char *read_file = rpg_items_data_load("./resources/items_en.json");
 	const nx_json* json;
 	const nx_json* items;
 	const nx_json* tmp;
