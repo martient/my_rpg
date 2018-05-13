@@ -19,19 +19,28 @@ void touch_player(mob_info_t *mob, player_info_t *player)
 	}
 }
 
-void attack_player(mob_first_t *first, player_info_t *player)
+int attack_player(mob_first_t *first, player_info_t *player)
 {
 	mob_info_t *mob = first->first;
 
 	while (mob->next != NULL) {
 		touch_player(mob, player);
+		if (player->health <= 0)
+			return (1);
 		mob = mob->next;
 	}
+	return (0);
 }
 
 void mobs_basic_attack(game_global_t *game)
 {
 	mob_first_t *first = game->mob_deploy;
 
-	attack_player(first, game->player);
+	if (attack_player(first, game->player) == 1) {
+		game->player->x = 86;
+		game->player->y = 3113;
+		game->player->health = game->player->max_health;
+		game->player->xp = 0;
+		reset_inventory(game->invent);
+	}
 }

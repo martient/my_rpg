@@ -35,15 +35,15 @@ mob_info_t *mob, double delta_time)
 		return (0);
 	if (is_between_offset(player->x, mob->x, 10) != 1) {
 		if (player->x > mob->x)
-			mob->x += PLAYER_SPEED * delta_time;
+			mob->x += (PLAYER_SPEED - 100) * delta_time;
 		else
-			mob->x -= PLAYER_SPEED * delta_time;
+			mob->x -= (PLAYER_SPEED - 100) * delta_time;
 	}
 	if (is_between_offset(player->y, mob->y, 10) != 1) {
 		if (player->y > mob->y)
-			mob->y += PLAYER_SPEED * delta_time;
+			mob->y += (PLAYER_SPEED - 100) * delta_time;
 		else
-			mob->y -= PLAYER_SPEED * delta_time;
+			mob->y -= (PLAYER_SPEED - 100) * delta_time;
 	}
 	return (1);
 }
