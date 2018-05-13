@@ -60,8 +60,8 @@ mob_first_t *mobs, player_info_t *player)
 	spawn_tmp = spawn->first;
 	while (spawn_tmp->next != NULL) {
 		srand(time(NULL));
-		mob_rand = (rand() % (RATE_SPAWN_MAX - RATE_SPAWN_MIN + 1)) +
-		RATE_SPAWN_MIN;
+		mob_rand = (rand() % (RATE_SPAWN_MAX - RATE_SPAWN_MIN + 1))
+		+ RATE_SPAWN_MIN;
 		if (spawn_tmp->rate >= mob_rand) {
 			rpg_mobs_inject(mobs, data, spawn_tmp);
 		}

@@ -14,7 +14,7 @@ mob_first_t *rpg_mob_init(void)
 
 	if (!first || !new) {
 		my_putstr("Error: malloc doesn't sucesfull\n");
-		exit(84);
+		return (NULL);
 	}
 	new->id = -1;
 	new->y = 0;
