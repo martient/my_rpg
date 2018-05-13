@@ -17,5 +17,11 @@
 #define RIGHT_KEY	(sfKeyD)
 #define QUEST_KEY	(sfKeyA)
 #define INVENTORY_KEY	(sdKeyI)
+#define PAUSE_KEY	(sfKeyEscape)
+#define INTERACT_KEY	(sfKeyE)
+#define SPELL_1		(sfKeyNum1)
+#define SPELL_2		(sfKeyNum2)
+#define SPELL_3		(sfKeyNum3)
+#define SPELL_4		(sfKeyNum4)
 
 #endif /* !KEYBOARD_H_ */

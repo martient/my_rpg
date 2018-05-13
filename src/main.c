@@ -4,6 +4,7 @@
 ** File description:
 ** main
 */
+
 #include "my_rpg.h"
 
 void game_loop(game_global_t *game)

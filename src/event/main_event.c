@@ -9,11 +9,11 @@
 
 void keyboard_press_event(game_global_t *game, sfKeyEvent event)
 {
-	if (event.code == sfKeyI)
+	if (event.code == INVENTORY_KEY)
 		game->inventory_show = (game->inventory_show == 0) ? 1 : 0;
-	if (event.code == sfKeyEscape)
+	if (event.code == PAUSE_KEY)
 		pause_screen(game);
-	if (event.code == sfKeyE)
+	if (event.code == INTERACT_KEY)
 		interact_obj(game);
 	if (event.code == QUEST_KEY) {
 		if (game->player->state == 2 || game->player->state == 0)
