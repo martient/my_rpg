@@ -37,9 +37,9 @@ static void player_cam_reset(game_global_t *game)
 
 void draw_start_screen(game_global_t *game)
 {
-	int info[3] = {(game->width / 2) - ((my_strlen(GAME_NAME) / 4) * 36),
-	(game->height / 2) - 150, 36};
-	
+	int len1 = (game->width / 2) - ((my_strlen(GAME_NAME) / 4) * 36);
+	int info[3] = {len1, (game->height / 2) - 150, 36};
+
 	sfRenderWindow_clear(game->window, sfBlack);
 	player_cam_reset(game);
 	engine_create_text(game, GAME_NAME, info, sfRed);

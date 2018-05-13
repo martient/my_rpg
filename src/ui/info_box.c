@@ -9,7 +9,9 @@
 
 static int generate_box(game_global_t *game, char *text)
 {
-	int info[3] = {game->player->x - 150, game->player->y + (game->height / 2) - 100, 32};
+	int len1 = game->player->x - 150;
+	int len2 = game->player->y + (game->height / 2) - 100;
+	int info[3] = {len1, len2, 32};
 	engine_create_text(game, text, info, sfBlack);
 	return (0);
 }

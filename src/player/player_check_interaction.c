@@ -31,10 +31,10 @@ int interaction_type_2(object_info_t *map, double x, double y)
 	return (0);
 }
 
-object_info_t *can_interact(object_info_t *map, player_info_t *player, int *type)
+object_info_t *can_interact(object_info_t *map, player_info_t *p, int *type)
 {
-	double x = player->x;
-	double y = player->y;
+	double x = p->x;
+	double y = p->y;
 
 	while (map) {
 		if (map->type == 1 && map->visible == 0
@@ -56,7 +56,8 @@ object_info_t *can_interact(object_info_t *map, player_info_t *player, int *type
 void show_interact_button(game_global_t *game)
 {
 	char *text = INTERACT;
-	int info[3] = {game->player->x - 150, game->player->y + (game->height / 2) - 150, 32};
+	int len1 = game->player->x - 150;
+	int info[3] = {len1, game->player->y + (game->height / 2) - 150, 32};
 	sfColor color = sfWhite;
 
 	engine_create_text(game, text, info, color);

@@ -38,10 +38,8 @@ static int can_move(game_global_t *game, float x, float y, int box[3])
 	}
 	if (collide_player(game, x, y))
 		return (1);
-	if (x >= box_x + size &&
-	x <= box_x &&
-	y >= box_y + size &&
-	y <= box_y)
+	if (x >= box_x + size && x <= box_x &&
+	y >= box_y + size && y <= box_y)
 		return (1);
 	return (0);
 }
@@ -79,27 +77,3 @@ int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time)
 	mob->y = y;
 	return (0);
 }
-
-// #include <criterion/criterion.h>
-
-// Test(check_mob_timeout, mob_move_passive, .timeout = 1)
-// {
-// 	srand(time(NULL));
-// 	int i = 0;
-
-// 	while ( i < 1000) {
-// 		mob_move_passive();
-// 		printf("Round %d done\n", i++);
-// 	}
-// }
-
-// Test(mob_can_move, can_move)
-// {
-// 	int x = 100;
-// 	int y = 50;
-// 	int box_x = 0;
-// 	int box_y = 0;
-// 	int size = 100;
-
-// 	cr_assert_eq(can_move(x, y, box_x, box_y, size), 0, "Failed to move");
-// }

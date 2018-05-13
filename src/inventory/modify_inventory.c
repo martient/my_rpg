@@ -5,11 +5,7 @@
 ** Function that checks if you can add or remove something in the inventory
 */
 
-#include "skill_tree.h"
-#include "global.h"
-#include "inventory.h"
-
-int play_sound(game_global_t *game, char *name);
+#include "my_rpg.h"
 
 int get_limit(game_global_t *game)
 {
