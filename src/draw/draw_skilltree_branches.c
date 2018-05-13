@@ -11,13 +11,16 @@ void st_draw_strength(game_global_t *game)
 {
 	sfSprite *sprite;
 	sfTexture *texture;
-	sfVector2f scale = {1.5 * (game->width / 800), 1.5 * (game->height / 600)};
-	sfVector2f position =
-	{(game->player->x) - (game->width  / 4) - (32 * scale.x / 2) + (32 * scale.x),
-	(game->player->y) - (game->height / 4) - (32 * scale.y / 2) + (32 * scale.y * 2)};
+	sfVector2f scale =
+	{1.5 * (game->width / 800), 1.5 * (game->height / 600)};
+	sfVector2f position = {(game->player->x) - (game->width  / 4)
+	- (32 * scale.x / 2) + (32 * scale.x),
+	(game->player->y) - (game->height / 4) -
+	(32 * scale.y / 2) + (32 * scale.y * 2)};
 
 	texture =
-	sfTexture_createFromFile("./resources/sprites/skill_tree/power.png", NULL);
+	sfTexture_createFromFile("./resources/sprites/skill_tree/power.png",
+	NULL);
 	sprite = sfSprite_create();
 	sfSprite_setTexture(sprite, texture, sfTrue);
 	sfSprite_setScale(sprite, scale);
@@ -32,12 +35,16 @@ void st_draw_inventory(game_global_t *game)
 {
 	sfSprite *sprite;
 	sfTexture *texture;
-	sfVector2f scale = {1.5 * (game->width / 800), 1.5 * (game->height / 600)};
+	sfVector2f scale =
+	{1.5 * (game->width / 800), 1.5 * (game->height / 600)};
 	sfVector2f position =
-	{(game->player->x) - (game->width  / 4) - (32 * scale.x / 2) + (32 * scale.x),
-	(game->player->y) - (game->height / 4) - (32 * scale.y / 2) + (32 * scale.y * 4)};
+	{(game->player->x) - (game->width  / 4) -
+	(32 * scale.x / 2) + (32 * scale.x),
+	(game->player->y) - (game->height / 4) -
+	(32 * scale.y / 2) + (32 * scale.y * 4)};
 	texture =
-	sfTexture_createFromFile("./resources/sprites/skill_tree/inventory.png", NULL);
+	sfTexture_createFromFile(
+	"./resources/sprites/skill_tree/inventory.png", NULL);
 	sprite = sfSprite_create();
 	sfSprite_setTexture(sprite, texture, sfTrue);
 	sfSprite_setScale(sprite, scale);
@@ -50,12 +57,16 @@ void st_draw_health(game_global_t *game)
 {
 	sfSprite *sprite;
 	sfTexture *texture;
-	sfVector2f scale = {1.5 * (game->width / 800), 1.5 * (game->height / 600)};
+	sfVector2f scale =
+	{1.5 * (game->width / 800), 1.5 * (game->height / 600)};
 	sfVector2f position =
-	{(game->player->x) - (game->width  / 4) - (32 * scale.x / 2) + (32 * scale.x),
-	(game->player->y) - (game->height / 4) - (32 * scale.y / 2) + (32 * scale.y * 6)};
+	{(game->player->x) - (game->width  / 4) -
+	(32 * scale.x / 2) + (32 * scale.x),
+	(game->player->y) - (game->height / 4) -
+	(32 * scale.y / 2) + (32 * scale.y * 6)};
 	texture =
-	sfTexture_createFromFile("./resources/sprites/skill_tree/life.png", NULL);
+	sfTexture_createFromFile("./resources/sprites/skill_tree/life.png",
+	NULL);
 	sprite = sfSprite_create();
 	sfSprite_setTexture(sprite, texture, sfTrue);
 	sfSprite_setScale(sprite, scale);
@@ -68,12 +79,16 @@ void st_draw_attack(game_global_t *game)
 {
 	sfSprite *sprite;
 	sfTexture *texture;
-	sfVector2f scale = {1.5 * (game->width / 800), 1.5 * (game->height / 600)};
+	sfVector2f scale =
+	{1.5 * (game->width / 800), 1.5 * (game->height / 600)};
 	sfVector2f position =
-	{(game->player->x) - (game->width  / 4) - (32 * scale.x / 2) + (32 * scale.x),
-	(game->player->y) - (game->height / 4) - (32 * scale.y / 2) + (32 * scale.y * 8)};
+	{(game->player->x) - (game->width  / 4) -
+	(32 * scale.x / 2) + (32 * scale.x),
+	(game->player->y) - (game->height / 4) -
+	(32 * scale.y / 2) + (32 * scale.y * 8)};
 	texture =
-	sfTexture_createFromFile("./resources/sprites/skill_tree/attack.png", NULL);
+	sfTexture_createFromFile(
+	"./resources/sprites/skill_tree/attack.png", NULL);
 	sprite = sfSprite_create();
 	sfSprite_setTexture(sprite, texture, sfTrue);
 	sfSprite_setScale(sprite, scale);

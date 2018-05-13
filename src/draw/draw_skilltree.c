@@ -16,7 +16,8 @@ void draw_sk_level(game_global_t *game, sfVector2f position, int level)
 
 	sprite = sfSprite_create();
 	texture =
-	sfTexture_createFromFile("./resources/sprites/skill_tree/level.png", NULL);
+	sfTexture_createFromFile("./resources/sprites/skill_tree/level.png",
+	NULL);
 	sfSprite_setTexture(sprite, texture, sfTrue);
 	position.x += 10;
 	for (int i = 0; i < level; i++) {

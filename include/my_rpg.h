@@ -188,4 +188,11 @@ int upgrade_knight_attacks(game_global_t *game);
 int upgrade_power(game_global_t *game);
 int upgrade_inventory(game_global_t *game);
 int upgrade_life(game_global_t *game);
+void st_draw_health(game_global_t *game);
+void st_draw_inventory(game_global_t *game);
+void st_draw_strength(game_global_t *game);
+void st_draw_attack(game_global_t *game);
+void draw_sk_level(game_global_t *game, sfVector2f position, int level);
+int draw_skill_tree(game_global_t *game);
+int st_mouse_click(game_global_t *game, sfMouseButtonEvent event);
 #endif /* !MY_RPG_H_ */
