@@ -7,17 +7,16 @@
 
 #include "my_rpg.h"
 
-/*
 static int rpg_mob_data_remove(mob_data_first_t *first)
 {
 	mob_data_t *remove = NULL;
 
-	if (!first) {
-		my_putstr("Error: value gift is NULL\n");
+	if (!first)
 		return (-1);
-	} else if (first->first != NULL) {
+	else if (first->first != NULL || !remove->sprite) {
 		remove = first->first;
 		first->first = first->first->next;
+		free(remove->name);
 		free(remove);
 	}
 	return (0);
@@ -25,11 +24,11 @@ static int rpg_mob_data_remove(mob_data_first_t *first)
 
 int rpg_mob_data_remove_all(mob_data_first_t *first)
 {
-	mob_data_t *prepare = NULL;
-
+	if (!first)
+		return (-1);
 	while (first->first != NULL) {
-		rpg_mob_data_remove(prepare);
+		rpg_mob_data_remove(first);
 	}
+	free(first);
 	return (0);
 }
-*/

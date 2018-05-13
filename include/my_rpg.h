@@ -81,7 +81,6 @@ int rpg_json_init_spawn(spawn_first_t *first);
 mob_data_first_t *rpg_mob_data_init(void);
 int rpg_mob_data_inject(mob_data_first_t *first, float *data, int id,
 	char *name);
-int rpg_mob_data_remove(mob_data_first_t *first);
 int rpg_mob_data_init_list(mob_data_first_t *first);
 int rpg_json_init_mob_data(mob_data_first_t *first);
 int rpg_mob_data_tex_inject(mob_data_first_t *first, char *pathfile);

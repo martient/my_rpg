@@ -31,11 +31,13 @@ int rpg_mob_remove(mob_first_t *first)
 	if (!first) {
 		my_putstr("Error: value gift is NULL\n");
 		return (-1);
-	} else if (first->first != NULL) {
+	}
+	while (first->first != NULL) {
 		remove = first->first;
 		first->first = first->first->next;
 		free(remove);
 	}
+	free(first);
 	return (0);
 }
 
@@ -49,6 +51,7 @@ int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs)
 	} else {
 		remove = mobs;
 		rpg_mob_remove_previoux(first, remove->id);
+		sfSprite_destroy(remove->sprite);
 		free(remove);
 	}
 	return (0);
