@@ -21,7 +21,7 @@ static void init_screen(game_global_t *game)
 	game->width = 800;
 	game->height = 600;
 	game->inventory_show = 0;
-	game->skill_tree_show = 1;
+	game->skill_tree_show = 0;
 	game->zoom = 1;
 }
 
