@@ -7,11 +7,11 @@
 
 #include "my_rpg.h"
 
-int fallen_killed_monster(game_global_t *game, int reset)
+int fallen_killed_monster(player_info_t *player, int reset)
 {
 	int static count = 0;
 
-	if (game->player->current_quest_id != 4)
+	if (player->current_quest_id != 4)
 		return (count);
 	if (reset == -1)
 		count = 0;
@@ -22,9 +22,9 @@ int fallen_killed_monster(game_global_t *game, int reset)
 
 int is_fallen_done(game_global_t *game)
 {
-	if (fallen_killed_monster(game, 0) != 5)
+	if (fallen_killed_monster(game->player, 0) != 5)
 		return (0);
-	fallen_killed_monster(game, -1);
+	fallen_killed_monster(game->player, -1);
 	play_sound(game, "success");
 	return (0);
 }
