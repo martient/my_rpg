@@ -61,6 +61,8 @@ enum player_direction {
 	up
 };
 
+typedef int (*skills_func_t)(game_global_t *);
+
 items_data_first_t *rpg_items_data_init(void);
 int rpg_init_link_list_items_data(items_data_first_t *first);
 int rpg_json_init_items_data(items_data_first_t *first);
@@ -181,4 +183,9 @@ void draw_sfx_button(game_global_t *game);
 int check_sfx_status(game_global_t *game, int reset);
 int check_music_status(game_global_t *game, int reset);
 char *rpg_player_load(char *filepath);
+sfVector2f screen_to_world_click(game_global_t *game, sfMouseButtonEvent event);
+int upgrade_knight_attacks(game_global_t *game);
+int upgrade_power(game_global_t *game);
+int upgrade_inventory(game_global_t *game);
+int upgrade_life(game_global_t *game);
 #endif /* !MY_RPG_H_ */

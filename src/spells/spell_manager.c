@@ -12,7 +12,7 @@ typedef int (*spell_t)(game_global_t *);
 void spell_cooldown(game_global_t *game, double delta_time)
 {
 	player_info_t *player = game->player;
-	double sec = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+	double sec = delta_time;
 
 	for (int i = 0; i < 5; i++) {
 		if (player->spell_cd[i] > 0)

@@ -41,6 +41,8 @@ SRC	=	.//engine_lib/text.c	\
 		./src/draw/draw_inventory.c	\
 		./src/draw/draw_spell_box.c	\
 		./src/draw/draw_quest.c		\
+		./src/draw/draw_skilltree.c	\
+		./src/draw/draw_skilltree_branches.c	\
 		./src/json_parser/rpg_json_reader.c	\
 		./src/json_parser/rpg_map_json.c	\
 		./src/link_list/rpg_init_object_list.c \
@@ -67,6 +69,7 @@ SRC	=	.//engine_lib/text.c	\
 		./src/event/key_event.c	\
 		./src/event/main_event.c	\
 		./src/event/mouse_click.c	\
+		./src/event/st_click.c		\
 		./src/draw/draw_element.c		\
 		./src/main.c	\
 		./src/ui/draw_ui.c	\

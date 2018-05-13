@@ -27,6 +27,8 @@ void draw__(game_global_t *game)
 	player_check_interaction(game);
 	if (game->inventory_show == 1)
 		draw_inventory(game);
+	if (game->skill_tree_show == 1)
+		draw_skill_tree(game);
 	player_cam(game);
 	quest_draw_manager(game);
 	sfRenderWindow_display(game->window);

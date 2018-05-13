@@ -42,6 +42,8 @@ int handle_event(game_global_t *game, sfEvent event)
 	if (game->inventory_show == 1 &&
 	event.type == sfEvtMouseButtonPressed)
 		mouse_click(game, event.mouseButton);
+	if (game->skill_tree_show == 1 && event.type == sfEvtMouseButtonPressed)
+		st_mouse_click(game, event.mouseButton);
 	return (0);
 }
 

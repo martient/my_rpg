@@ -22,6 +22,7 @@ typedef struct game_global_t {
 	int state;
 	double zoom;
 	int inventory_show;
+	int skill_tree_show;
 	sfFont *font;
 	struct player_info_t *player;
 	inventory_list_t *invent;
@@ -37,5 +38,5 @@ typedef struct game_global_t {
 
 game_global_t *__init__(void);
 int rpg_json_init_inventory_data(game_global_t *global);
-int rpg_mob_generator_timer(game_global_t *game);
+
 #endif /* !GLOBAL_H_ */
