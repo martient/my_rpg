@@ -25,7 +25,7 @@ static int can_move(game_global_t *game, float x, float y, int box[3])
 	int box_y = box[1];
 	object_info_t *map = game->info_map->first->first;
 
-	if (x < box_x - 5 || x > box_x + 5 || y < box_y - 5 || y > box_y + 5)
+	if (x < box_x - 160 || x > box_x + 160 || y < box_y - 160 || y > box_y + 160)
 		return (0);
 	if (x < 0 || x > 3200 || y < 0 || y > 3200)
 		return (0);
@@ -47,7 +47,7 @@ int next_move(void)
 	int coef = rand() % 1000;
 
 	if (coef % 2)
-		return (-1);
+		return (0);
 	return (1);
 }
 
@@ -56,22 +56,22 @@ int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time)
 {
 	float x = mob->x;
 	float y = mob->y;
-	int move = rand() % 100;
+	int move = rand() % 4;
 	int coef = next_move();
 	int box[3] = {mob->spawn->x * 32, mob->spawn->y * 32,
 	mob->spawn->size * 32};
 
-	if (move % 2)
+	if (move == 0)
 		x += (PLAYER_SPEED - 100) * coef * delta_time;
-	else
+	if (move == 1)
+		y -= (PLAYER_SPEED - 100) * coef * delta_time;
+	if (move == 2)
 		y += (PLAYER_SPEED - 100) * coef * delta_time;
+	if (move == 3)
+		x -= (PLAYER_SPEED - 100) * coef * delta_time;
 	if (can_move(game, x, y, box)) {
-		if (move % 2)
-			x += PLAYER_SPEED * (coef * -2) * delta_time;
-		else
-			y += PLAYER_SPEED * (coef * -2) * delta_time;
+		mob->x = x;
+		mob->y = y;
 	}
-	mob->x = x;
-	mob->y = y;
 	return (0);
 }

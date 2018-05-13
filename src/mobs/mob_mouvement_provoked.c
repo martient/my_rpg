@@ -50,9 +50,5 @@ mob_info_t *mob, double delta_time)
 
 int mob_move_provoked(game_global_t *game, mob_info_t *mob, double delta_time)
 {
-	player_info_t *player = game->player;
-
-	if (is_player_close(game, mob))
-		move_towards_player(game, mob, delta_time);
-	return (0);
+	mob_move_passive(game, mob, delta_time);
 }
