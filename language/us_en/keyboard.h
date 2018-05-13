@@ -16,7 +16,7 @@
 #define LEFT_KEY	(sfKeyA)
 #define RIGHT_KEY	(sfKeyD)
 #define QUEST_KEY	(sfKeyQ)
-#define INVENTORY_KEY	(sdKeyI)
+#define INVENTORY_KEY	(sfKeyI)
 #define PAUSE_KEY	(sfKeyEscape)
 #define INTERACT_KEY	(sfKeyE)
 #define SPELL_1		(sfKeyNum1)
