@@ -13,11 +13,13 @@ int check_sfx_status(game_global_t *game, int reset)
 
 	if (reset == 1)
 		status *= -1;
-	if (status == 1)
+	if (status == 1 && reset == 1) {
 		game->sound->sfx_volume = 100;
-	else
+		update_sound(game);
+	} else if (status == -1 && reset == 1) {
 		game->sound->sfx_volume = 0;
-	update_sound(game);
+		update_sound(game);
+	}
 	return (status);
 }
 
