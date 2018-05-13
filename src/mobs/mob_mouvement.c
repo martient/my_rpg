@@ -14,10 +14,8 @@ int collide_player(game_global_t *game, float x, float y)
 	if (x < player->x + 32 &&
 	x + 32 > player->x &&
 	y < player->y + 32 &&
-	y + 32 > player->y) {
-		printf("Touching Player\n");
+	y + 32 > player->y)
 		return (1);
-	}
 	return (0);
 }
 
@@ -25,9 +23,12 @@ static int can_move(game_global_t *game, float x, float y, int box[3])
 {
 	int box_x = box[0];
 	int box_y = box[1];
-	int size = box[2];
 	object_info_t *map = game->info_map->first->first;
 
+	if (x < box_x - 5 || x > box_x + 5 || y < box_y - 5 || y > box_y + 5)
+		return (0);
+	if (x < 0 || x > 3200 || y < 0 || y > 3200)
+		return (0);
 	while (map) {
 		if (x <= (map->x * 32) + 32 &&
 		x + 39 >= (map->x * 32) &&
@@ -37,9 +38,6 @@ static int can_move(game_global_t *game, float x, float y, int box[3])
 		map = map->next;
 	}
 	if (collide_player(game, x, y))
-		return (1);
-	if (x >= box_x + size && x <= box_x &&
-	y >= box_y + size && y <= box_y)
 		return (1);
 	return (0);
 }
@@ -64,9 +62,9 @@ int mob_move_passive(game_global_t *game, mob_info_t *mob, double delta_time)
 	mob->spawn->size * 32};
 
 	if (move % 2)
-		x += PLAYER_SPEED * coef * delta_time;
+		x += (PLAYER_SPEED - 100) * coef * delta_time;
 	else
-		y += PLAYER_SPEED * coef * delta_time;
+		y += (PLAYER_SPEED - 100) * coef * delta_time;
 	if (can_move(game, x, y, box)) {
 		if (move % 2)
 			x += PLAYER_SPEED * (coef * -2) * delta_time;

@@ -128,6 +128,8 @@ int spell_speed(game_global_t *game);
 int speed_spell_clock(game_global_t *game);
 void mobs_basic_attack(game_global_t *game);
 int destroy_map(game_global_t *game);
+int reset_inventory(inventory_list_t *ivnt);
+void level_up(game_global_t *game);
 int interact_obj(game_global_t *game);
 int obj_cooldown(game_global_t *game, double sec);
 void draw_rect(game_global_t *game, int infos[4], sfColor color);
