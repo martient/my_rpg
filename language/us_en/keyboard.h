@@ -23,5 +23,6 @@
 #define SPELL_2		(sfKeyNum2)
 #define SPELL_3		(sfKeyNum3)
 #define SPELL_4		(sfKeyNum4)
+#define SKILLTREE_KEY	(sfKeyTab)
 
 #endif /* !KEYBOARD_H_ */
