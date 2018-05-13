@@ -81,6 +81,6 @@ int rpg_mob_generator_timer(game_global_t *game)
 	}
 	rpg_mob_generator(game->mob_spawn, game->mob_data, game->mob_deploy,
 	game->player);
-	timer = 3;
+	timer = 7;
 	return (0);
 }
