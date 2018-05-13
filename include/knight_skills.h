@@ -17,7 +17,7 @@
 #endif
 
 #ifndef NORMAL_ATTACK
-#define NORMAL_ATTACK 25
+#define NORMAL_ATTACK 100
 #endif
 
 #ifndef CIRCULAR_ATTACK

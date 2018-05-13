@@ -33,7 +33,10 @@ void activate_spell(game_global_t *game, int spell)
 	spell_t spells[5] = {spell_speed, simple_, double_, circular_, NULL};
 
 	if (player->spell_cd[spell] <= 0) {
-		player->spell_cd[spell] = 5;
+		if (spell >= 2 && game->tree->attack_level >= spell)
+			player->spell_cd[spell] = 5;
+		if (spell >= 2 && game->tree->attack_level < spell)
+			player->spell_cd[spell] = 0;
 		if (spell == 0 || spell == 1)
 			player->spell_cd[spell] = 2;
 		spells[spell](game);

@@ -11,10 +11,11 @@ void analyse_circle(mob_info_t *mob, player_info_t *player)
 {
 	double diff_x = player->x - mob->x;
 	double diff_y = player->y - mob->y;
+	float pw = player->power;
 
 	if (diff_x > -48 && diff_x < 35) {
 		if (diff_y > -48 && diff_y < 35) {
-			mob->health = mob->health - CIRCULAR_ATTACK;
+			mob->health = mob->health - (CIRCULAR_ATTACK * pw);
 		}
 	}
 }
