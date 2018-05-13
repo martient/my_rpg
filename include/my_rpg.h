@@ -21,7 +21,7 @@
 #include "player.h"
 #include "keyboard.h"
 #include "text.h"
-#include "nxjson.h"
+#include "../extern_libs/nxjson.h"
 #include "inventory.h"
 #include "skill_tree.h"
 #include "monster.h"

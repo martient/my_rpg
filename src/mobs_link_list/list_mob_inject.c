@@ -51,8 +51,6 @@ int rpg_mob_generator(spawn_first_t *spawn, mob_data_first_t *data,
 mob_first_t *mobs, player_info_t *player)
 {
 	spawn_mob_t *spawn_tmp = NULL;
-	static int max = 100;
-	static int min = 0;
 	int mob_rand = 0;
 
 	if (!spawn || !data || !mobs || !player) {
@@ -62,11 +60,27 @@ mob_first_t *mobs, player_info_t *player)
 	spawn_tmp = spawn->first;
 	while (spawn_tmp->next != NULL) {
 		srand(time(NULL));
-		mob_rand = (rand() % (max - min + 1)) + min;
+		mob_rand = (rand() % (RATE_SPAWN_MAX - RATE_SPAWN_MIN + 1)) +
+		RATE_SPAWN_MIN;
 		if (spawn_tmp->rate >= mob_rand) {
 			rpg_mobs_inject(mobs, data, spawn_tmp);
 		}
 		spawn_tmp = spawn_tmp->next;
 	}
+	return (0);
+}
+
+int rpg_mob_generator_timer(game_global_t *game)
+{
+	double sec = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+	static double timer = 0;
+
+	if (!game || timer > 0) {
+		timer -= sec;
+		return (-1);
+	}
+	rpg_mob_generator(game->mob_spawn, game->mob_data, game->mob_deploy,
+	game->player);
+	timer = 3;
 	return (0);
 }

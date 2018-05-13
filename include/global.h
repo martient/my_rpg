@@ -37,5 +37,5 @@ typedef struct game_global_t {
 
 game_global_t *__init__(void);
 int rpg_json_init_inventory_data(game_global_t *global);
-
+int rpg_mob_generator_timer(game_global_t *game);
 #endif /* !GLOBAL_H_ */

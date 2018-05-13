@@ -9,6 +9,8 @@
 	#define MOBS_H_
 
 #include <SFML/Graphics.h>
+#define RATE_SPAWN_MAX 100
+#define RATE_SPAWN_MIN 0
 
 typedef struct spawn_mob_t spawn_mob_t;
 struct spawn_mob_t {
