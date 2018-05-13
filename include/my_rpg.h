@@ -183,7 +183,8 @@ void draw_sfx_button(game_global_t *game);
 int check_sfx_status(game_global_t *game, int reset);
 int check_music_status(game_global_t *game, int reset);
 char *rpg_player_load(char *filepath);
-sfVector2f screen_to_world_click(game_global_t *game, sfMouseButtonEvent event);
+sfVector2f screen_to_world_click(game_global_t *game,
+sfMouseButtonEvent event);
 int upgrade_knight_attacks(game_global_t *game);
 int upgrade_power(game_global_t *game);
 int upgrade_inventory(game_global_t *game);

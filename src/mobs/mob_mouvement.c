@@ -25,7 +25,8 @@ static int can_move(game_global_t *game, float x, float y, int box[3])
 	int box_y = box[1];
 	object_info_t *map = game->info_map->first->first;
 
-	if (x < box_x - 160 || x > box_x + 160 || y < box_y - 160 || y > box_y + 160)
+	if (x < box_x - 160 || x > box_x + 160 ||
+	y < box_y - 160 || y > box_y + 160)
 		return (0);
 	if (x < 0 || x > 3200 || y < 0 || y > 3200)
 		return (0);

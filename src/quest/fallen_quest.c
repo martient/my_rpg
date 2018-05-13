@@ -23,8 +23,9 @@ int fallen_killed_monster(player_info_t *player, int reset)
 int is_fallen_done(game_global_t *game)
 {
 	if (fallen_killed_monster(game->player, 0) != 5)
-		return (0);
+		return (1);
 	fallen_killed_monster(game->player, -1);
+	game->player->xp += 500;
 	play_sound(game, "success");
 	return (0);
 }
