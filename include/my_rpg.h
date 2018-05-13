@@ -24,7 +24,6 @@
 #include "../extern_libs/nxjson.h"
 #include "inventory.h"
 #include "skill_tree.h"
-#include "monster.h"
 #include "sound.h"
 #include "global.h"
 #include "items_data.h"
@@ -122,7 +121,8 @@ void activate_spell(game_global_t *game, int spell);
 void spell_cooldown(game_global_t *game, double delta_time);
 int rpg_player_save(player_info_t *player);
 int rpg_player_create_json(void);
-void engine_create_text(game_global_t *global, char *text, int info[3], sfColor color);
+void engine_create_text(game_global_t *global, char *text, int info[3],
+sfColor color);
 void player_check_interaction(game_global_t *game);
 int spell_speed(game_global_t *game);
 int speed_spell_clock(game_global_t *game);
