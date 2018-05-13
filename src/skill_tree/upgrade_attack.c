@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-int upgrade_knight_attacks(struct game_global_t *game)
+int upgrade_knight_attacks(game_global_t *game)
 {
 	int up = DOUBLE_ATTACK_COST;
 	int up2 = CIRCULAR_ATTACK_COST;
