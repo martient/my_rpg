@@ -57,7 +57,6 @@ int rpg_mob_remove_spe(mob_first_t *first, mob_info_t *mobs)
 	} else {
 		remove = mobs;
 		rpg_mob_remove_previoux(first, remove->id);
-		//sfSprite_destroy(remove->sprite);
 		free(remove);
 	}
 	return (0);

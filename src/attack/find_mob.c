@@ -14,19 +14,19 @@ void analyse_mob(int t, mob_info_t *mob, player_info_t *player)
 	float pwr = player->power;
 
 	if (player->direction == 1) {
-		if (diff_x > -20 && diff_x < 20 && diff_y > -48 && diff_y < 32)
+		if (diff_x > -32 && diff_x < 32 && diff_y > -48 && diff_y < 32)
 			mob->health = mob->health - (NORMAL_ATTACK * t * pwr);
 	}
 	if (player->direction == 2) {
-		if (diff_x > -32 && diff_x < 32 && diff_y > -15 && diff_y < 15)
+		if (diff_x > -32 && diff_x < 32 && diff_y > -32 && diff_y < 32)
 			mob->health = mob->health - (NORMAL_ATTACK * t * pwr);
 	}
 	if (player->direction == 3) {
-		if (diff_x > -32 && diff_x < 32 && diff_y > -15 && diff_y < 15)
+		if (diff_x > -32 && diff_x < 32 && diff_y > -32 && diff_y < 32)
 			mob->health = mob->health - (NORMAL_ATTACK * t * pwr);
 	}
 	if (player->direction == 4) {
-		if (diff_x > -20 && diff_x < 20 && diff_y > -32 && diff_y < 32)
+		if (diff_x > -32 && diff_x < 32 && diff_y > -32 && diff_y < 32)
 			mob->health = mob->health - (NORMAL_ATTACK * t * pwr);
 	}
 }

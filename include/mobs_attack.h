@@ -9,7 +9,7 @@
 	#define MOBS_ATTACK_H_
 
 #ifndef MOBS_SIMPLE_ATTACK
-#define MOBS_SIMPLE_ATTACK 0.2
+#define MOBS_SIMPLE_ATTACK 0.1
 #endif
 
 #endif /* !MOBS_ATTACK_H_ */
